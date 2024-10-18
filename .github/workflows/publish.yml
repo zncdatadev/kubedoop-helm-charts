@@ -1,0 +1,45 @@
+# Deploy a dev version snapshot of helm chart to GitHub releases, the target version is 0.0.0-dev.
+# When re-deploy, the previous release will be replaced.
+
+name: Publish helm chart
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "charts/**"
+
+permissions:
+  contents: read
+
+
+jobs:
+  upload-helm-chart:
+    # if: ${{ github.repository_owner == 'zncdatadev' }}
+    permissions:
+      contents: write  # for helm/chart-releaser-action to push chart release and create a release
+    name: Publish helm chart
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+    - name: Configure Git
+      run: |
+        git config user.name "$GITHUB_ACTOR"
+        git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
+    - name: Helm tool installer
+      uses: azure/setup-helm@v4.2.0
+    - name: Delete existing release if exists
+      env:
+        GH_TOKEN: ${{ github.token }}
+      run: |
+        ./scripts/delete-release.sh -r ${{ github.repository }}
+    # TODO: Sign the chart
+    - name: Run chart-releaser
+      uses: helm/chart-releaser-action@v1.6.0
+      env:
+        # set directly parameters to chart-releaser cli
+        CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+        CR_INDEX_PATH: "./index.yaml"
