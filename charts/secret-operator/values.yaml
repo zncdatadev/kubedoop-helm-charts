@@ -1,0 +1,106 @@
+# Default values for secret-operator.
+---
+image:
+  repository: quay.io/zncdatadev/secret-csi-driver
+  pullPolicy: IfNotPresent
+  pullSecrets: []
+
+csiProvisioner:
+  image:
+    repository: registry.k8s.io/sig-storage/csi-provisioner
+    tag: v5.1.0
+    pullPolicy: IfNotPresent
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+    limits:
+      cpu: 100m
+      memory: 128Mi
+csiNodeDriverRegistrar:
+  image:
+    repository: registry.k8s.io/sig-storage/csi-node-driver-registrar
+    tag: v2.12.0
+    pullPolicy: IfNotPresent
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+    limits:
+      cpu: 100m
+      memory: 128Mi
+
+node:
+  driver:
+    # Resources of the secret-operator container itself
+    resources:
+      limits:
+        cpu: 100m
+        memory: 128Mi
+      requests:
+        cpu: 100m
+        memory: 128Mi
+
+livenessProbe:
+  image: 
+    repository: registry.k8s.io/sig-storage/livenessprobe
+    tag: v2.14.0
+    pullPolicy: IfNotPresent
+  resources:
+    limits:
+      cpu: 100m
+      memory: 128Mi
+    requests:
+      cpu: 100m
+      memory: 128Mi
+
+
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+
+podAnnotations: {}
+
+# Provide additional labels which get attached to all deployed resources
+labels:
+  zncdata.dev/vendor: zncdata
+
+podSecurityContext: {}
+  # fsGroup: 2000
+
+securityContext:
+  # secret-operator requires root permissions
+  runAsUser: 0
+  # It is strongly recommended to run secret-operator as a privileged container, since
+  # it enables additional protections for the secret contents.
+  # Unprivileged mode is EXPERIMENTAL and requires manual migration for an existing cluster.
+  privileged: true
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+# Kubelet dir may vary in environments such as microk8s 
+kubeletDir: /var/lib/kubelet
+
+secretClasses:
+  tls:
+    # The namespace that the TLS Certificate Authority is installed into.
+    # Defaults to the namespace where secret-op is installed.
+    caSecretNamespace: null
