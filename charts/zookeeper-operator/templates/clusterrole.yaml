@@ -1,0 +1,99 @@
+{{- if .Values.serviceAccount.create -}}
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: {{ include "operator.fullname" . }}
+  labels:
+    {{- include "operator.labels" . | nindent 4 }}
+rules:
+- apiGroups:
+  - apps
+  resources:
+  - statefulsets
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - ""
+  resources:
+  - configmaps
+  - secrets
+  - serviceaccounts
+  - services
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - ""
+  resources:
+  - endpoints
+  - pods
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - events.k8s.io
+  resources:
+  - events
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - rbac.authorization.k8s.io
+  resources:
+  - clusterroles
+  - rolebindings
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - zookeeper.zncdata.dev
+  resources:
+  - zookeeperclusters
+  - zookeeperznodes
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - zookeeper.zncdata.dev
+  resources:
+  - zookeeperclusters/finalizers
+  - zookeeperznodes/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - zookeeper.zncdata.dev
+  resources:
+  - zookeeperclusters/status
+  - zookeeperznodes/status
+  verbs:
+  - get
+  - patch
+  - update
+{{- end }}
