@@ -1,6 +1,6 @@
 apiVersion: v2
 name: zookeeper-operator
-description: The Kubedoop operator form Apache Zookeeper
+description: The Kubedoop operator for Apache Zookeeper
 
 # A chart can be either an 'application' or a 'library' chart.
 #
