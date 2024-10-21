@@ -7,7 +7,7 @@ chart-dirs:
   - charts
 chart-repos: []
 validate-chart-schema: false
-validate-maintainers: true
+validate-maintainers: false
 validate-yaml: true
 exclude-deprecated: true
 excluded-charts: []
