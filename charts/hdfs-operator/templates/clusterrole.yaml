@@ -1,0 +1,90 @@
+{{- if .Values.serviceAccount.create -}}
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: {{ include "operator.fullname" . }}
+  labels:
+    {{- include "operator.labels" . | nindent 4 }}
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - configmaps
+  - secrets
+  - serviceaccounts
+  - services
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - ""
+  resources:
+  - pods
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apps
+  resources:
+  - statefulsets
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - authentication.zncdata.dev
+  resources:
+  - authenticationclasses
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - hdfs.zncdata.dev
+  resources:
+  - hdfsclusters
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - hdfs.zncdata.dev
+  resources:
+  - hdfsclusters/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - hdfs.zncdata.dev
+  resources:
+  - hdfsclusters/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - listeners.zncdata.dev
+  resources:
+  - listeners
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+{{- end }}
