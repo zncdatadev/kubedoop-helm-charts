@@ -42,7 +42,7 @@ node:
         memory: 128Mi
 
 livenessProbe:
-  image: 
+  image:
     repository: registry.k8s.io/sig-storage/livenessprobe
     tag: v2.14.0
     pullPolicy: IfNotPresent
@@ -96,7 +96,7 @@ tolerations: []
 
 affinity: {}
 
-# Kubelet dir may vary in environments such as microk8s 
+# Kubelet dir may vary in environments such as microk8s
 kubeletDir: /var/lib/kubelet
 
 secretClasses:
