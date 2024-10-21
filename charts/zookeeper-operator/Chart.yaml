@@ -23,6 +23,5 @@ version: 0.0.0-dev
 # It is recommended to use it with quotes.
 appVersion: "0.0.0-dev"
 maintainers:
-- name: zncdatadev
-  url: https://zncdata.dev
-  email: zncdatadev@gmail.com
+  - email: zncdatadev@googlegroups.com
+    name: ZNCDataDev Team
