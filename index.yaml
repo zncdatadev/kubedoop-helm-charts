@@ -28,6 +28,20 @@ entries:
     urls:
     - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/secret-operator-0.0.0-dev/secret-operator-0.0.0-dev.tgz
     version: 0.0.0-dev
+  spark-k8s-operator:
+  - apiVersion: v2
+    appVersion: 0.0.0-dev
+    created: "2024-10-21T11:02:23.98436762Z"
+    description: The Kubedoop operator for Apache Spark k8s
+    digest: 468b8ac938540dbd69501723f10a4f5b29ff7ed8569c914e0904eae9634db7ea
+    maintainers:
+    - email: zncdatadev@googlegroups.com
+      name: ZNCDataDev Team
+    name: spark-k8s-operator
+    type: application
+    urls:
+    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/spark-k8s-operator-0.0.0-dev/spark-k8s-operator-0.0.0-dev.tgz
+    version: 0.0.0-dev
   zookeeper-operator:
   - apiVersion: v2
     appVersion: 0.0.0-dev
@@ -42,4 +56,4 @@ entries:
     urls:
     - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/zookeeper-operator-0.0.0-dev/zookeeper-operator-0.0.0-dev.tgz
     version: 0.0.0-dev
-generated: "2024-10-21T11:01:27.710626267Z"
+generated: "2024-10-21T11:02:23.984398498Z"
