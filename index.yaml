@@ -28,6 +28,20 @@ entries:
     urls:
     - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/dolphinscheduler-operator-0.0.0-dev/dolphinscheduler-operator-0.0.0-dev.tgz
     version: 0.0.0-dev
+  hdfs-operator:
+  - apiVersion: v2
+    appVersion: 0.0.0-dev
+    created: "2024-10-23T03:03:53.354576806Z"
+    description: The Kubedoop operator for Apache HDFS
+    digest: 8bef04c6806fcf626b942b4c11c4364e2e04885030d2f123957e68664c033cc0
+    maintainers:
+    - email: zncdatadev@googlegroups.com
+      name: ZNCDataDev Team
+    name: hdfs-operator
+    type: application
+    urls:
+    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/hdfs-operator-0.0.0-dev/hdfs-operator-0.0.0-dev.tgz
+    version: 0.0.0-dev
   hive-operator:
   - apiVersion: v2
     appVersion: 0.0.0-dev
@@ -152,4 +166,4 @@ entries:
     urls:
     - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/zookeeper-operator-0.0.0-dev/zookeeper-operator-0.0.0-dev.tgz
     version: 0.0.0-dev
-generated: "2024-10-23T03:03:34.526763496Z"
+generated: "2024-10-23T03:03:53.354592395Z"
