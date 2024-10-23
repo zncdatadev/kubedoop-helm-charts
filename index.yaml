@@ -14,6 +14,20 @@ entries:
     urls:
     - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/commons-operator-0.0.0-dev/commons-operator-0.0.0-dev.tgz
     version: 0.0.0-dev
+  dolphinscheduler-operator:
+  - apiVersion: v2
+    appVersion: 0.0.0-dev
+    created: "2024-10-23T03:03:34.526744792Z"
+    description: The Kubedoop operator for Apache DolphinScheduler
+    digest: 509dcc6cee84dd019b07ecfb8b10db2339839abbda5570489224e08ffe281ef8
+    maintainers:
+    - email: zncdatadev@googlegroups.com
+      name: ZNCDataDev Team
+    name: dolphinscheduler-operator
+    type: application
+    urls:
+    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/dolphinscheduler-operator-0.0.0-dev/dolphinscheduler-operator-0.0.0-dev.tgz
+    version: 0.0.0-dev
   hive-operator:
   - apiVersion: v2
     appVersion: 0.0.0-dev
@@ -138,4 +152,4 @@ entries:
     urls:
     - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/zookeeper-operator-0.0.0-dev/zookeeper-operator-0.0.0-dev.tgz
     version: 0.0.0-dev
-generated: "2024-10-23T03:03:16.115773657Z"
+generated: "2024-10-23T03:03:34.526763496Z"
