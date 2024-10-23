@@ -28,6 +28,19 @@ entries:
     urls:
     - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/dolphinscheduler-operator-0.0.0-dev/dolphinscheduler-operator-0.0.0-dev.tgz
     version: 0.0.0-dev
+  - apiVersion: v2
+    appVersion: 0.0.0-dev
+    created: "2024-10-23T12:11:23.24478672Z"
+    description: The Kubedoop operator for Apache DolphinScheduler
+    digest: 02b3d3c020095ec70c88b1774647830bddafaade201b1b619d4a0569d8bf333d
+    maintainers:
+    - email: zncdatadev@googlegroups.com
+      name: ZNCDataDev Team
+    name: dolphinscheduler-operator
+    type: application
+    urls:
+    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/dolphinscheduler-operator-0.0.0-dev/dolphinscheduler-operator-0.0.0-dev.tgz
+    version: 0.0.0-dev
   hdfs-operator:
   - apiVersion: v2
     appVersion: 0.0.0-dev
@@ -89,6 +102,19 @@ entries:
     created: "2024-10-23T03:55:56.893363792Z"
     description: The Kubedoop Listener Operator
     digest: 560cab1ccd2d4c5c886b00d2ae55442f853fc8224bbc40df918d5a7ed956f45c
+    maintainers:
+    - email: zncdatadev@googlegroups.com
+      name: ZNCDataDev Team
+    name: listener-operator
+    type: application
+    urls:
+    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/listener-operator-0.0.0-dev/listener-operator-0.0.0-dev.tgz
+    version: 0.0.0-dev
+  - apiVersion: v2
+    appVersion: 0.0.0-dev
+    created: "2024-10-23T12:11:23.430788533Z"
+    description: The Kubedoop Listener Operator
+    digest: 1419c9399f742a7d0c673be18135fba2c2a484275c1eab134f987987abf568b4
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -193,4 +219,4 @@ entries:
     urls:
     - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/zookeeper-operator-0.0.0-dev/zookeeper-operator-0.0.0-dev.tgz
     version: 0.0.0-dev
-generated: "2024-10-23T03:55:56.893403857Z"
+generated: "2024-10-23T12:11:23.430816805Z"
