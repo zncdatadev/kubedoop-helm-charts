@@ -112,6 +112,20 @@ entries:
     urls:
     - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/spark-k8s-operator-0.0.0-dev/spark-k8s-operator-0.0.0-dev.tgz
     version: 0.0.0-dev
+  superset-operator:
+  - apiVersion: v2
+    appVersion: 0.0.0-dev
+    created: "2024-10-23T03:04:23.436630594Z"
+    description: The Kubedoop operator for Apache Superset
+    digest: 424da2b0253e1a4a58b2a3a0ccfd5bb8922001b3bdd0bbd0d9a96a56906e14c7
+    maintainers:
+    - email: zncdatadev@googlegroups.com
+      name: ZNCDataDev Team
+    name: superset-operator
+    type: application
+    urls:
+    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/superset-operator-0.0.0-dev/superset-operator-0.0.0-dev.tgz
+    version: 0.0.0-dev
   trino-operator:
   - apiVersion: v2
     appVersion: 0.0.0-dev
@@ -166,4 +180,4 @@ entries:
     urls:
     - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/zookeeper-operator-0.0.0-dev/zookeeper-operator-0.0.0-dev.tgz
     version: 0.0.0-dev
-generated: "2024-10-23T03:03:53.354592395Z"
+generated: "2024-10-23T03:04:23.436645812Z"
