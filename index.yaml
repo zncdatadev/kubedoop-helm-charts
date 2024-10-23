@@ -28,6 +28,20 @@ entries:
     urls:
     - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/hive-operator-0.0.0-dev/hive-operator-0.0.0-dev.tgz
     version: 0.0.0-dev
+  kafka-operator:
+  - apiVersion: v2
+    appVersion: 0.0.0-dev
+    created: "2024-10-23T03:03:16.115753869Z"
+    description: The Kubedoop operator for Apache Kafka
+    digest: 9f48226757077bd6c7a3bc5448cadde5550247c789972ad506bd1cf3ad72832b
+    maintainers:
+    - email: zncdatadev@googlegroups.com
+      name: ZNCDataDev Team
+    name: kafka-operator
+    type: application
+    urls:
+    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/kafka-operator-0.0.0-dev/kafka-operator-0.0.0-dev.tgz
+    version: 0.0.0-dev
   listener-operator:
   - apiVersion: v2
     appVersion: 0.0.0-dev
@@ -124,4 +138,4 @@ entries:
     urls:
     - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/zookeeper-operator-0.0.0-dev/zookeeper-operator-0.0.0-dev.tgz
     version: 0.0.0-dev
-generated: "2024-10-23T03:02:52.497798192Z"
+generated: "2024-10-23T03:03:16.115773657Z"
