@@ -70,4 +70,14 @@ rules:
   - get
   - patch
   - update
+- apiGroups:
+  - storage.k8s.io
+  resources:
+  - csidrivers
+  - storageclasses
+  verbs:
+  - get
+  - list
+  - patch
+  - watch
 {{- end }}
