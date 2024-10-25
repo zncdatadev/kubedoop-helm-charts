@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: DaemonSet
 metadata:
-  name: {{ include "operator.fullname" . }}
+  name: {{ include "operator.fullname" . }}-daemonset
   labels:
     {{- include "operator.labels" . | nindent 4 }}
 spec:
