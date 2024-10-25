@@ -66,8 +66,8 @@ spec:
             - name: DRIVER_REG_SOCK_PATH
               value: {{ .Values.kubeletDir }}/plugins/listeners.zncdata.dev/csi.sock
           args:
-            - --csi-address=${ADDRESS}
-            - --kubelet-registration-path=${DRIVER_REG_SOCK_PATH}
+            - --csi-address=$(ADDRESS)
+            - --kubelet-registration-path=$(DRIVER_REG_SOCK_PATH)
             {{- with .Values.csiNodeDriverRegistrar.logging }}
             - -v={{ .level }}
             {{- end }}
