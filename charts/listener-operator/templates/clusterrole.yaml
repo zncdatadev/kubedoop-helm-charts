@@ -48,11 +48,12 @@ rules:
   - listenercsis
   - listeners
   verbs:
+  - create
+  - delete
   - get
   - list
   - patch
-  - update
-  - watch
+  - updat
 - apiGroups:
   - listeners.zncdata.dev
   resources:
