@@ -53,7 +53,8 @@ rules:
   - get
   - list
   - patch
-  - updat
+  - update
+  - watch
 - apiGroups:
   - listeners.zncdata.dev
   resources:
