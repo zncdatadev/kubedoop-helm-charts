@@ -1,82 +1,33 @@
-# Zncdata Stack Operator for Trino
+# Operator Chart for Trino on Kubedoop
 
-[![Build Status](https://travis-ci.org/zncdata/trino-operator.svg?branch=main)](https://travis-ci.org/zncdata/trino-operator)
-[![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0)
+This chart bootstraps an Trino Operator deployment on a Kubernetes cluster using the Helm package manager. It's part of the Kubedoop ecosystem.
 
-[//]: # ([![codecov]&#40;https://codecov.io/gh/zncdata/trino-operator/branch/main/graph/badge.svg&#41;]&#40;https://codecov.io/gh/zncdata/trino-operator&#41;)
+## Pre-Requisites
 
-This is a Kubernetes operator to manage [Trino](https://trino.io/) ensembles.
+### Custom resource definitions
 
-It is part of the Stack ZncData Platform,
-a curated selection of the best open source data apps like Apache Hive, Apache Druid, Trino or Apache Spark,
-working together seamlessly. Based on Kubernetes, it runs everywhere.
+Some users would prefer to install the CRDs _outside_ of the chart. You can disable the CRD installation of this chart by using `--set crds.install=false` when installing the chart.
 
-## Quick Start
+Helm cannot upgrade custom resource definitions in the `<chart>/crds` folder [by design](https://helm.sh/docs/chart_best_practices/custom_resource_definitions/#some-caveats-and-explanations).
+Starting with 3.4.0 (chart version 0.19.0), the CRDs have been moved to `<chart>/templates` to address this design decision.
 
-1. Install Operator Lifecycle Manager (OLM), a tool to help manage the Operators running on your cluster.
+If you are using Argo Workflows chart version prior to 3.4.0 (chart version 0.19.0) or have elected to manage the Argo Workflows CRDs outside of the chart,
+please use `kubectl` to upgrade CRDs manually from [templates/crds](templates/crds/) folder or via the manifests from the upstream project repo:
 
-    ```bash
-    curl -sL https://github.com/operator-framework/operator-lifecycle-manager/releases/download/v0.26.0/install.sh | bash -s v0.26.0
-    ```
+## Installing the Chart
 
-2. First we need to prepare an OperatorGroup
+To install the chart with the release name `trino-operator`:
 
-    ```bash
-    apiVersion: operators.coreos.com/v1
-    kind: OperatorGroup
-    metadata:
-      name: operatorgroup
-    spec:
-      targetNamespaces:
-      - tmp
-      upgradeStrategy: Default
-    ```
+```bash
+helm repo add kubedoop https://zncdatadev.github.io/kubedoop-helm-charts/
 
-3. Start deploying our catalog
+helm install trino-operator kubedoop/trino-operator
+```
 
-    ```bash
-    apiVersion: operators.coreos.com/v1alpha1
-    kind: CatalogSource
-    metadata:
-      name: catalog-v0-0-1-alpha
-      namespace: tmp
-    spec:
-      displayName: zncdata operators
-      grpcPodConfig:
-        securityContextConfig: restricted
-      image: quay.io/zncdatadev/catalog:v0.0.1-alpha
-      publisher: zncdata.dev
-      sourceType: grpc
-      updateStrategy:
-        registryPoll:
-          interval: 60m
-    ```
+## Usage
 
-4. After completing the OperatorGroup and Catalog, you can start installing the service Subscription
+The operator example usage can be found in the [examples](https://github.com/zncdatadev/trino-operator/tree/main/examples) directory.
 
-    ```bash
-    apiVersion: operators.coreos.com/v1alpha1
-    kind: Subscription
-    metadata:
-      name: trino-operator-v0-0-1-alpha-sub
-      namespace: tmp
-    spec:
-      channel: fast-v0.0
-      name: trino-operator
-      source: catalog
-      sourceNamespace: tmp
-      installPlanApproval: Automatic
-      startingCSV: trino-operator.v0.0.1-alpha
-    ```
+## More information
 
-5. After install, watch your operator come up using next command.
-
-    ```bash
-    kubectl get csv -n tmp
-    ```
-
-6. Install Instances of Custom Resources:
-
-    ```sh
-    kubectl apply -f config/samples/
-    ```
+- [Kubedoop operator for Trino](https://github.com/zncdatadev/trino-operator)
