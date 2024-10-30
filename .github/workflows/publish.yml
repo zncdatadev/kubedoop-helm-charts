@@ -1,7 +1,7 @@
 # Deploy a dev version snapshot of helm chart to GitHub releases, the target version is 0.0.0-dev.
 # When re-deploy, the previous release will be replaced.
 
-name: Publish helm chart
+name: Chart Publish
 
 on:
   push:
@@ -19,7 +19,7 @@ jobs:
     if: ${{ github.repository_owner == 'zncdatadev' }}
     permissions:
       contents: write  # for helm/chart-releaser-action to push chart release and create a release
-    name: Publish helm chart
+    name: Chart Publish
     runs-on: ubuntu-22.04
     steps:
     - uses: actions/checkout@v3
