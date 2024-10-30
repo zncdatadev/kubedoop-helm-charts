@@ -1,104 +1,33 @@
-# superset-operator
+# Operator Chart for Apache Superset on Kubedoop
 
-// TODO(user): Add simple overview of use/purpose
+This chart bootstraps an Apache Superset Operator deployment on a Kubernetes cluster using the Helm package manager. It's part of the Kubedoop ecosystem.
 
-## Description
+## Pre-Requisites
 
-// TODO(user): An in-depth paragraph about your project and overview of use
+### Custom resource definitions
 
-## Getting Started
+Some users would prefer to install the CRDs _outside_ of the chart. You can disable the CRD installation of this chart by using `--set crds.install=false` when installing the chart.
 
-You’ll need a Kubernetes cluster to run against. You can use [KIND](https://sigs.k8s.io/kind) to get a local cluster for testing, or run against a remote cluster.
-**Note:** Your controller will automatically use the current context in your kubeconfig file (i.e. whatever cluster `kubectl cluster-info` shows).
+Helm cannot upgrade custom resource definitions in the `<chart>/crds` folder [by design](https://helm.sh/docs/chart_best_practices/custom_resource_definitions/#some-caveats-and-explanations).
+Starting with 3.4.0 (chart version 0.19.0), the CRDs have been moved to `<chart>/templates` to address this design decision.
 
-### Running on the cluster
+If you are using Argo Workflows chart version prior to 3.4.0 (chart version 0.19.0) or have elected to manage the Argo Workflows CRDs outside of the chart,
+please use `kubectl` to upgrade CRDs manually from [templates/crds](templates/crds/) folder or via the manifests from the upstream project repo:
 
-1. Install Instances of Custom Resources:
+## Installing the Chart
 
-    ```sh
-    kubectl apply -f config/samples/
-    ```
+To install the chart with the release name `superset-operator`:
 
-2. Build and push your image to the location specified by `IMG`:
+```bash
+helm repo add kubedoop https://zncdatadev.github.io/kubedoop-helm-charts/
 
-    ```sh
-    make docker-build docker-push IMG=<some-registry>/superset-operator:tag
-    ```
-
-3. Deploy the controller to the cluster with the image specified by `IMG`:
-
-    ```sh
-    make deploy IMG=<some-registry>/superset-operator:tag
-    ```
-
-### Uninstall CRDs
-
-To delete the CRDs from the cluster:
-
-```sh
-make uninstall
+helm install superset-operator kubedoop/superset-operator
 ```
 
-### Undeploy controller
+## Usage
 
-UnDeploy the controller from the cluster:
+The operator example usage can be found in the [examples](https://github.com/zncdatadev/superset-operator/tree/main/examples) directory.
 
-```sh
-make undeploy
-```
+## More information
 
-## Contributing
-
-// TODO(user): Add detailed information on how you would like others to contribute to this project
-
-### How it works
-
-This project aims to follow the Kubernetes [Operator pattern](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/).
-
-It uses [Controllers](https://kubernetes.io/docs/concepts/architecture/controller/),
-which provide a reconcile function responsible for synchronizing resources until the desired state is reached on the cluster.
-
-### Test It Out
-
-1. Install the CRDs into the cluster:
-
-    ```sh
-    make install
-    ```
-
-2. Run your controller (this will run in the foreground, so switch to a new terminal if you want to leave it running):
-
-    ```sh
-    make run
-    ```
-
-**NOTE:** You can also run this in one step by running: `make install run`
-
-### Modifying the API definitions
-
-If you are editing the API definitions, generate the manifests such as CRs or CRDs using:
-
-```sh
-make manifests
-```
-
-**NOTE:** Run `make --help` for more information on all potential `make` targets
-
-More information can be found via the [Kubebuilder Documentation](https://book.kubebuilder.io/introduction.html)
-
-## License
-
-Copyright 2024 zncdatadev.
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-
+- [Kubedoop operator for Apache Superset](https://github.com/zncdatadev/superset-operator)
