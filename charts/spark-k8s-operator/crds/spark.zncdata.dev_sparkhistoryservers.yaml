@@ -2,7 +2,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    controller-gen.kubebuilder.io/version: v0.16.2
+    controller-gen.kubebuilder.io/version: v0.16.5
   name: sparkhistoryservers.spark.zncdata.dev
 spec:
   group: spark.zncdata.dev
@@ -180,6 +180,8 @@ spec:
                     required:
                     - s3
                     type: object
+                  vectorAggregatorConfigMapName:
+                    type: string
                 type: object
               clusterOperation:
                 description: ClusterOperationSpec defines the desired state of ClusterOperation
@@ -215,7 +217,7 @@ spec:
               node:
                 description: spark history server role spec
                 properties:
-                  commandArgsOverrides:
+                  cliOverrides:
                     items:
                       type: string
                     type: array
@@ -1321,7 +1323,7 @@ spec:
                   roleGroups:
                     additionalProperties:
                       properties:
-                        commandOverrides:
+                        cliOverrides:
                           items:
                             type: string
                           type: array
