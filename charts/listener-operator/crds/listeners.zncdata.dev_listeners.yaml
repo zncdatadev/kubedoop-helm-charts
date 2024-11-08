@@ -1,0 +1,104 @@
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.16.5
+  name: listeners.listeners.zncdata.dev
+spec:
+  group: listeners.zncdata.dev
+  names:
+    kind: Listener
+    listKind: ListenerList
+    plural: listeners
+    singular: listener
+  scope: Namespaced
+  versions:
+  - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: Listener is the Schema for the listeners API
+        properties:
+          apiVersion:
+            description: |-
+              APIVersion defines the versioned schema of this representation of an object.
+              Servers should convert recognized schemas to the latest internal value, and
+              may reject unrecognized values.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
+            type: string
+          kind:
+            description: |-
+              Kind is a string value representing the REST resource this object represents.
+              Servers may infer this from the endpoint the client submits requests to.
+              Cannot be updated.
+              In CamelCase.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: ListenerSpec defines the desired state of Listener
+            properties:
+              className:
+                type: string
+              extraPodMatchLabels:
+                additionalProperties:
+                  type: string
+                type: object
+              ports:
+                items:
+                  properties:
+                    name:
+                      type: string
+                    port:
+                      format: int32
+                      type: integer
+                    protocol:
+                      description: Protocol defines network protocols supported for
+                        things like container ports.
+                      type: string
+                  required:
+                  - name
+                  - port
+                  - protocol
+                  type: object
+                type: array
+            required:
+            - className
+            type: object
+          status:
+            description: ListenerStatus defines the observed state of Listener
+            properties:
+              ingressAddresses:
+                items:
+                  properties:
+                    address:
+                      type: string
+                    addressType:
+                      enum:
+                      - Hostname
+                      - IP
+                      type: string
+                    ports:
+                      additionalProperties:
+                        format: int32
+                        type: integer
+                      type: object
+                  required:
+                  - address
+                  - addressType
+                  - ports
+                  type: object
+                type: array
+              nodePorts:
+                additionalProperties:
+                  format: int32
+                  type: integer
+                type: object
+              serviceName:
+                type: string
+            type: object
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}
