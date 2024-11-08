@@ -2,7 +2,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    controller-gen.kubebuilder.io/version: v0.16.2
+    controller-gen.kubebuilder.io/version: v0.16.5
   name: supersetclusters.superset.zncdata.dev
 spec:
   group: superset.zncdata.dev
@@ -124,7 +124,7 @@ spec:
                 type: object
               node:
                 properties:
-                  commandOverrides:
+                  cliOverrides:
                     items:
                       type: string
                     type: array
@@ -9231,7 +9231,7 @@ spec:
                   roleGroups:
                     additionalProperties:
                       properties:
-                        commandOverrides:
+                        cliOverrides:
                           items:
                             type: string
                           type: array
