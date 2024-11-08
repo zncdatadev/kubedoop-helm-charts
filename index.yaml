@@ -131,6 +131,19 @@ entries:
     urls:
     - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/commons-operator-0.0.0-dev/commons-operator-0.0.0-dev.tgz
     version: 0.0.0-dev
+  - apiVersion: v2
+    appVersion: 0.0.0-dev
+    created: "2024-11-08T06:59:18.217859191Z"
+    description: Commons operator of Kubedoop
+    digest: a7b0b081331fad16322a0c25419c3f21ba9695e7b8039ef40a31d92fc5946a97
+    maintainers:
+    - email: huagang517@126.com
+      name: whg517
+    name: commons-operator
+    type: application
+    urls:
+    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/commons-operator-0.0.0-dev/commons-operator-0.0.0-dev.tgz
+    version: 0.0.0-dev
   dolphinscheduler-operator:
   - apiVersion: v2
     appVersion: 0.0.0-dev
@@ -314,6 +327,19 @@ entries:
     urls:
     - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/dolphinscheduler-operator-0.0.0-dev/dolphinscheduler-operator-0.0.0-dev.tgz
     version: 0.0.0-dev
+  - apiVersion: v2
+    appVersion: 0.0.0-dev
+    created: "2024-11-08T06:59:18.309560558Z"
+    description: The Kubedoop operator for Apache DolphinScheduler
+    digest: be77e2a7f59a602459b0b00f7d6af278d065abdab889ee480ac7dd2bab45ee95
+    maintainers:
+    - email: zncdatadev@googlegroups.com
+      name: ZNCDataDev Team
+    name: dolphinscheduler-operator
+    type: application
+    urls:
+    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/dolphinscheduler-operator-0.0.0-dev/dolphinscheduler-operator-0.0.0-dev.tgz
+    version: 0.0.0-dev
   hbase-operator:
   - apiVersion: v2
     appVersion: 0.0.0-dev
@@ -410,6 +436,16 @@ entries:
     created: "2024-11-08T06:57:01.723766204Z"
     description: The Kubedoop operator for Hbase
     digest: 87cb7b7baf781f426f3dcd6285cb24565531a756f7d97b495c52fdcaf1fe85f2
+    name: hbase-operator
+    type: application
+    urls:
+    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/hbase-operator-0.0.0-dev/hbase-operator-0.0.0-dev.tgz
+    version: 0.0.0-dev
+  - apiVersion: v2
+    appVersion: 0.0.0-dev
+    created: "2024-11-08T06:59:18.396751828Z"
+    description: The Kubedoop operator for Hbase
+    digest: 656dc6f4617b5748448e3cc1236d3cc4dec21e7478620b6dfa4fbea73e4bd594
     name: hbase-operator
     type: application
     urls:
@@ -538,6 +574,19 @@ entries:
     created: "2024-11-08T06:57:01.887023842Z"
     description: The Kubedoop operator for Apache HDFS
     digest: b65fb0c1fb2253406ea8593e02a304fbc78c0d7b94d29a7893194cbefbcf6a02
+    maintainers:
+    - email: zncdatadev@googlegroups.com
+      name: ZNCDataDev Team
+    name: hdfs-operator
+    type: application
+    urls:
+    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/hdfs-operator-0.0.0-dev/hdfs-operator-0.0.0-dev.tgz
+    version: 0.0.0-dev
+  - apiVersion: v2
+    appVersion: 0.0.0-dev
+    created: "2024-11-08T06:59:18.504091916Z"
+    description: The Kubedoop operator for Apache HDFS
+    digest: 98a256f0770324c4b20fc68eb62eb96c8b22940cf5418fbaf53b0a04daf62691
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -677,6 +726,19 @@ entries:
     urls:
     - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/hive-operator-0.0.0-dev/hive-operator-0.0.0-dev.tgz
     version: 0.0.0-dev
+  - apiVersion: v2
+    appVersion: 0.0.0-dev
+    created: "2024-11-08T06:59:18.59275393Z"
+    description: The Kubedoop Operator for Apache Hive
+    digest: 04f11fa2be1b5f5dbff7f9581970d3905c23fd694c4ed9787f2baa0dddee9314
+    maintainers:
+    - email: zncdatadev@googlegroups.com
+      name: ZNCDataDev Team
+    name: hive-operator
+    type: application
+    urls:
+    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/hive-operator-0.0.0-dev/hive-operator-0.0.0-dev.tgz
+    version: 0.0.0-dev
   kafka-operator:
   - apiVersion: v2
     appVersion: 0.0.0-dev
@@ -800,6 +862,19 @@ entries:
     created: "2024-11-08T06:57:02.081696541Z"
     description: The Kubedoop operator for Apache Kafka
     digest: 9dc32a8c6a53f3f08c9d85caec20ff80dfc7f8d48ec19751bc0e13f45ef1d5e2
+    maintainers:
+    - email: zncdatadev@googlegroups.com
+      name: ZNCDataDev Team
+    name: kafka-operator
+    type: application
+    urls:
+    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/kafka-operator-0.0.0-dev/kafka-operator-0.0.0-dev.tgz
+    version: 0.0.0-dev
+  - apiVersion: v2
+    appVersion: 0.0.0-dev
+    created: "2024-11-08T06:59:18.695379703Z"
+    description: The Kubedoop operator for Apache Kafka
+    digest: fa03cf0beb4887dc8c49faa654c3597d0c78c66e31b930ecff52267cbf28a465
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -1030,6 +1105,19 @@ entries:
     urls:
     - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/listener-operator-0.0.0-dev/listener-operator-0.0.0-dev.tgz
     version: 0.0.0-dev
+  - apiVersion: v2
+    appVersion: 0.0.0-dev
+    created: "2024-11-08T06:59:18.769560112Z"
+    description: The Kubedoop Listener Operator
+    digest: 88e382ed33314ae09c692e7a7a8bb8bd23432f94750a281d413c01a3d85be762
+    maintainers:
+    - email: zncdatadev@googlegroups.com
+      name: ZNCDataDev Team
+    name: listener-operator
+    type: application
+    urls:
+    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/listener-operator-0.0.0-dev/listener-operator-0.0.0-dev.tgz
+    version: 0.0.0-dev
   secret-operator:
   - apiVersion: v2
     appVersion: 0.0.0-dev
@@ -1200,6 +1288,19 @@ entries:
     urls:
     - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/secret-operator-0.0.0-dev/secret-operator-0.0.0-dev.tgz
     version: 0.0.0-dev
+  - apiVersion: v2
+    appVersion: 0.0.0-dev
+    created: "2024-11-08T06:59:18.86555309Z"
+    description: The Kubedoop Secret Operator
+    digest: 46468dd083bd6d03cfb97cd26c85e16945078301b8eef5c45b87cf7d85fd86a9
+    maintainers:
+    - email: zncdatadev@googlegroups.com
+      name: zncdatadev
+    name: secret-operator
+    type: application
+    urls:
+    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/secret-operator-0.0.0-dev/secret-operator-0.0.0-dev.tgz
+    version: 0.0.0-dev
   spark-k8s-operator:
   - apiVersion: v2
     appVersion: 0.0.0-dev
@@ -1323,6 +1424,19 @@ entries:
     created: "2024-11-08T06:57:02.397839194Z"
     description: The Kubedoop operator for Apache Spark k8s
     digest: 56d961314cd57cb983ba09108d675a022f2620e5e972c3a3806a36b7f41dae44
+    maintainers:
+    - email: zncdatadev@googlegroups.com
+      name: ZNCDataDev Team
+    name: spark-k8s-operator
+    type: application
+    urls:
+    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/spark-k8s-operator-0.0.0-dev/spark-k8s-operator-0.0.0-dev.tgz
+    version: 0.0.0-dev
+  - apiVersion: v2
+    appVersion: 0.0.0-dev
+    created: "2024-11-08T06:59:18.954058903Z"
+    description: The Kubedoop operator for Apache Spark k8s
+    digest: b5756d5c791d0d6b81d8b2c0cec86f463d128cca83508b648f7761e829395e3a
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -1462,6 +1576,19 @@ entries:
     urls:
     - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/superset-operator-0.0.0-dev/superset-operator-0.0.0-dev.tgz
     version: 0.0.0-dev
+  - apiVersion: v2
+    appVersion: 0.0.0-dev
+    created: "2024-11-08T06:59:19.069850947Z"
+    description: The Kubedoop operator for Apache Superset
+    digest: 7b1d285c8dd25135a22a022b901109e1cc3736243f8d5ef6a7ff6f590bef71fb
+    maintainers:
+    - email: zncdatadev@googlegroups.com
+      name: ZNCDataDev Team
+    name: superset-operator
+    type: application
+    urls:
+    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/superset-operator-0.0.0-dev/superset-operator-0.0.0-dev.tgz
+    version: 0.0.0-dev
   trino-operator:
   - apiVersion: v2
     appVersion: 0.0.0-dev
@@ -1585,6 +1712,19 @@ entries:
     created: "2024-11-08T06:57:02.609251111Z"
     description: The Kubedoop operator for Trino
     digest: 43abc2ba8be723eaa30e7b744242e149bcc2877fa8ec41c5271f583b0605dbbd
+    maintainers:
+    - email: zncdatadev@googlegroups.com
+      name: ZNCDataDev Team
+    name: trino-operator
+    type: application
+    urls:
+    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/trino-operator-0.0.0-dev/trino-operator-0.0.0-dev.tgz
+    version: 0.0.0-dev
+  - apiVersion: v2
+    appVersion: 0.0.0-dev
+    created: "2024-11-08T06:59:19.223492116Z"
+    description: The Kubedoop operator for Trino
+    digest: 0c1cc92835b5c1259c2bc2286230c76bf932909a0d3ce2970637f1b19369f4e6
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -1750,4 +1890,17 @@ entries:
     urls:
     - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/zookeeper-operator-0.0.0-dev/zookeeper-operator-0.0.0-dev.tgz
     version: 0.0.0-dev
-generated: "2024-11-08T06:57:02.721366365Z"
+  - apiVersion: v2
+    appVersion: 0.0.0-dev
+    created: "2024-11-08T06:59:19.327498424Z"
+    description: The Kubedoop operator for Apache Zookeeper
+    digest: 761a952c7ed343f43225ea7ef8e3ccdcfae55c05a6242ed2952f8dc456294665
+    maintainers:
+    - email: zncdatadev@googlegroups.com
+      name: ZNCDataDev Team
+    name: zookeeper-operator
+    type: application
+    urls:
+    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/zookeeper-operator-0.0.0-dev/zookeeper-operator-0.0.0-dev.tgz
+    version: 0.0.0-dev
+generated: "2024-11-08T06:59:19.327785979Z"
