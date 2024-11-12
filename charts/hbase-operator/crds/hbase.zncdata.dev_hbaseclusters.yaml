@@ -1,8 +1,9 @@
+---
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    controller-gen.kubebuilder.io/version: v0.16.2
+    controller-gen.kubebuilder.io/version: v0.16.5
   name: hbaseclusters.hbase.zncdata.dev
 spec:
   group: hbase.zncdata.dev
@@ -112,7 +113,7 @@ spec:
                 type: object
               master:
                 properties:
-                  commandOverrides:
+                  cliOverrides:
                     items:
                       type: string
                     type: array
@@ -1055,96 +1056,99 @@ spec:
                         type: string
                       logging:
                         properties:
-                          console:
-                            description: |-
-                              LogLevelSpec
-                              level mapping example:
-
-                              |---------------------|-----------------|
-                              |  App log level      |  kds log level  |
-                              |---------------------|-----------------|
-                              |  CRITICAL           |  FATAL          |
-                              |  ERROR              |  ERROR          |
-                              |  WARNING            |  WARN           |
-                              |  INFO               |  INFO           |
-                              |  DEBUG              |  DEBUG          |
-                              |  DEBUG              |  TRACE          |
-                              |---------------------|-----------------|
-                            properties:
-                              level:
-                                default: INFO
-                                enum:
-                                - FATAL
-                                - ERROR
-                                - WARN
-                                - INFO
-                                - DEBUG
-                                - TRACE
-                                type: string
-                            type: object
-                          file:
-                            description: |-
-                              LogLevelSpec
-                              level mapping example:
-
-                              |---------------------|-----------------|
-                              |  App log level      |  kds log level  |
-                              |---------------------|-----------------|
-                              |  CRITICAL           |  FATAL          |
-                              |  ERROR              |  ERROR          |
-                              |  WARNING            |  WARN           |
-                              |  INFO               |  INFO           |
-                              |  DEBUG              |  DEBUG          |
-                              |  DEBUG              |  TRACE          |
-                              |---------------------|-----------------|
-                            properties:
-                              level:
-                                default: INFO
-                                enum:
-                                - FATAL
-                                - ERROR
-                                - WARN
-                                - INFO
-                                - DEBUG
-                                - TRACE
-                                type: string
-                            type: object
-                          loggers:
+                          containers:
                             additionalProperties:
-                              description: |-
-                                LogLevelSpec
-                                level mapping example:
-
-                                |---------------------|-----------------|
-                                |  App log level      |  kds log level  |
-                                |---------------------|-----------------|
-                                |  CRITICAL           |  FATAL          |
-                                |  ERROR              |  ERROR          |
-                                |  WARNING            |  WARN           |
-                                |  INFO               |  INFO           |
-                                |  DEBUG              |  DEBUG          |
-                                |  DEBUG              |  TRACE          |
-                                |---------------------|-----------------|
                               properties:
-                                level:
-                                  default: INFO
-                                  enum:
-                                  - FATAL
-                                  - ERROR
-                                  - WARN
-                                  - INFO
-                                  - DEBUG
-                                  - TRACE
-                                  type: string
+                                console:
+                                  description: |-
+                                    LogLevelSpec
+                                    level mapping if app log level is not standard
+                                      - FATAL -> CRITICAL
+                                      - ERROR -> ERROR
+                                      - WARN -> WARNING
+                                      - INFO -> INFO
+                                      - DEBUG -> DEBUG
+                                      - TRACE -> DEBUG
+
+                                    Default log level is INFO
+                                  properties:
+                                    level:
+                                      default: INFO
+                                      enum:
+                                      - FATAL
+                                      - ERROR
+                                      - WARN
+                                      - INFO
+                                      - DEBUG
+                                      - TRACE
+                                      type: string
+                                  type: object
+                                file:
+                                  description: |-
+                                    LogLevelSpec
+                                    level mapping if app log level is not standard
+                                      - FATAL -> CRITICAL
+                                      - ERROR -> ERROR
+                                      - WARN -> WARNING
+                                      - INFO -> INFO
+                                      - DEBUG -> DEBUG
+                                      - TRACE -> DEBUG
+
+                                    Default log level is INFO
+                                  properties:
+                                    level:
+                                      default: INFO
+                                      enum:
+                                      - FATAL
+                                      - ERROR
+                                      - WARN
+                                      - INFO
+                                      - DEBUG
+                                      - TRACE
+                                      type: string
+                                  type: object
+                                loggers:
+                                  additionalProperties:
+                                    description: |-
+                                      LogLevelSpec
+                                      level mapping if app log level is not standard
+                                        - FATAL -> CRITICAL
+                                        - ERROR -> ERROR
+                                        - WARN -> WARNING
+                                        - INFO -> INFO
+                                        - DEBUG -> DEBUG
+                                        - TRACE -> DEBUG
+
+                                      Default log level is INFO
+                                    properties:
+                                      level:
+                                        default: INFO
+                                        enum:
+                                        - FATAL
+                                        - ERROR
+                                        - WARN
+                                        - INFO
+                                        - DEBUG
+                                        - TRACE
+                                        type: string
+                                    type: object
+                                  type: object
                               type: object
                             type: object
+                          enableVectorAgent:
+                            type: boolean
                         type: object
                       podDisruptionBudget:
+                        description: |-
+                          This struct is used to configure:
+
+                          1. If PodDisruptionBudgets are created by the operator
+                          2. The allowed number of Pods to be unavailable (`maxUnavailable`)
                         properties:
+                          enabled:
+                            default: true
+                            type: boolean
                           maxUnavailable:
-                            format: int32
-                            type: integer
-                          minAvailable:
                             format: int32
                             type: integer
                         type: object
@@ -1232,19 +1236,27 @@ spec:
                     additionalProperties:
                       type: string
                     type: object
-                  podDisruptionBudget:
+                  roleConfig:
                     properties:
-                      maxUnavailable:
-                        format: int32
-                        type: integer
-                      minAvailable:
-                        format: int32
-                        type: integer
+                      podDisruptionBudget:
+                        description: |-
+                          This struct is used to configure:
+
+                          1. If PodDisruptionBudgets are created by the operator
+                          2. The allowed number of Pods to be unavailable (`maxUnavailable`)
+                        properties:
+                          enabled:
+                            default: true
+                            type: boolean
+                          maxUnavailable:
+                            format: int32
+                            type: integer
+                        type: object
                     type: object
                   roleGroups:
                     additionalProperties:
                       properties:
-                        commandOverrides:
+                        cliOverrides:
                           items:
                             type: string
                           type: array
@@ -2198,96 +2210,99 @@ spec:
                               type: string
                             logging:
                               properties:
-                                console:
-                                  description: |-
-                                    LogLevelSpec
-                                    level mapping example:
-
-                                    |---------------------|-----------------|
-                                    |  App log level      |  kds log level  |
-                                    |---------------------|-----------------|
-                                    |  CRITICAL           |  FATAL          |
-                                    |  ERROR              |  ERROR          |
-                                    |  WARNING            |  WARN           |
-                                    |  INFO               |  INFO           |
-                                    |  DEBUG              |  DEBUG          |
-                                    |  DEBUG              |  TRACE          |
-                                    |---------------------|-----------------|
-                                  properties:
-                                    level:
-                                      default: INFO
-                                      enum:
-                                      - FATAL
-                                      - ERROR
-                                      - WARN
-                                      - INFO
-                                      - DEBUG
-                                      - TRACE
-                                      type: string
-                                  type: object
-                                file:
-                                  description: |-
-                                    LogLevelSpec
-                                    level mapping example:
-
-                                    |---------------------|-----------------|
-                                    |  App log level      |  kds log level  |
-                                    |---------------------|-----------------|
-                                    |  CRITICAL           |  FATAL          |
-                                    |  ERROR              |  ERROR          |
-                                    |  WARNING            |  WARN           |
-                                    |  INFO               |  INFO           |
-                                    |  DEBUG              |  DEBUG          |
-                                    |  DEBUG              |  TRACE          |
-                                    |---------------------|-----------------|
-                                  properties:
-                                    level:
-                                      default: INFO
-                                      enum:
-                                      - FATAL
-                                      - ERROR
-                                      - WARN
-                                      - INFO
-                                      - DEBUG
-                                      - TRACE
-                                      type: string
-                                  type: object
-                                loggers:
+                                containers:
                                   additionalProperties:
-                                    description: |-
-                                      LogLevelSpec
-                                      level mapping example:
-
-                                      |---------------------|-----------------|
-                                      |  App log level      |  kds log level  |
-                                      |---------------------|-----------------|
-                                      |  CRITICAL           |  FATAL          |
-                                      |  ERROR              |  ERROR          |
-                                      |  WARNING            |  WARN           |
-                                      |  INFO               |  INFO           |
-                                      |  DEBUG              |  DEBUG          |
-                                      |  DEBUG              |  TRACE          |
-                                      |---------------------|-----------------|
                                     properties:
-                                      level:
-                                        default: INFO
-                                        enum:
-                                        - FATAL
-                                        - ERROR
-                                        - WARN
-                                        - INFO
-                                        - DEBUG
-                                        - TRACE
-                                        type: string
+                                      console:
+                                        description: |-
+                                          LogLevelSpec
+                                          level mapping if app log level is not standard
+                                            - FATAL -> CRITICAL
+                                            - ERROR -> ERROR
+                                            - WARN -> WARNING
+                                            - INFO -> INFO
+                                            - DEBUG -> DEBUG
+                                            - TRACE -> DEBUG
+
+                                          Default log level is INFO
+                                        properties:
+                                          level:
+                                            default: INFO
+                                            enum:
+                                            - FATAL
+                                            - ERROR
+                                            - WARN
+                                            - INFO
+                                            - DEBUG
+                                            - TRACE
+                                            type: string
+                                        type: object
+                                      file:
+                                        description: |-
+                                          LogLevelSpec
+                                          level mapping if app log level is not standard
+                                            - FATAL -> CRITICAL
+                                            - ERROR -> ERROR
+                                            - WARN -> WARNING
+                                            - INFO -> INFO
+                                            - DEBUG -> DEBUG
+                                            - TRACE -> DEBUG
+
+                                          Default log level is INFO
+                                        properties:
+                                          level:
+                                            default: INFO
+                                            enum:
+                                            - FATAL
+                                            - ERROR
+                                            - WARN
+                                            - INFO
+                                            - DEBUG
+                                            - TRACE
+                                            type: string
+                                        type: object
+                                      loggers:
+                                        additionalProperties:
+                                          description: |-
+                                            LogLevelSpec
+                                            level mapping if app log level is not standard
+                                              - FATAL -> CRITICAL
+                                              - ERROR -> ERROR
+                                              - WARN -> WARNING
+                                              - INFO -> INFO
+                                              - DEBUG -> DEBUG
+                                              - TRACE -> DEBUG
+
+                                            Default log level is INFO
+                                          properties:
+                                            level:
+                                              default: INFO
+                                              enum:
+                                              - FATAL
+                                              - ERROR
+                                              - WARN
+                                              - INFO
+                                              - DEBUG
+                                              - TRACE
+                                              type: string
+                                          type: object
+                                        type: object
                                     type: object
                                   type: object
+                                enableVectorAgent:
+                                  type: boolean
                               type: object
                             podDisruptionBudget:
+                              description: |-
+                                This struct is used to configure:
+
+                                1. If PodDisruptionBudgets are created by the operator
+                                2. The allowed number of Pods to be unavailable (`maxUnavailable`)
                               properties:
+                                enabled:
+                                  default: true
+                                  type: boolean
                                 maxUnavailable:
-                                  format: int32
-                                  type: integer
-                                minAvailable:
                                   format: int32
                                   type: integer
                               type: object
@@ -2374,15 +2389,6 @@ spec:
                         envOverrides:
                           additionalProperties:
                             type: string
-                          type: object
-                        podDisruptionBudget:
-                          properties:
-                            maxUnavailable:
-                              format: int32
-                              type: integer
-                            minAvailable:
-                              format: int32
-                              type: integer
                           type: object
                         podOverrides:
                           description: PodTemplateSpec describes the data a pod should
@@ -10552,7 +10558,7 @@ spec:
                 type: object
               regionServer:
                 properties:
-                  commandOverrides:
+                  cliOverrides:
                     items:
                       type: string
                     type: array
@@ -11495,96 +11501,99 @@ spec:
                         type: string
                       logging:
                         properties:
-                          console:
-                            description: |-
-                              LogLevelSpec
-                              level mapping example:
-
-                              |---------------------|-----------------|
-                              |  App log level      |  kds log level  |
-                              |---------------------|-----------------|
-                              |  CRITICAL           |  FATAL          |
-                              |  ERROR              |  ERROR          |
-                              |  WARNING            |  WARN           |
-                              |  INFO               |  INFO           |
-                              |  DEBUG              |  DEBUG          |
-                              |  DEBUG              |  TRACE          |
-                              |---------------------|-----------------|
-                            properties:
-                              level:
-                                default: INFO
-                                enum:
-                                - FATAL
-                                - ERROR
-                                - WARN
-                                - INFO
-                                - DEBUG
-                                - TRACE
-                                type: string
-                            type: object
-                          file:
-                            description: |-
-                              LogLevelSpec
-                              level mapping example:
-
-                              |---------------------|-----------------|
-                              |  App log level      |  kds log level  |
-                              |---------------------|-----------------|
-                              |  CRITICAL           |  FATAL          |
-                              |  ERROR              |  ERROR          |
-                              |  WARNING            |  WARN           |
-                              |  INFO               |  INFO           |
-                              |  DEBUG              |  DEBUG          |
-                              |  DEBUG              |  TRACE          |
-                              |---------------------|-----------------|
-                            properties:
-                              level:
-                                default: INFO
-                                enum:
-                                - FATAL
-                                - ERROR
-                                - WARN
-                                - INFO
-                                - DEBUG
-                                - TRACE
-                                type: string
-                            type: object
-                          loggers:
+                          containers:
                             additionalProperties:
-                              description: |-
-                                LogLevelSpec
-                                level mapping example:
-
-                                |---------------------|-----------------|
-                                |  App log level      |  kds log level  |
-                                |---------------------|-----------------|
-                                |  CRITICAL           |  FATAL          |
-                                |  ERROR              |  ERROR          |
-                                |  WARNING            |  WARN           |
-                                |  INFO               |  INFO           |
-                                |  DEBUG              |  DEBUG          |
-                                |  DEBUG              |  TRACE          |
-                                |---------------------|-----------------|
                               properties:
-                                level:
-                                  default: INFO
-                                  enum:
-                                  - FATAL
-                                  - ERROR
-                                  - WARN
-                                  - INFO
-                                  - DEBUG
-                                  - TRACE
-                                  type: string
+                                console:
+                                  description: |-
+                                    LogLevelSpec
+                                    level mapping if app log level is not standard
+                                      - FATAL -> CRITICAL
+                                      - ERROR -> ERROR
+                                      - WARN -> WARNING
+                                      - INFO -> INFO
+                                      - DEBUG -> DEBUG
+                                      - TRACE -> DEBUG
+
+                                    Default log level is INFO
+                                  properties:
+                                    level:
+                                      default: INFO
+                                      enum:
+                                      - FATAL
+                                      - ERROR
+                                      - WARN
+                                      - INFO
+                                      - DEBUG
+                                      - TRACE
+                                      type: string
+                                  type: object
+                                file:
+                                  description: |-
+                                    LogLevelSpec
+                                    level mapping if app log level is not standard
+                                      - FATAL -> CRITICAL
+                                      - ERROR -> ERROR
+                                      - WARN -> WARNING
+                                      - INFO -> INFO
+                                      - DEBUG -> DEBUG
+                                      - TRACE -> DEBUG
+
+                                    Default log level is INFO
+                                  properties:
+                                    level:
+                                      default: INFO
+                                      enum:
+                                      - FATAL
+                                      - ERROR
+                                      - WARN
+                                      - INFO
+                                      - DEBUG
+                                      - TRACE
+                                      type: string
+                                  type: object
+                                loggers:
+                                  additionalProperties:
+                                    description: |-
+                                      LogLevelSpec
+                                      level mapping if app log level is not standard
+                                        - FATAL -> CRITICAL
+                                        - ERROR -> ERROR
+                                        - WARN -> WARNING
+                                        - INFO -> INFO
+                                        - DEBUG -> DEBUG
+                                        - TRACE -> DEBUG
+
+                                      Default log level is INFO
+                                    properties:
+                                      level:
+                                        default: INFO
+                                        enum:
+                                        - FATAL
+                                        - ERROR
+                                        - WARN
+                                        - INFO
+                                        - DEBUG
+                                        - TRACE
+                                        type: string
+                                    type: object
+                                  type: object
                               type: object
                             type: object
+                          enableVectorAgent:
+                            type: boolean
                         type: object
                       podDisruptionBudget:
+                        description: |-
+                          This struct is used to configure:
+
+                          1. If PodDisruptionBudgets are created by the operator
+                          2. The allowed number of Pods to be unavailable (`maxUnavailable`)
                         properties:
+                          enabled:
+                            default: true
+                            type: boolean
                           maxUnavailable:
-                            format: int32
-                            type: integer
-                          minAvailable:
                             format: int32
                             type: integer
                         type: object
@@ -11672,19 +11681,27 @@ spec:
                     additionalProperties:
                       type: string
                     type: object
-                  podDisruptionBudget:
+                  roleConfig:
                     properties:
-                      maxUnavailable:
-                        format: int32
-                        type: integer
-                      minAvailable:
-                        format: int32
-                        type: integer
+                      podDisruptionBudget:
+                        description: |-
+                          This struct is used to configure:
+
+                          1. If PodDisruptionBudgets are created by the operator
+                          2. The allowed number of Pods to be unavailable (`maxUnavailable`)
+                        properties:
+                          enabled:
+                            default: true
+                            type: boolean
+                          maxUnavailable:
+                            format: int32
+                            type: integer
+                        type: object
                     type: object
                   roleGroups:
                     additionalProperties:
                       properties:
-                        commandOverrides:
+                        cliOverrides:
                           items:
                             type: string
                           type: array
@@ -12638,96 +12655,99 @@ spec:
                               type: string
                             logging:
                               properties:
-                                console:
-                                  description: |-
-                                    LogLevelSpec
-                                    level mapping example:
-
-                                    |---------------------|-----------------|
-                                    |  App log level      |  kds log level  |
-                                    |---------------------|-----------------|
-                                    |  CRITICAL           |  FATAL          |
-                                    |  ERROR              |  ERROR          |
-                                    |  WARNING            |  WARN           |
-                                    |  INFO               |  INFO           |
-                                    |  DEBUG              |  DEBUG          |
-                                    |  DEBUG              |  TRACE          |
-                                    |---------------------|-----------------|
-                                  properties:
-                                    level:
-                                      default: INFO
-                                      enum:
-                                      - FATAL
-                                      - ERROR
-                                      - WARN
-                                      - INFO
-                                      - DEBUG
-                                      - TRACE
-                                      type: string
-                                  type: object
-                                file:
-                                  description: |-
-                                    LogLevelSpec
-                                    level mapping example:
-
-                                    |---------------------|-----------------|
-                                    |  App log level      |  kds log level  |
-                                    |---------------------|-----------------|
-                                    |  CRITICAL           |  FATAL          |
-                                    |  ERROR              |  ERROR          |
-                                    |  WARNING            |  WARN           |
-                                    |  INFO               |  INFO           |
-                                    |  DEBUG              |  DEBUG          |
-                                    |  DEBUG              |  TRACE          |
-                                    |---------------------|-----------------|
-                                  properties:
-                                    level:
-                                      default: INFO
-                                      enum:
-                                      - FATAL
-                                      - ERROR
-                                      - WARN
-                                      - INFO
-                                      - DEBUG
-                                      - TRACE
-                                      type: string
-                                  type: object
-                                loggers:
+                                containers:
                                   additionalProperties:
-                                    description: |-
-                                      LogLevelSpec
-                                      level mapping example:
-
-                                      |---------------------|-----------------|
-                                      |  App log level      |  kds log level  |
-                                      |---------------------|-----------------|
-                                      |  CRITICAL           |  FATAL          |
-                                      |  ERROR              |  ERROR          |
-                                      |  WARNING            |  WARN           |
-                                      |  INFO               |  INFO           |
-                                      |  DEBUG              |  DEBUG          |
-                                      |  DEBUG              |  TRACE          |
-                                      |---------------------|-----------------|
                                     properties:
-                                      level:
-                                        default: INFO
-                                        enum:
-                                        - FATAL
-                                        - ERROR
-                                        - WARN
-                                        - INFO
-                                        - DEBUG
-                                        - TRACE
-                                        type: string
+                                      console:
+                                        description: |-
+                                          LogLevelSpec
+                                          level mapping if app log level is not standard
+                                            - FATAL -> CRITICAL
+                                            - ERROR -> ERROR
+                                            - WARN -> WARNING
+                                            - INFO -> INFO
+                                            - DEBUG -> DEBUG
+                                            - TRACE -> DEBUG
+
+                                          Default log level is INFO
+                                        properties:
+                                          level:
+                                            default: INFO
+                                            enum:
+                                            - FATAL
+                                            - ERROR
+                                            - WARN
+                                            - INFO
+                                            - DEBUG
+                                            - TRACE
+                                            type: string
+                                        type: object
+                                      file:
+                                        description: |-
+                                          LogLevelSpec
+                                          level mapping if app log level is not standard
+                                            - FATAL -> CRITICAL
+                                            - ERROR -> ERROR
+                                            - WARN -> WARNING
+                                            - INFO -> INFO
+                                            - DEBUG -> DEBUG
+                                            - TRACE -> DEBUG
+
+                                          Default log level is INFO
+                                        properties:
+                                          level:
+                                            default: INFO
+                                            enum:
+                                            - FATAL
+                                            - ERROR
+                                            - WARN
+                                            - INFO
+                                            - DEBUG
+                                            - TRACE
+                                            type: string
+                                        type: object
+                                      loggers:
+                                        additionalProperties:
+                                          description: |-
+                                            LogLevelSpec
+                                            level mapping if app log level is not standard
+                                              - FATAL -> CRITICAL
+                                              - ERROR -> ERROR
+                                              - WARN -> WARNING
+                                              - INFO -> INFO
+                                              - DEBUG -> DEBUG
+                                              - TRACE -> DEBUG
+
+                                            Default log level is INFO
+                                          properties:
+                                            level:
+                                              default: INFO
+                                              enum:
+                                              - FATAL
+                                              - ERROR
+                                              - WARN
+                                              - INFO
+                                              - DEBUG
+                                              - TRACE
+                                              type: string
+                                          type: object
+                                        type: object
                                     type: object
                                   type: object
+                                enableVectorAgent:
+                                  type: boolean
                               type: object
                             podDisruptionBudget:
+                              description: |-
+                                This struct is used to configure:
+
+                                1. If PodDisruptionBudgets are created by the operator
+                                2. The allowed number of Pods to be unavailable (`maxUnavailable`)
                               properties:
+                                enabled:
+                                  default: true
+                                  type: boolean
                                 maxUnavailable:
-                                  format: int32
-                                  type: integer
-                                minAvailable:
                                   format: int32
                                   type: integer
                               type: object
@@ -12814,15 +12834,6 @@ spec:
                         envOverrides:
                           additionalProperties:
                             type: string
-                          type: object
-                        podDisruptionBudget:
-                          properties:
-                            maxUnavailable:
-                              format: int32
-                              type: integer
-                            minAvailable:
-                              format: int32
-                              type: integer
                           type: object
                         podOverrides:
                           description: PodTemplateSpec describes the data a pod should
@@ -20990,7 +21001,7 @@ spec:
                 type: object
               restServer:
                 properties:
-                  commandOverrides:
+                  cliOverrides:
                     items:
                       type: string
                     type: array
@@ -21933,96 +21944,99 @@ spec:
                         type: string
                       logging:
                         properties:
-                          console:
-                            description: |-
-                              LogLevelSpec
-                              level mapping example:
-
-                              |---------------------|-----------------|
-                              |  App log level      |  kds log level  |
-                              |---------------------|-----------------|
-                              |  CRITICAL           |  FATAL          |
-                              |  ERROR              |  ERROR          |
-                              |  WARNING            |  WARN           |
-                              |  INFO               |  INFO           |
-                              |  DEBUG              |  DEBUG          |
-                              |  DEBUG              |  TRACE          |
-                              |---------------------|-----------------|
-                            properties:
-                              level:
-                                default: INFO
-                                enum:
-                                - FATAL
-                                - ERROR
-                                - WARN
-                                - INFO
-                                - DEBUG
-                                - TRACE
-                                type: string
-                            type: object
-                          file:
-                            description: |-
-                              LogLevelSpec
-                              level mapping example:
-
-                              |---------------------|-----------------|
-                              |  App log level      |  kds log level  |
-                              |---------------------|-----------------|
-                              |  CRITICAL           |  FATAL          |
-                              |  ERROR              |  ERROR          |
-                              |  WARNING            |  WARN           |
-                              |  INFO               |  INFO           |
-                              |  DEBUG              |  DEBUG          |
-                              |  DEBUG              |  TRACE          |
-                              |---------------------|-----------------|
-                            properties:
-                              level:
-                                default: INFO
-                                enum:
-                                - FATAL
-                                - ERROR
-                                - WARN
-                                - INFO
-                                - DEBUG
-                                - TRACE
-                                type: string
-                            type: object
-                          loggers:
+                          containers:
                             additionalProperties:
-                              description: |-
-                                LogLevelSpec
-                                level mapping example:
-
-                                |---------------------|-----------------|
-                                |  App log level      |  kds log level  |
-                                |---------------------|-----------------|
-                                |  CRITICAL           |  FATAL          |
-                                |  ERROR              |  ERROR          |
-                                |  WARNING            |  WARN           |
-                                |  INFO               |  INFO           |
-                                |  DEBUG              |  DEBUG          |
-                                |  DEBUG              |  TRACE          |
-                                |---------------------|-----------------|
                               properties:
-                                level:
-                                  default: INFO
-                                  enum:
-                                  - FATAL
-                                  - ERROR
-                                  - WARN
-                                  - INFO
-                                  - DEBUG
-                                  - TRACE
-                                  type: string
+                                console:
+                                  description: |-
+                                    LogLevelSpec
+                                    level mapping if app log level is not standard
+                                      - FATAL -> CRITICAL
+                                      - ERROR -> ERROR
+                                      - WARN -> WARNING
+                                      - INFO -> INFO
+                                      - DEBUG -> DEBUG
+                                      - TRACE -> DEBUG
+
+                                    Default log level is INFO
+                                  properties:
+                                    level:
+                                      default: INFO
+                                      enum:
+                                      - FATAL
+                                      - ERROR
+                                      - WARN
+                                      - INFO
+                                      - DEBUG
+                                      - TRACE
+                                      type: string
+                                  type: object
+                                file:
+                                  description: |-
+                                    LogLevelSpec
+                                    level mapping if app log level is not standard
+                                      - FATAL -> CRITICAL
+                                      - ERROR -> ERROR
+                                      - WARN -> WARNING
+                                      - INFO -> INFO
+                                      - DEBUG -> DEBUG
+                                      - TRACE -> DEBUG
+
+                                    Default log level is INFO
+                                  properties:
+                                    level:
+                                      default: INFO
+                                      enum:
+                                      - FATAL
+                                      - ERROR
+                                      - WARN
+                                      - INFO
+                                      - DEBUG
+                                      - TRACE
+                                      type: string
+                                  type: object
+                                loggers:
+                                  additionalProperties:
+                                    description: |-
+                                      LogLevelSpec
+                                      level mapping if app log level is not standard
+                                        - FATAL -> CRITICAL
+                                        - ERROR -> ERROR
+                                        - WARN -> WARNING
+                                        - INFO -> INFO
+                                        - DEBUG -> DEBUG
+                                        - TRACE -> DEBUG
+
+                                      Default log level is INFO
+                                    properties:
+                                      level:
+                                        default: INFO
+                                        enum:
+                                        - FATAL
+                                        - ERROR
+                                        - WARN
+                                        - INFO
+                                        - DEBUG
+                                        - TRACE
+                                        type: string
+                                    type: object
+                                  type: object
                               type: object
                             type: object
+                          enableVectorAgent:
+                            type: boolean
                         type: object
                       podDisruptionBudget:
+                        description: |-
+                          This struct is used to configure:
+
+                          1. If PodDisruptionBudgets are created by the operator
+                          2. The allowed number of Pods to be unavailable (`maxUnavailable`)
                         properties:
+                          enabled:
+                            default: true
+                            type: boolean
                           maxUnavailable:
-                            format: int32
-                            type: integer
-                          minAvailable:
                             format: int32
                             type: integer
                         type: object
@@ -22110,19 +22124,27 @@ spec:
                     additionalProperties:
                       type: string
                     type: object
-                  podDisruptionBudget:
+                  roleConfig:
                     properties:
-                      maxUnavailable:
-                        format: int32
-                        type: integer
-                      minAvailable:
-                        format: int32
-                        type: integer
+                      podDisruptionBudget:
+                        description: |-
+                          This struct is used to configure:
+
+                          1. If PodDisruptionBudgets are created by the operator
+                          2. The allowed number of Pods to be unavailable (`maxUnavailable`)
+                        properties:
+                          enabled:
+                            default: true
+                            type: boolean
+                          maxUnavailable:
+                            format: int32
+                            type: integer
+                        type: object
                     type: object
                   roleGroups:
                     additionalProperties:
                       properties:
-                        commandOverrides:
+                        cliOverrides:
                           items:
                             type: string
                           type: array
@@ -23076,96 +23098,99 @@ spec:
                               type: string
                             logging:
                               properties:
-                                console:
-                                  description: |-
-                                    LogLevelSpec
-                                    level mapping example:
-
-                                    |---------------------|-----------------|
-                                    |  App log level      |  kds log level  |
-                                    |---------------------|-----------------|
-                                    |  CRITICAL           |  FATAL          |
-                                    |  ERROR              |  ERROR          |
-                                    |  WARNING            |  WARN           |
-                                    |  INFO               |  INFO           |
-                                    |  DEBUG              |  DEBUG          |
-                                    |  DEBUG              |  TRACE          |
-                                    |---------------------|-----------------|
-                                  properties:
-                                    level:
-                                      default: INFO
-                                      enum:
-                                      - FATAL
-                                      - ERROR
-                                      - WARN
-                                      - INFO
-                                      - DEBUG
-                                      - TRACE
-                                      type: string
-                                  type: object
-                                file:
-                                  description: |-
-                                    LogLevelSpec
-                                    level mapping example:
-
-                                    |---------------------|-----------------|
-                                    |  App log level      |  kds log level  |
-                                    |---------------------|-----------------|
-                                    |  CRITICAL           |  FATAL          |
-                                    |  ERROR              |  ERROR          |
-                                    |  WARNING            |  WARN           |
-                                    |  INFO               |  INFO           |
-                                    |  DEBUG              |  DEBUG          |
-                                    |  DEBUG              |  TRACE          |
-                                    |---------------------|-----------------|
-                                  properties:
-                                    level:
-                                      default: INFO
-                                      enum:
-                                      - FATAL
-                                      - ERROR
-                                      - WARN
-                                      - INFO
-                                      - DEBUG
-                                      - TRACE
-                                      type: string
-                                  type: object
-                                loggers:
+                                containers:
                                   additionalProperties:
-                                    description: |-
-                                      LogLevelSpec
-                                      level mapping example:
-
-                                      |---------------------|-----------------|
-                                      |  App log level      |  kds log level  |
-                                      |---------------------|-----------------|
-                                      |  CRITICAL           |  FATAL          |
-                                      |  ERROR              |  ERROR          |
-                                      |  WARNING            |  WARN           |
-                                      |  INFO               |  INFO           |
-                                      |  DEBUG              |  DEBUG          |
-                                      |  DEBUG              |  TRACE          |
-                                      |---------------------|-----------------|
                                     properties:
-                                      level:
-                                        default: INFO
-                                        enum:
-                                        - FATAL
-                                        - ERROR
-                                        - WARN
-                                        - INFO
-                                        - DEBUG
-                                        - TRACE
-                                        type: string
+                                      console:
+                                        description: |-
+                                          LogLevelSpec
+                                          level mapping if app log level is not standard
+                                            - FATAL -> CRITICAL
+                                            - ERROR -> ERROR
+                                            - WARN -> WARNING
+                                            - INFO -> INFO
+                                            - DEBUG -> DEBUG
+                                            - TRACE -> DEBUG
+
+                                          Default log level is INFO
+                                        properties:
+                                          level:
+                                            default: INFO
+                                            enum:
+                                            - FATAL
+                                            - ERROR
+                                            - WARN
+                                            - INFO
+                                            - DEBUG
+                                            - TRACE
+                                            type: string
+                                        type: object
+                                      file:
+                                        description: |-
+                                          LogLevelSpec
+                                          level mapping if app log level is not standard
+                                            - FATAL -> CRITICAL
+                                            - ERROR -> ERROR
+                                            - WARN -> WARNING
+                                            - INFO -> INFO
+                                            - DEBUG -> DEBUG
+                                            - TRACE -> DEBUG
+
+                                          Default log level is INFO
+                                        properties:
+                                          level:
+                                            default: INFO
+                                            enum:
+                                            - FATAL
+                                            - ERROR
+                                            - WARN
+                                            - INFO
+                                            - DEBUG
+                                            - TRACE
+                                            type: string
+                                        type: object
+                                      loggers:
+                                        additionalProperties:
+                                          description: |-
+                                            LogLevelSpec
+                                            level mapping if app log level is not standard
+                                              - FATAL -> CRITICAL
+                                              - ERROR -> ERROR
+                                              - WARN -> WARNING
+                                              - INFO -> INFO
+                                              - DEBUG -> DEBUG
+                                              - TRACE -> DEBUG
+
+                                            Default log level is INFO
+                                          properties:
+                                            level:
+                                              default: INFO
+                                              enum:
+                                              - FATAL
+                                              - ERROR
+                                              - WARN
+                                              - INFO
+                                              - DEBUG
+                                              - TRACE
+                                              type: string
+                                          type: object
+                                        type: object
                                     type: object
                                   type: object
+                                enableVectorAgent:
+                                  type: boolean
                               type: object
                             podDisruptionBudget:
+                              description: |-
+                                This struct is used to configure:
+
+                                1. If PodDisruptionBudgets are created by the operator
+                                2. The allowed number of Pods to be unavailable (`maxUnavailable`)
                               properties:
+                                enabled:
+                                  default: true
+                                  type: boolean
                                 maxUnavailable:
-                                  format: int32
-                                  type: integer
-                                minAvailable:
                                   format: int32
                                   type: integer
                               type: object
@@ -23252,15 +23277,6 @@ spec:
                         envOverrides:
                           additionalProperties:
                             type: string
-                          type: object
-                        podDisruptionBudget:
-                          properties:
-                            maxUnavailable:
-                              format: int32
-                              type: integer
-                            minAvailable:
-                              format: int32
-                              type: integer
                           type: object
                         podOverrides:
                           description: PodTemplateSpec describes the data a pod should
