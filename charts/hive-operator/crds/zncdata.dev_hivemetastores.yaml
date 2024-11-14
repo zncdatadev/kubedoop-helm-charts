@@ -1,3 +1,4 @@
+---
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
@@ -1165,18 +1166,15 @@ spec:
                                 console:
                                   description: |-
                                     LogLevelSpec
-                                    level mapping example:
+                                    level mapping if app log level is not standard
+                                      - FATAL -> CRITICAL
+                                      - ERROR -> ERROR
+                                      - WARN -> WARNING
+                                      - INFO -> INFO
+                                      - DEBUG -> DEBUG
+                                      - TRACE -> DEBUG
 
-                                    |---------------------|-----------------|
-                                    |  App log level      |  kds log level  |
-                                    |---------------------|-----------------|
-                                    |  CRITICAL           |  FATAL          |
-                                    |  ERROR              |  ERROR          |
-                                    |  WARNING            |  WARN           |
-                                    |  INFO               |  INFO           |
-                                    |  DEBUG              |  DEBUG          |
-                                    |  DEBUG              |  TRACE          |
-                                    |---------------------|-----------------|
+                                    Default log level is INFO
                                   properties:
                                     level:
                                       default: INFO
@@ -1192,18 +1190,15 @@ spec:
                                 file:
                                   description: |-
                                     LogLevelSpec
-                                    level mapping example:
+                                    level mapping if app log level is not standard
+                                      - FATAL -> CRITICAL
+                                      - ERROR -> ERROR
+                                      - WARN -> WARNING
+                                      - INFO -> INFO
+                                      - DEBUG -> DEBUG
+                                      - TRACE -> DEBUG
 
-                                    |---------------------|-----------------|
-                                    |  App log level      |  kds log level  |
-                                    |---------------------|-----------------|
-                                    |  CRITICAL           |  FATAL          |
-                                    |  ERROR              |  ERROR          |
-                                    |  WARNING            |  WARN           |
-                                    |  INFO               |  INFO           |
-                                    |  DEBUG              |  DEBUG          |
-                                    |  DEBUG              |  TRACE          |
-                                    |---------------------|-----------------|
+                                    Default log level is INFO
                                   properties:
                                     level:
                                       default: INFO
@@ -1220,18 +1215,15 @@ spec:
                                   additionalProperties:
                                     description: |-
                                       LogLevelSpec
-                                      level mapping example:
+                                      level mapping if app log level is not standard
+                                        - FATAL -> CRITICAL
+                                        - ERROR -> ERROR
+                                        - WARN -> WARNING
+                                        - INFO -> INFO
+                                        - DEBUG -> DEBUG
+                                        - TRACE -> DEBUG
 
-                                      |---------------------|-----------------|
-                                      |  App log level      |  kds log level  |
-                                      |---------------------|-----------------|
-                                      |  CRITICAL           |  FATAL          |
-                                      |  ERROR              |  ERROR          |
-                                      |  WARNING            |  WARN           |
-                                      |  INFO               |  INFO           |
-                                      |  DEBUG              |  DEBUG          |
-                                      |  DEBUG              |  TRACE          |
-                                      |---------------------|-----------------|
+                                      Default log level is INFO
                                     properties:
                                       level:
                                         default: INFO
@@ -1249,11 +1241,16 @@ spec:
                             type: object
                         type: object
                       podDisruptionBudget:
+                        description: |-
+                          This struct is used to configure:
+
+                          1. If PodDisruptionBudgets are created by the operator
+                          2. The allowed number of Pods to be unavailable (`maxUnavailable`)
                         properties:
+                          enabled:
+                            default: true
+                            type: boolean
                           maxUnavailable:
-                            format: int32
-                            type: integer
-                          minAvailable:
                             format: int32
                             type: integer
                         type: object
@@ -1311,14 +1308,22 @@ spec:
                     additionalProperties:
                       type: string
                     type: object
-                  podDisruptionBudget:
+                  roleConfig:
                     properties:
-                      maxUnavailable:
-                        format: int32
-                        type: integer
-                      minAvailable:
-                        format: int32
-                        type: integer
+                      podDisruptionBudget:
+                        description: |-
+                          This struct is used to configure:
+
+                          1. If PodDisruptionBudgets are created by the operator
+                          2. The allowed number of Pods to be unavailable (`maxUnavailable`)
+                        properties:
+                          enabled:
+                            default: true
+                            type: boolean
+                          maxUnavailable:
+                            format: int32
+                            type: integer
+                        type: object
                     type: object
                   roleGroups:
                     additionalProperties:
@@ -2286,18 +2291,15 @@ spec:
                                       console:
                                         description: |-
                                           LogLevelSpec
-                                          level mapping example:
+                                          level mapping if app log level is not standard
+                                            - FATAL -> CRITICAL
+                                            - ERROR -> ERROR
+                                            - WARN -> WARNING
+                                            - INFO -> INFO
+                                            - DEBUG -> DEBUG
+                                            - TRACE -> DEBUG
 
-                                          |---------------------|-----------------|
-                                          |  App log level      |  kds log level  |
-                                          |---------------------|-----------------|
-                                          |  CRITICAL           |  FATAL          |
-                                          |  ERROR              |  ERROR          |
-                                          |  WARNING            |  WARN           |
-                                          |  INFO               |  INFO           |
-                                          |  DEBUG              |  DEBUG          |
-                                          |  DEBUG              |  TRACE          |
-                                          |---------------------|-----------------|
+                                          Default log level is INFO
                                         properties:
                                           level:
                                             default: INFO
@@ -2313,18 +2315,15 @@ spec:
                                       file:
                                         description: |-
                                           LogLevelSpec
-                                          level mapping example:
+                                          level mapping if app log level is not standard
+                                            - FATAL -> CRITICAL
+                                            - ERROR -> ERROR
+                                            - WARN -> WARNING
+                                            - INFO -> INFO
+                                            - DEBUG -> DEBUG
+                                            - TRACE -> DEBUG
 
-                                          |---------------------|-----------------|
-                                          |  App log level      |  kds log level  |
-                                          |---------------------|-----------------|
-                                          |  CRITICAL           |  FATAL          |
-                                          |  ERROR              |  ERROR          |
-                                          |  WARNING            |  WARN           |
-                                          |  INFO               |  INFO           |
-                                          |  DEBUG              |  DEBUG          |
-                                          |  DEBUG              |  TRACE          |
-                                          |---------------------|-----------------|
+                                          Default log level is INFO
                                         properties:
                                           level:
                                             default: INFO
@@ -2341,18 +2340,15 @@ spec:
                                         additionalProperties:
                                           description: |-
                                             LogLevelSpec
-                                            level mapping example:
+                                            level mapping if app log level is not standard
+                                              - FATAL -> CRITICAL
+                                              - ERROR -> ERROR
+                                              - WARN -> WARNING
+                                              - INFO -> INFO
+                                              - DEBUG -> DEBUG
+                                              - TRACE -> DEBUG
 
-                                            |---------------------|-----------------|
-                                            |  App log level      |  kds log level  |
-                                            |---------------------|-----------------|
-                                            |  CRITICAL           |  FATAL          |
-                                            |  ERROR              |  ERROR          |
-                                            |  WARNING            |  WARN           |
-                                            |  INFO               |  INFO           |
-                                            |  DEBUG              |  DEBUG          |
-                                            |  DEBUG              |  TRACE          |
-                                            |---------------------|-----------------|
+                                            Default log level is INFO
                                           properties:
                                             level:
                                               default: INFO
@@ -2370,11 +2366,16 @@ spec:
                                   type: object
                               type: object
                             podDisruptionBudget:
+                              description: |-
+                                This struct is used to configure:
+
+                                1. If PodDisruptionBudgets are created by the operator
+                                2. The allowed number of Pods to be unavailable (`maxUnavailable`)
                               properties:
+                                enabled:
+                                  default: true
+                                  type: boolean
                                 maxUnavailable:
-                                  format: int32
-                                  type: integer
-                                minAvailable:
                                   format: int32
                                   type: integer
                               type: object
