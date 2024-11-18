@@ -1,6 +1,8 @@
 #!/bin/bash
 set -euo pipefail
 
+set -x
+
 SUPPORT_DELETE_RELEASE_VERSION="0.0.0-dev"
 
 function main () {
