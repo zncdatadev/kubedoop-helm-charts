@@ -1,6 +1,8 @@
 #!/bin/bash
 set -euo pipefail
 
+set -x
+
 SUPPORT_DELETE_RELEASE_VERSION="0.0.0-dev"
 
 function main () {
@@ -49,7 +51,7 @@ function main () {
   check_gh_login
 
   local latest_tag=$(lookup_latest_tag)
-  echo "Discovering changes since $latest_tag..."
+  echo "Discovering changes since $latest_tag"
 
   local changed_charts=()
   readarray -t changed_charts <<<"$(lookup_changed_charts "$latest_tag" "$charts_dir")"
