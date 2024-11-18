@@ -4,9 +4,9 @@ kind: CustomResourceDefinition
 metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.16.5
-  name: authenticationclasses.authentication.zncdata.dev
+  name: authenticationclasses.authentication.kubedoop.dev
 spec:
-  group: authentication.zncdata.dev
+  group: authentication.kubedoop.dev
   names:
     kind: AuthenticationClass
     listKind: AuthenticationClassList
