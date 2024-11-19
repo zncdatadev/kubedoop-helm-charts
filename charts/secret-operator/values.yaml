@@ -71,7 +71,7 @@ podAnnotations: {}
 
 # Provide additional labels which get attached to all deployed resources
 labels:
-  zncdata.dev/vendor: zncdata
+  kubedoop.dev/vendor: zncdata
 
 podSecurityContext: {}
   # fsGroup: 2000

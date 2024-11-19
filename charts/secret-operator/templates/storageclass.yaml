@@ -2,7 +2,7 @@
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
-  name: secrets.zncdata.dev
+  name: secrets.kubedoop.dev
   labels:
   {{- include "operator.labels" . | nindent 4 }}
-provisioner: secrets.zncdata.dev
+provisioner: secrets.kubedoop.dev
