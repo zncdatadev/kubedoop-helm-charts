@@ -67,7 +67,7 @@ rules:
   - update
   - watch
 - apiGroups:
-  - secrets.zncdata.dev
+  - secrets.kubedoop.dev
   resources:
   - secretclasses
   verbs:
@@ -79,13 +79,13 @@ rules:
   - update
   - watch
 - apiGroups:
-  - secrets.zncdata.dev
+  - secrets.kubedoop.dev
   resources:
   - secretclasses/finalizers
   verbs:
   - update
 - apiGroups:
-  - secrets.zncdata.dev
+  - secrets.kubedoop.dev
   resources:
   - secretclasses/status
   verbs:
@@ -93,7 +93,7 @@ rules:
   - patch
   - update
 - apiGroups:
-  - secrets.zncdata.dev
+  - secrets.kubedoop.dev
   resources:
   - secretcsis
   verbs:
@@ -105,13 +105,13 @@ rules:
   - update
   - watch
 - apiGroups:
-  - secrets.zncdata.dev
+  - secrets.kubedoop.dev
   resources:
   - secretcsis/finalizers
   verbs:
   - update
 - apiGroups:
-  - secrets.zncdata.dev
+  - secrets.kubedoop.dev
   resources:
   - secretcsis/status
   verbs:

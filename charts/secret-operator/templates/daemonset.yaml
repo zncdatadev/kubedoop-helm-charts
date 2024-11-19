@@ -76,7 +76,7 @@ spec:
             - name: ADDRESS
               value: unix:///csi/csi.sock
             - name: DRIVER_REG_SOCK_PATH
-              value: {{ .Values.kubeletDir }}/plugins/secrets.zncdata.dev/csi.sock
+              value: {{ .Values.kubeletDir }}/plugins/secrets.kubedoop.dev/csi.sock
           args:
             - --csi-address=$(ADDRESS)
             - --kubelet-registration-path=$(DRIVER_REG_SOCK_PATH)
@@ -108,7 +108,7 @@ spec:
         - name: plugin-dir
           hostPath:
             type: DirectoryOrCreate
-            path: {{ .Values.kubeletDir }}/plugins/secrets.zncdata.dev/
+            path: {{ .Values.kubeletDir }}/plugins/secrets.kubedoop.dev/
         - name: mountpoint-dir
           hostPath:
             type: DirectoryOrCreate
