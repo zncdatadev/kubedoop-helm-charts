@@ -1,11 +1,12 @@
+---
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.16.5
-  name: listeners.listeners.zncdata.dev
+  name: listeners.listeners.kubedoop.dev
 spec:
-  group: listeners.zncdata.dev
+  group: listeners.kubedoop.dev
   names:
     kind: Listener
     listKind: ListenerList

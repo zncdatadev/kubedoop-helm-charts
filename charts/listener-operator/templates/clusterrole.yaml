@@ -42,7 +42,7 @@ rules:
   - update
   - watch
 - apiGroups:
-  - listeners.zncdata.dev
+  - listeners.kubedoop.dev
   resources:
   - listenerclasses
   - listenercsis
@@ -56,7 +56,7 @@ rules:
   - update
   - watch
 - apiGroups:
-  - listeners.zncdata.dev
+  - listeners.kubedoop.dev
   resources:
   - listenerclasses/finalizers
   - listenercsis/finalizers
@@ -64,7 +64,7 @@ rules:
   verbs:
   - update
 - apiGroups:
-  - listeners.zncdata.dev
+  - listeners.kubedoop.dev
   resources:
   - listenerclasses/status
   - listeners/status

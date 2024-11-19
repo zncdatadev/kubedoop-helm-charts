@@ -82,7 +82,7 @@ serviceAccount:
   name: ""
 
 labels:
-  zncdata.dev/vendor: Zncdatadev
+  kubedoop.dev/vendor: Zncdatadev
 
 podAnnotations: {}
 podLabels: {}
