@@ -2,6 +2,6 @@
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
-  name: listeners.zncdata.dev
-provisioner: listeners.zncdata.dev
+  name: listeners.kubedoop.dev
+provisioner: listeners.kubedoop.dev
 volumeBindingMode: WaitForFirstConsumer
