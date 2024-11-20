@@ -40,7 +40,7 @@ rules:
   - update
   - watch
 - apiGroups:
-  - s3.zncdata.dev
+  - s3.kubedoop.dev
   resources:
   - s3buckets
   - s3connections
@@ -49,7 +49,7 @@ rules:
   - list
   - watch
 - apiGroups:
-  - zncdata.dev
+  - kubedoop.dev
   resources:
   - hivemetastores
   verbs:
@@ -61,13 +61,13 @@ rules:
   - update
   - watch
 - apiGroups:
-  - zncdata.dev
+  - kubedoop.dev
   resources:
   - hivemetastores/finalizers
   verbs:
   - update
 - apiGroups:
-  - zncdata.dev
+  - kubedoop.dev
   resources:
   - hivemetastores/status
   verbs:
