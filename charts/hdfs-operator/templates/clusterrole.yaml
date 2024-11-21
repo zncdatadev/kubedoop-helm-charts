@@ -42,7 +42,7 @@ rules:
   - update
   - watch
 - apiGroups:
-  - authentication.zncdata.dev
+  - authentication.kubedoop.dev
   resources:
   - authenticationclasses
   verbs:
@@ -50,7 +50,7 @@ rules:
   - list
   - watch
 - apiGroups:
-  - hdfs.zncdata.dev
+  - hdfs.kubedoop.dev
   resources:
   - hdfsclusters
   verbs:
@@ -62,13 +62,13 @@ rules:
   - update
   - watch
 - apiGroups:
-  - hdfs.zncdata.dev
+  - hdfs.kubedoop.dev
   resources:
   - hdfsclusters/finalizers
   verbs:
   - update
 - apiGroups:
-  - hdfs.zncdata.dev
+  - hdfs.kubedoop.dev
   resources:
   - hdfsclusters/status
   verbs:
@@ -76,7 +76,7 @@ rules:
   - patch
   - update
 - apiGroups:
-  - listeners.zncdata.dev
+  - listeners.kubedoop.dev
   resources:
   - listeners
   verbs:
