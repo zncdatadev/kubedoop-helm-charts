@@ -68,7 +68,7 @@ rules:
   - update
   - watch
 - apiGroups:
-  - zookeeper.zncdata.dev
+  - zookeeper.kubedoop.dev
   resources:
   - zookeeperclusters
   - zookeeperznodes
@@ -81,14 +81,14 @@ rules:
   - update
   - watch
 - apiGroups:
-  - zookeeper.zncdata.dev
+  - zookeeper.kubedoop.dev
   resources:
   - zookeeperclusters/finalizers
   - zookeeperznodes/finalizers
   verbs:
   - update
 - apiGroups:
-  - zookeeper.zncdata.dev
+  - zookeeper.kubedoop.dev
   resources:
   - zookeeperclusters/status
   - zookeeperznodes/status
