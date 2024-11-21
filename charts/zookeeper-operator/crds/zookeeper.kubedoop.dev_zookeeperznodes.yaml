@@ -1,11 +1,12 @@
+---
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.16.5
-  name: zookeeperznodes.zookeeper.zncdata.dev
+  name: zookeeperznodes.zookeeper.kubedoop.dev
 spec:
-  group: zookeeper.zncdata.dev
+  group: zookeeper.kubedoop.dev
   names:
     kind: ZookeeperZnode
     listKind: ZookeeperZnodeList
