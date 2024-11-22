@@ -41,7 +41,7 @@ rules:
   - list
   - watch
 - apiGroups:
-  - kafka.zncdata.dev
+  - kafka.kubedoop.dev
   resources:
   - kafkaclusters
   verbs:
@@ -53,13 +53,13 @@ rules:
   - update
   - watch
 - apiGroups:
-  - kafka.zncdata.dev
+  - kafka.kubedoop.dev
   resources:
   - kafkaclusters/finalizers
   verbs:
   - update
 - apiGroups:
-  - kafka.zncdata.dev
+  - kafka.kubedoop.dev
   resources:
   - kafkaclusters/status
   verbs:
