@@ -1,11 +1,12 @@
+---
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    controller-gen.kubebuilder.io/version: v0.16.1
-  name: kafkaclusters.kafka.zncdata.dev
+    controller-gen.kubebuilder.io/version: v0.16.5
+  name: kafkaclusters.kafka.kubedoop.dev
 spec:
-  group: kafka.zncdata.dev
+  group: kafka.kubedoop.dev
   names:
     kind: KafkaCluster
     listKind: KafkaClusterList
