@@ -157,37 +157,33 @@ function delete_chart_release() {
   local chart_version=$(yq eval '.version' "$changed_chart/Chart.yaml")
   local release_name="$chart_name-$chart_version"
   
-  echo "Deleting release and tag for $release_name..."
-  # check chart_version support delete, if not support, raise error
+  echo "Deleting release and tags for $release_name..."
+  # check chart_version support delete
   if [[ "$chart_version" != "$SUPPORT_DELETE_RELEASE_VERSION" ]]; then
     echo "WARNING: Release $release_name is not supported for deletion. Skipping." 1>&2
     return
   fi
 
-  # delete release
+  # Delete release
   local release_id=$(gh api -X GET "repos/$repository/releases" | jq -r ".[] | select(.name | startswith(\"$release_name\")) | .id")
   if [[ -n "$release_id" ]]; then
-    if gh api -X DELETE "repos/$repository/releases/$release_id"; then
-      echo "Successfully deleted release $release_name"
-    else
+    if ! gh api -X DELETE "repos/$repository/releases/$release_id"; then
       echo "Failed to delete release $release_name" 1>&2
       return 1
     fi
+    echo "Successfully deleted release $release_name"
   else
-    echo "No release found for $release_name." 1>&2
+    echo "No release found for $release_name" 1>&2
   fi
 
-  # delete tag
-  if git tag -d "$release_name" 2>/dev/null; then
-    if git push origin ":refs/tags/$release_name" 2>/dev/null; then
-      echo "Successfully deleted tag $release_name"
+  # Delete tags from remote
+  for tag in "$release_name" "$chart_version"; do
+    if gh api -X DELETE "repos/$repository/git/refs/tags/$tag" 2>/dev/null; then
+      echo "Successfully deleted remote tag $tag"
     else
-      echo "Failed to delete remote tag $release_name" 1>&2
-      return 1
+      echo "No remote tag found for $tag or failed to delete" 1>&2
     fi
-  else
-    echo "No local tag found for $release_name" 1>&2
-  fi
+  done
 }
 
 main "$@"
