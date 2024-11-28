@@ -1,8 +1,10 @@
 ## Reference: https://github.com/helm/chart-testing-action
 name: Linting and Testing
-on: 
-  pull_request:
+on:
   push:
+    branches:
+      - main
+      - release-*
 
 permissions:
   contents: read
@@ -19,7 +21,7 @@ jobs:
       - name: Run ah lint
         working-directory: ./charts
         run: ah lint
-  
+
   lint-test:
     runs-on: ubuntu-latest
     steps:
@@ -48,7 +50,7 @@ jobs:
           fi
       - name: Run chart-testing (lint)
         if: steps.list-changed.outputs.changed == 'true'
-        run: ct lint --debug --config ./.github/configs/ct-lint.yaml 
+        run: ct lint --debug --config ./.github/configs/ct-lint.yaml
 
       - name: Create kind cluster
         if: steps.list-changed.outputs.changed == 'true'
