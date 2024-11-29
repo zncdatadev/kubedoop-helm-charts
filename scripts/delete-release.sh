@@ -14,11 +14,13 @@ function main () {
   Arguments:
     -r, --repository <repo>  The GitHub repository to look for Helm charts. Required.
     -d, --chart-dir <dir>      The directory to look for Helm charts. Default is 'charts'.
+    -b, --base-branch <branch> The base branch to compare changes against. Default is 'main'.
     -h, --help               Display
 "
 
   local charts_dir="charts"
   local repository
+  local base_branch="main"
 
   while [[ $# -gt 0 ]]; do
     case $1 in
@@ -28,6 +30,10 @@ function main () {
         ;;
       -d|--chart-dir)
         charts_dir=$2
+        shift 2
+        ;;
+      -b|--base-branch)
+        base_branch=$2
         shift 2
         ;;
       -h|--help)
@@ -50,7 +56,7 @@ function main () {
 
   check_gh_login
 
-  local latest_tag=$(lookup_latest_tag)
+  local latest_tag=$(lookup_latest_tag "$base_branch")
   echo "Discovering changes since $latest_tag..."
 
   local changed_charts=()
@@ -84,17 +90,42 @@ function check_gh_login() {
 }
 
 # lookup_latest_tag looks up the latest tag in the repository.
+# If the current branch is the base branch, it looks up the latest tag or first commit.
+# If the current branch is not the base branch, it looks up the latest tag or merge base commit.
 # Arguments:
-#   None.
+#   $1: The base branch name to compare against.
 # Returns:
-#   The latest tag in the repository.
+#   The latest tag in the repository or the commit hash if no tags are found.
 function lookup_latest_tag() {
-  git fetch --tags >/dev/null 2>&1
+  local base_branch="$1"
 
-  if ! git describe --tags --abbrev=0 HEAD~ 2>/dev/null; then
-    git rev-list --max-parents=0 --first-parent HEAD
+  # Ensure local tags are up-to-date
+  git fetch --tags >/dev/null 2>&1 || {
+    echo "Warning: Failed to fetch tags from remote" >&2
+  }
+
+  local current_branch
+  current_branch=$(git rev-parse --abbrev-ref HEAD)
+
+  # First, try to get the latest tag
+  local tag_or_commit
+  tag_or_commit=$(git describe --tags --abbrev=0 HEAD~ 2>/dev/null)
+
+  # If no tag is found, decide which commit to use based on the branch
+  if [[ -z "$tag_or_commit" ]]; then
+    if [[ "$current_branch" == "$base_branch" ]]; then
+      # On the base branch, use the first commit
+      tag_or_commit=$(git rev-list --max-parents=0 --first-parent HEAD)
+    else
+      # On other branches, use the merge base with the base branch
+      tag_or_commit=$(git merge-base HEAD "$base_branch") || {
+        echo "Error: Could not find merge base with $base_branch" >&2
+        exit 1
+      }
+    fi
   fi
 
+  echo "$tag_or_commit"
 }
 
 # filter_charts filters out non-Helm charts from a list of directories.
@@ -156,7 +187,7 @@ function delete_chart_release() {
   local chart_name=$(basename "$changed_chart")
   local chart_version=$(yq eval '.version' "$changed_chart/Chart.yaml")
   local release_name="$chart_name-$chart_version"
-  
+
   echo "Deleting release and tags for $release_name..."
   # check chart_version support delete
   if [[ "$chart_version" != "$SUPPORT_DELETE_RELEASE_VERSION" ]]; then
