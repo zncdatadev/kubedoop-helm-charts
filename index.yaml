@@ -3779,49 +3779,23 @@ entries:
     version: 0.0.0-dev
   spark-k8s-operator:
   - apiVersion: v2
-    appVersion: 0.0.0-dev
-    created: "2024-10-21T11:02:23.98436762Z"
+    appVersion: 0.1.0
+    created: "2024-11-29T10:49:07.932593263Z"
     description: The Kubedoop operator for Apache Spark k8s
-    digest: 468b8ac938540dbd69501723f10a4f5b29ff7ed8569c914e0904eae9634db7ea
+    digest: 59c89436f34799ef5177c3fa78c399154765500f2c30c04845fb71999c040264
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
     name: spark-k8s-operator
     type: application
     urls:
-    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/spark-k8s-operator-0.0.0-dev/spark-k8s-operator-0.0.0-dev.tgz
-    version: 0.0.0-dev
+    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/spark-k8s-operator-0.1.0/spark-k8s-operator-0.1.0.tgz
+    version: 0.1.0
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-10-30T09:56:23.406231835Z"
+    created: "2024-11-14T02:30:16.49397446Z"
     description: The Kubedoop operator for Apache Spark k8s
-    digest: d4ec4916d37461979794119fa5c934ae04f5666242159dd23abf64a91d4c9d6f
-    maintainers:
-    - email: zncdatadev@googlegroups.com
-      name: ZNCDataDev Team
-    name: spark-k8s-operator
-    type: application
-    urls:
-    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/spark-k8s-operator-0.0.0-dev/spark-k8s-operator-0.0.0-dev.tgz
-    version: 0.0.0-dev
-  - apiVersion: v2
-    appVersion: 0.0.0-dev
-    created: "2024-11-08T03:21:14.452732979Z"
-    description: The Kubedoop operator for Apache Spark k8s
-    digest: 24344797ec2a0b2e6c50049db5bbd06fc319a8375dfa5ae4f2153cbf8eb4265b
-    maintainers:
-    - email: zncdatadev@googlegroups.com
-      name: ZNCDataDev Team
-    name: spark-k8s-operator
-    type: application
-    urls:
-    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/spark-k8s-operator-0.0.0-dev/spark-k8s-operator-0.0.0-dev.tgz
-    version: 0.0.0-dev
-  - apiVersion: v2
-    appVersion: 0.0.0-dev
-    created: "2024-11-08T06:32:15.011717467Z"
-    description: The Kubedoop operator for Apache Spark k8s
-    digest: a10100982cde060aff0c47fb172bdd4b4e9dd43b4e7e3ab7b4ba0cc04faad5e1
+    digest: fa1ad9046347b84221784a92a9a0f14941c89b7edc91ee77be0a7d4af28b81bb
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -3845,6 +3819,32 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
+    created: "2024-11-08T06:32:15.011717467Z"
+    description: The Kubedoop operator for Apache Spark k8s
+    digest: a10100982cde060aff0c47fb172bdd4b4e9dd43b4e7e3ab7b4ba0cc04faad5e1
+    maintainers:
+    - email: zncdatadev@googlegroups.com
+      name: ZNCDataDev Team
+    name: spark-k8s-operator
+    type: application
+    urls:
+    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/spark-k8s-operator-0.0.0-dev/spark-k8s-operator-0.0.0-dev.tgz
+    version: 0.0.0-dev
+  - apiVersion: v2
+    appVersion: 0.0.0-dev
+    created: "2024-10-21T11:02:23.98436762Z"
+    description: The Kubedoop operator for Apache Spark k8s
+    digest: 468b8ac938540dbd69501723f10a4f5b29ff7ed8569c914e0904eae9634db7ea
+    maintainers:
+    - email: zncdatadev@googlegroups.com
+      name: ZNCDataDev Team
+    name: spark-k8s-operator
+    type: application
+    urls:
+    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/spark-k8s-operator-0.0.0-dev/spark-k8s-operator-0.0.0-dev.tgz
+    version: 0.0.0-dev
+  - apiVersion: v2
+    appVersion: 0.0.0-dev
     created: "2024-11-08T06:46:21.264764646Z"
     description: The Kubedoop operator for Apache Spark k8s
     digest: 1ec3e3cc245e458b36835035bf3d7c50cc56864b97c27f7a09419fd2764e1cd1
@@ -3858,9 +3858,9 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-08T06:46:56.403767171Z"
+    created: "2024-11-14T02:31:21.795758031Z"
     description: The Kubedoop operator for Apache Spark k8s
-    digest: 00f105e2f8f36313f5e677764b6ff76585b2ff9792be865a4566da1bd8f5330b
+    digest: 9c5a2264d7dc581bece08e7f44d42c9060f4e7f6015c3d00cf328e9e1a84b415
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -4001,9 +4001,9 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-14T02:29:00.308232159Z"
+    created: "2024-11-29T06:49:30.902604705Z"
     description: The Kubedoop operator for Apache Spark k8s
-    digest: af4cf47155daa85a13940f60c926099f2824bc4228ef2f916baaec9ddfdc33d5
+    digest: 61f63cb2bf8da3826ef2bfcf3f242ee83b8381df8520e251cd43b910dce2e673
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -4014,9 +4014,9 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-14T02:30:16.49397446Z"
+    created: "2024-11-08T03:21:14.452732979Z"
     description: The Kubedoop operator for Apache Spark k8s
-    digest: fa1ad9046347b84221784a92a9a0f14941c89b7edc91ee77be0a7d4af28b81bb
+    digest: 24344797ec2a0b2e6c50049db5bbd06fc319a8375dfa5ae4f2153cbf8eb4265b
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -4027,9 +4027,9 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-14T02:31:21.795758031Z"
+    created: "2024-11-08T06:46:56.403767171Z"
     description: The Kubedoop operator for Apache Spark k8s
-    digest: 9c5a2264d7dc581bece08e7f44d42c9060f4e7f6015c3d00cf328e9e1a84b415
+    digest: 00f105e2f8f36313f5e677764b6ff76585b2ff9792be865a4566da1bd8f5330b
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -4222,9 +4222,22 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-29T06:49:30.902604705Z"
+    created: "2024-11-14T02:29:00.308232159Z"
     description: The Kubedoop operator for Apache Spark k8s
-    digest: 61f63cb2bf8da3826ef2bfcf3f242ee83b8381df8520e251cd43b910dce2e673
+    digest: af4cf47155daa85a13940f60c926099f2824bc4228ef2f916baaec9ddfdc33d5
+    maintainers:
+    - email: zncdatadev@googlegroups.com
+      name: ZNCDataDev Team
+    name: spark-k8s-operator
+    type: application
+    urls:
+    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/spark-k8s-operator-0.0.0-dev/spark-k8s-operator-0.0.0-dev.tgz
+    version: 0.0.0-dev
+  - apiVersion: v2
+    appVersion: 0.0.0-dev
+    created: "2024-10-30T09:56:23.406231835Z"
+    description: The Kubedoop operator for Apache Spark k8s
+    digest: d4ec4916d37461979794119fa5c934ae04f5666242159dd23abf64a91d4c9d6f
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -5653,4 +5666,4 @@ entries:
     urls:
     - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/zookeeper-operator-0.0.0-dev/zookeeper-operator-0.0.0-dev.tgz
     version: 0.0.0-dev
-generated: "2024-11-29T10:39:25.159310393Z"
+generated: "2024-11-29T10:49:07.9335568Z"
