@@ -14,6 +14,19 @@ entries:
     urls:
     - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/airflow-operator-0.0.0-dev/airflow-operator-0.0.0-dev.tgz
     version: 0.0.0-dev
+  - apiVersion: v2
+    appVersion: 0.0.0-dev
+    created: "2024-11-29T11:44:19.934319894Z"
+    description: The Kubedoop operator for Apache airflow
+    digest: d6e19b2d8c78775ff1d2266937a0893c675b9aae6b62a8c733cc71fa1fac074b
+    maintainers:
+    - email: zncdatadev@googlegroups.com
+      name: ZNCDataDev Team
+    name: airflow-operator
+    type: application
+    urls:
+    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/airflow-operator-0.0.0-dev/airflow-operator-0.0.0-dev.tgz
+    version: 0.0.0-dev
   commons-operator:
   - apiVersion: v2
     appVersion: 0.1.0
@@ -5758,4 +5771,4 @@ entries:
     urls:
     - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/zookeeper-operator-0.0.0-dev/zookeeper-operator-0.0.0-dev.tgz
     version: 0.0.0-dev
-generated: "2024-11-29T11:43:06.951570643Z"
+generated: "2024-11-29T11:44:19.935771311Z"
