@@ -41,7 +41,7 @@ rules:
   - update
   - watch
 - apiGroups:
-  - authentication.
+  - authentication.kubedoop.dev
   resources:
   - authenticationclasses
   verbs:
@@ -49,7 +49,7 @@ rules:
   - list
   - watch
 - apiGroups:
-  - s3.
+  - s3.kubedoop.dev
   resources:
   - s3buckets
   - s3connections
@@ -58,7 +58,7 @@ rules:
   - list
   - watch
 - apiGroups:
-  - spark.
+  - spark.kubedoop.dev
   resources:
   - sparkhistoryservers
   verbs:
@@ -70,13 +70,13 @@ rules:
   - update
   - watch
 - apiGroups:
-  - spark.
+  - spark.kubedoop.dev
   resources:
   - sparkhistoryservers/finalizers
   verbs:
   - update
 - apiGroups:
-  - spark.
+  - spark.kubedoop.dev
   resources:
   - sparkhistoryservers/status
   verbs:
