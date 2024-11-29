@@ -2685,10 +2685,23 @@ entries:
     version: 0.0.0-dev
   listener-operator:
   - apiVersion: v2
-    appVersion: 0.0.0-dev
-    created: "2024-10-23T03:02:52.497780829Z"
+    appVersion: 0.1.0
+    created: "2024-11-29T08:02:10.519895814Z"
     description: The Kubedoop Listener Operator
-    digest: d52fae8538a3680a156a76b966bf755a17e57d879c78995532d7d72f0fc6f69c
+    digest: 22afa022e2cee971cdca99676a9abc7d97752ef8089e7f900f9700ee63e11d79
+    maintainers:
+    - email: zncdatadev@googlegroups.com
+      name: ZNCDataDev Team
+    name: listener-operator
+    type: application
+    urls:
+    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/listener-operator-0.1.0/listener-operator-0.1.0.tgz
+    version: 0.1.0
+  - apiVersion: v2
+    appVersion: 0.0.0-dev
+    created: "2024-11-14T02:25:05.983817486Z"
+    description: The Kubedoop Listener Operator
+    digest: cb5379d01599f89eeb005c7e37c0cf8ecdff43458b36387f5b79f30be05f0fe5
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -2699,22 +2712,9 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-10-23T03:55:56.893363792Z"
+    created: "2024-10-24T10:52:14.127284351Z"
     description: The Kubedoop Listener Operator
-    digest: 560cab1ccd2d4c5c886b00d2ae55442f853fc8224bbc40df918d5a7ed956f45c
-    maintainers:
-    - email: zncdatadev@googlegroups.com
-      name: ZNCDataDev Team
-    name: listener-operator
-    type: application
-    urls:
-    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/listener-operator-0.0.0-dev/listener-operator-0.0.0-dev.tgz
-    version: 0.0.0-dev
-  - apiVersion: v2
-    appVersion: 0.0.0-dev
-    created: "2024-10-23T12:11:23.430788533Z"
-    description: The Kubedoop Listener Operator
-    digest: 1419c9399f742a7d0c673be18135fba2c2a484275c1eab134f987987abf568b4
+    digest: 48784a0c96f883d23f910a44c4e4ccfb16c9f399d6c7ec4f43a043bb7fbb7edc
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -2738,9 +2738,9 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-10-24T10:52:14.127284351Z"
+    created: "2024-10-23T03:02:52.497780829Z"
     description: The Kubedoop Listener Operator
-    digest: 48784a0c96f883d23f910a44c4e4ccfb16c9f399d6c7ec4f43a043bb7fbb7edc
+    digest: d52fae8538a3680a156a76b966bf755a17e57d879c78995532d7d72f0fc6f69c
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -2894,9 +2894,9 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-08T06:57:02.175545408Z"
+    created: "2024-11-14T02:27:09.123435351Z"
     description: The Kubedoop Listener Operator
-    digest: 89911088993d742a05dbfc2af55c52ff1f5b1186fc9f72757707f82d275f5a3d
+    digest: 53deffb72e0f728f6d9f52f820ebc3048d12051f1115a4e13b26bf1d75b41570
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -2959,9 +2959,9 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-14T02:23:58.047786835Z"
+    created: "2024-11-29T07:00:01.350749312Z"
     description: The Kubedoop Listener Operator
-    digest: b329827ee65d4ef1778c07a7ba0dbb92787a2fd1e5058cfd2d1f1a57da307d24
+    digest: f7d5004e6d3e442bee663dbe551cfffa955cc3064979e278cde3b14a9bf948cb
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -2972,9 +2972,9 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-14T02:25:05.983817486Z"
+    created: "2024-10-23T12:11:23.430788533Z"
     description: The Kubedoop Listener Operator
-    digest: cb5379d01599f89eeb005c7e37c0cf8ecdff43458b36387f5b79f30be05f0fe5
+    digest: 1419c9399f742a7d0c673be18135fba2c2a484275c1eab134f987987abf568b4
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -2985,9 +2985,9 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-14T02:27:09.123435351Z"
+    created: "2024-11-08T06:57:02.175545408Z"
     description: The Kubedoop Listener Operator
-    digest: 53deffb72e0f728f6d9f52f820ebc3048d12051f1115a4e13b26bf1d75b41570
+    digest: 89911088993d742a05dbfc2af55c52ff1f5b1186fc9f72757707f82d275f5a3d
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -3232,9 +3232,22 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-29T07:00:01.350749312Z"
+    created: "2024-11-14T02:23:58.047786835Z"
     description: The Kubedoop Listener Operator
-    digest: f7d5004e6d3e442bee663dbe551cfffa955cc3064979e278cde3b14a9bf948cb
+    digest: b329827ee65d4ef1778c07a7ba0dbb92787a2fd1e5058cfd2d1f1a57da307d24
+    maintainers:
+    - email: zncdatadev@googlegroups.com
+      name: ZNCDataDev Team
+    name: listener-operator
+    type: application
+    urls:
+    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/listener-operator-0.0.0-dev/listener-operator-0.0.0-dev.tgz
+    version: 0.0.0-dev
+  - apiVersion: v2
+    appVersion: 0.0.0-dev
+    created: "2024-10-23T03:55:56.893363792Z"
+    description: The Kubedoop Listener Operator
+    digest: 560cab1ccd2d4c5c886b00d2ae55442f853fc8224bbc40df918d5a7ed956f45c
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -5588,4 +5601,4 @@ entries:
     urls:
     - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/zookeeper-operator-0.0.0-dev/zookeeper-operator-0.0.0-dev.tgz
     version: 0.0.0-dev
-generated: "2024-11-29T07:00:01.351805621Z"
+generated: "2024-11-29T08:02:10.521116187Z"
