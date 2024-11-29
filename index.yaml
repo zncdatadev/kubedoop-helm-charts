@@ -4327,49 +4327,23 @@ entries:
     version: 0.0.0-dev
   superset-operator:
   - apiVersion: v2
-    appVersion: 0.0.0-dev
-    created: "2024-10-23T03:04:23.436630594Z"
+    appVersion: 0.1.0
+    created: "2024-11-29T11:43:06.950462418Z"
     description: The Kubedoop operator for Apache Superset
-    digest: 424da2b0253e1a4a58b2a3a0ccfd5bb8922001b3bdd0bbd0d9a96a56906e14c7
+    digest: c161bada050ed417ba47575114053a82bca12ad09ef0bb045605a073378ce8d4
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
     name: superset-operator
     type: application
     urls:
-    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/superset-operator-0.0.0-dev/superset-operator-0.0.0-dev.tgz
-    version: 0.0.0-dev
+    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/superset-operator-0.1.0/superset-operator-0.1.0.tgz
+    version: 0.1.0
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-10-30T09:56:23.535685209Z"
+    created: "2024-11-14T02:30:16.62456154Z"
     description: The Kubedoop operator for Apache Superset
-    digest: 89091f01ff870058d9d7f630ce7bef2ed10a8638c4b13cfd414160b3161364e2
-    maintainers:
-    - email: zncdatadev@googlegroups.com
-      name: ZNCDataDev Team
-    name: superset-operator
-    type: application
-    urls:
-    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/superset-operator-0.0.0-dev/superset-operator-0.0.0-dev.tgz
-    version: 0.0.0-dev
-  - apiVersion: v2
-    appVersion: 0.0.0-dev
-    created: "2024-11-08T03:21:14.675569402Z"
-    description: The Kubedoop operator for Apache Superset
-    digest: 8e7d43edabb1c2186a91326557678cb41c621219d4bd8165447b1503adc5d508
-    maintainers:
-    - email: zncdatadev@googlegroups.com
-      name: ZNCDataDev Team
-    name: superset-operator
-    type: application
-    urls:
-    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/superset-operator-0.0.0-dev/superset-operator-0.0.0-dev.tgz
-    version: 0.0.0-dev
-  - apiVersion: v2
-    appVersion: 0.0.0-dev
-    created: "2024-11-08T06:32:15.121197307Z"
-    description: The Kubedoop operator for Apache Superset
-    digest: 038b1bb48e6228d45aad07a9651213a154f12b25da3b3591a16de3aee9345c2f
+    digest: a293f41eb985d21fd8655883a153fa792509fad7da30a47cad9185ccecf2e499
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -4393,6 +4367,32 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
+    created: "2024-11-08T06:32:15.121197307Z"
+    description: The Kubedoop operator for Apache Superset
+    digest: 038b1bb48e6228d45aad07a9651213a154f12b25da3b3591a16de3aee9345c2f
+    maintainers:
+    - email: zncdatadev@googlegroups.com
+      name: ZNCDataDev Team
+    name: superset-operator
+    type: application
+    urls:
+    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/superset-operator-0.0.0-dev/superset-operator-0.0.0-dev.tgz
+    version: 0.0.0-dev
+  - apiVersion: v2
+    appVersion: 0.0.0-dev
+    created: "2024-10-23T03:04:23.436630594Z"
+    description: The Kubedoop operator for Apache Superset
+    digest: 424da2b0253e1a4a58b2a3a0ccfd5bb8922001b3bdd0bbd0d9a96a56906e14c7
+    maintainers:
+    - email: zncdatadev@googlegroups.com
+      name: ZNCDataDev Team
+    name: superset-operator
+    type: application
+    urls:
+    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/superset-operator-0.0.0-dev/superset-operator-0.0.0-dev.tgz
+    version: 0.0.0-dev
+  - apiVersion: v2
+    appVersion: 0.0.0-dev
     created: "2024-11-08T06:46:21.519516601Z"
     description: The Kubedoop operator for Apache Superset
     digest: f7453d95160eec55aa2f528b40d5f43e4b9f990c7b2052aceee48a8a03083b1d
@@ -4406,9 +4406,9 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-08T06:46:56.499550692Z"
+    created: "2024-11-14T02:31:21.911315485Z"
     description: The Kubedoop operator for Apache Superset
-    digest: a65be0bd6c08347e84b38f0b899fa4c12831593971142a843bcd5be0ed47994f
+    digest: 74a3bf8561bfe1137a42a2065c01b7ac3977aedaecfd21a89875f83bae5e7b32
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -4549,9 +4549,9 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-14T02:29:00.435255364Z"
+    created: "2024-11-29T06:49:31.085480991Z"
     description: The Kubedoop operator for Apache Superset
-    digest: 11e904618b736fb49c7abc38923d338bea67eed83693c59eb82b5d72364933f5
+    digest: f1040fae8cceda44e558e872fdee02732bbff5df79a89c1454db599c827e8f79
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -4562,9 +4562,9 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-14T02:30:16.62456154Z"
+    created: "2024-11-08T03:21:14.675569402Z"
     description: The Kubedoop operator for Apache Superset
-    digest: a293f41eb985d21fd8655883a153fa792509fad7da30a47cad9185ccecf2e499
+    digest: 8e7d43edabb1c2186a91326557678cb41c621219d4bd8165447b1503adc5d508
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -4575,9 +4575,9 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-14T02:31:21.911315485Z"
+    created: "2024-11-08T06:46:56.499550692Z"
     description: The Kubedoop operator for Apache Superset
-    digest: 74a3bf8561bfe1137a42a2065c01b7ac3977aedaecfd21a89875f83bae5e7b32
+    digest: a65be0bd6c08347e84b38f0b899fa4c12831593971142a843bcd5be0ed47994f
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -4770,9 +4770,22 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-29T06:49:31.085480991Z"
+    created: "2024-11-14T02:29:00.435255364Z"
     description: The Kubedoop operator for Apache Superset
-    digest: f1040fae8cceda44e558e872fdee02732bbff5df79a89c1454db599c827e8f79
+    digest: 11e904618b736fb49c7abc38923d338bea67eed83693c59eb82b5d72364933f5
+    maintainers:
+    - email: zncdatadev@googlegroups.com
+      name: ZNCDataDev Team
+    name: superset-operator
+    type: application
+    urls:
+    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/superset-operator-0.0.0-dev/superset-operator-0.0.0-dev.tgz
+    version: 0.0.0-dev
+  - apiVersion: v2
+    appVersion: 0.0.0-dev
+    created: "2024-10-30T09:56:23.535685209Z"
+    description: The Kubedoop operator for Apache Superset
+    digest: 89091f01ff870058d9d7f630ce7bef2ed10a8638c4b13cfd414160b3161364e2
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -5745,4 +5758,4 @@ entries:
     urls:
     - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/zookeeper-operator-0.0.0-dev/zookeeper-operator-0.0.0-dev.tgz
     version: 0.0.0-dev
-generated: "2024-11-29T11:42:57.99783376Z"
+generated: "2024-11-29T11:43:06.951570643Z"
