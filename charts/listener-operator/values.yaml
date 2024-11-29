@@ -16,7 +16,6 @@ csiDriver:
   #   level: "5"
   image:
     repository: quay.io/zncdatadev/listener-csi-driver
-    tag: 0.0.0-dev
     pullPolicy: IfNotPresent
   resources:
     requests:
