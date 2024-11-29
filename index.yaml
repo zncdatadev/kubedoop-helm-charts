@@ -3258,10 +3258,23 @@ entries:
     version: 0.0.0-dev
   secret-operator:
   - apiVersion: v2
-    appVersion: 0.0.0-dev
-    created: "2024-10-21T11:01:27.710595459Z"
+    appVersion: 0.1.0
+    created: "2024-11-29T09:47:42.921009179Z"
     description: The Kubedoop Secret Operator
-    digest: 60b2804b722b56a3e272645e049bda072ae981bbf55dfbf9d4fa8167a33af9cd
+    digest: c626aa2ed73a91ee66991ada723c410363eb6e675a5c8c571c81b914d3b3fbf5
+    maintainers:
+    - email: zncdatadev@googlegroups.com
+      name: zncdatadev
+    name: secret-operator
+    type: application
+    urls:
+    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/secret-operator-0.1.0/secret-operator-0.1.0.tgz
+    version: 0.1.0
+  - apiVersion: v2
+    appVersion: 0.0.0-dev
+    created: "2024-11-14T02:25:06.096774287Z"
+    description: The Kubedoop Secret Operator
+    digest: acefd95153be96d6e7e862d8016e0644502af7c490a2de0916d20e0c92ae6881
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: zncdatadev
@@ -3272,22 +3285,9 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-10-24T07:19:27.870232395Z"
+    created: "2024-11-29T06:49:30.725263256Z"
     description: The Kubedoop Secret Operator
-    digest: 4b6b28ad4aab8d31d868ed58b85f4702f1a571d3d96e75f46f6cfbce5c09e683
-    maintainers:
-    - email: zncdatadev@googlegroups.com
-      name: zncdatadev
-    name: secret-operator
-    type: application
-    urls:
-    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/secret-operator-0.0.0-dev/secret-operator-0.0.0-dev.tgz
-    version: 0.0.0-dev
-  - apiVersion: v2
-    appVersion: 0.0.0-dev
-    created: "2024-10-24T10:52:14.306520069Z"
-    description: The Kubedoop Secret Operator
-    digest: 4a7e7069fcad5d5b4b1dae8010b333d553cb6700b02d26f9338bc5cc80dc0e96
+    digest: 3cc88094817c83bb689dd475ff059ed09a6a107a5d589b8f37780b780b5ff925
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: zncdatadev
@@ -3376,9 +3376,9 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-08T06:46:56.298896537Z"
+    created: "2024-11-14T02:27:09.248038817Z"
     description: The Kubedoop Secret Operator
-    digest: 1dab83ef0264bda8968784d668ceb3da9fd73c73e3c2249f950e83347aa5f25c
+    digest: d77215ad6e2035d4db30957b092ed9bd01118dde1d340337b1e871ab57049a86
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: zncdatadev
@@ -3493,9 +3493,9 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-14T02:25:06.096774287Z"
+    created: "2024-10-21T11:01:27.710595459Z"
     description: The Kubedoop Secret Operator
-    digest: acefd95153be96d6e7e862d8016e0644502af7c490a2de0916d20e0c92ae6881
+    digest: 60b2804b722b56a3e272645e049bda072ae981bbf55dfbf9d4fa8167a33af9cd
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: zncdatadev
@@ -3506,9 +3506,9 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-14T02:27:09.248038817Z"
+    created: "2024-11-08T06:46:56.298896537Z"
     description: The Kubedoop Secret Operator
-    digest: d77215ad6e2035d4db30957b092ed9bd01118dde1d340337b1e871ab57049a86
+    digest: 1dab83ef0264bda8968784d668ceb3da9fd73c73e3c2249f950e83347aa5f25c
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: zncdatadev
@@ -3519,9 +3519,9 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-14T02:29:00.188854428Z"
+    created: "2024-10-24T10:52:14.306520069Z"
     description: The Kubedoop Secret Operator
-    digest: ba5ba6ede316fa1a45b670f1fca03eb3d8e3382831fc8631bd859a1bcc74b4b9
+    digest: 4a7e7069fcad5d5b4b1dae8010b333d553cb6700b02d26f9338bc5cc80dc0e96
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: zncdatadev
@@ -3532,9 +3532,9 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-14T02:30:16.361120576Z"
+    created: "2024-11-19T09:03:08.422798816Z"
     description: The Kubedoop Secret Operator
-    digest: 871b1cf033018a657289f9fdf2ea58a23f23073d2b3a5cc62a611b42d2b8a385
+    digest: 1f8a4a9ec6580ae293738fcbf5b23a8e565aa0fe4c9c31c9f3e01c7728e2e061
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: zncdatadev
@@ -3597,9 +3597,9 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-19T09:03:08.422798816Z"
+    created: "2024-11-14T02:30:16.361120576Z"
     description: The Kubedoop Secret Operator
-    digest: 1f8a4a9ec6580ae293738fcbf5b23a8e565aa0fe4c9c31c9f3e01c7728e2e061
+    digest: 871b1cf033018a657289f9fdf2ea58a23f23073d2b3a5cc62a611b42d2b8a385
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: zncdatadev
@@ -3740,9 +3740,22 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-29T06:49:30.725263256Z"
+    created: "2024-11-14T02:29:00.188854428Z"
     description: The Kubedoop Secret Operator
-    digest: 3cc88094817c83bb689dd475ff059ed09a6a107a5d589b8f37780b780b5ff925
+    digest: ba5ba6ede316fa1a45b670f1fca03eb3d8e3382831fc8631bd859a1bcc74b4b9
+    maintainers:
+    - email: zncdatadev@googlegroups.com
+      name: zncdatadev
+    name: secret-operator
+    type: application
+    urls:
+    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/secret-operator-0.0.0-dev/secret-operator-0.0.0-dev.tgz
+    version: 0.0.0-dev
+  - apiVersion: v2
+    appVersion: 0.0.0-dev
+    created: "2024-10-24T07:19:27.870232395Z"
+    description: The Kubedoop Secret Operator
+    digest: 4b6b28ad4aab8d31d868ed58b85f4702f1a571d3d96e75f46f6cfbce5c09e683
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: zncdatadev
@@ -5601,4 +5614,4 @@ entries:
     urls:
     - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/zookeeper-operator-0.0.0-dev/zookeeper-operator-0.0.0-dev.tgz
     version: 0.0.0-dev
-generated: "2024-11-29T08:02:10.521116187Z"
+generated: "2024-11-29T09:47:42.922396022Z"
