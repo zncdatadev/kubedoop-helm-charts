@@ -5160,10 +5160,23 @@ entries:
     version: 0.0.0-dev
   zookeeper-operator:
   - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2024-11-29T10:39:25.157742554Z"
+    description: The Kubedoop operator for Apache Zookeeper
+    digest: 8d12f6deba39a3330a34c8ed2c1bdec0d2feaa948ebde771ea164d4b981683a9
+    maintainers:
+    - email: zncdatadev@googlegroups.com
+      name: ZNCDataDev Team
+    name: zookeeper-operator
+    type: application
+    urls:
+    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/zookeeper-operator-0.1.0/zookeeper-operator-0.1.0.tgz
+    version: 0.1.0
+  - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-10-21T09:43:15.25328977Z"
-    description: The Kubedoop operator form Apache Zookeeper
-    digest: e671e4108c7433cc8274056b753f5ff3b6691d6b22511f31d411df20da53d681
+    created: "2024-11-14T02:27:09.727508051Z"
+    description: The Kubedoop operator for Apache Zookeeper
+    digest: e7af608f559f98bf46a9f1960266b686051200b4b54230b042a176e10485612c
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -5174,22 +5187,9 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-10-22T01:47:32.555473883Z"
+    created: "2024-11-29T06:49:31.478353463Z"
     description: The Kubedoop operator for Apache Zookeeper
-    digest: 41bc7bfc99a171dc23815b843fe11810df50d1c9d2fd893989bdd2021a0ff059
-    maintainers:
-    - email: zncdatadev@googlegroups.com
-      name: ZNCDataDev Team
-    name: zookeeper-operator
-    type: application
-    urls:
-    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/zookeeper-operator-0.0.0-dev/zookeeper-operator-0.0.0-dev.tgz
-    version: 0.0.0-dev
-  - apiVersion: v2
-    appVersion: 0.0.0-dev
-    created: "2024-10-22T01:48:46.340804793Z"
-    description: The Kubedoop operator for Apache Zookeeper
-    digest: 0ccc655213683604773457f3607f606422265e599d167d2eb92b4533e83f415b
+    digest: 0ad35e565aadd25018e00f5929d617715e27059b4a7c41a00c963fe32f7c08c2
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -5213,9 +5213,9 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-08T03:21:15.082394441Z"
+    created: "2024-11-14T02:29:00.657313491Z"
     description: The Kubedoop operator for Apache Zookeeper
-    digest: be208d6e3eb5763dab5302c82eca34ccf6d9e7246071a5eed89d7481dbedee9a
+    digest: a197a2455b41fe58a380bb1df5dcf5a6d059eb1dcca65aff3586cbb7d2daec98
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -5395,9 +5395,9 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-14T02:27:09.727508051Z"
-    description: The Kubedoop operator for Apache Zookeeper
-    digest: e7af608f559f98bf46a9f1960266b686051200b4b54230b042a176e10485612c
+    created: "2024-10-21T09:43:15.25328977Z"
+    description: The Kubedoop operator form Apache Zookeeper
+    digest: e671e4108c7433cc8274056b753f5ff3b6691d6b22511f31d411df20da53d681
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -5408,9 +5408,9 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-14T02:29:00.657313491Z"
+    created: "2024-11-08T03:21:15.082394441Z"
     description: The Kubedoop operator for Apache Zookeeper
-    digest: a197a2455b41fe58a380bb1df5dcf5a6d059eb1dcca65aff3586cbb7d2daec98
+    digest: be208d6e3eb5763dab5302c82eca34ccf6d9e7246071a5eed89d7481dbedee9a
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -5421,22 +5421,9 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-14T02:30:16.855240315Z"
+    created: "2024-10-22T01:48:46.340804793Z"
     description: The Kubedoop operator for Apache Zookeeper
-    digest: a3c5b33906978c371a5e3f3c099447e2eed8baf6ab8fd3de52f4f038424ce195
-    maintainers:
-    - email: zncdatadev@googlegroups.com
-      name: ZNCDataDev Team
-    name: zookeeper-operator
-    type: application
-    urls:
-    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/zookeeper-operator-0.0.0-dev/zookeeper-operator-0.0.0-dev.tgz
-    version: 0.0.0-dev
-  - apiVersion: v2
-    appVersion: 0.0.0-dev
-    created: "2024-11-14T02:31:22.116385802Z"
-    description: The Kubedoop operator for Apache Zookeeper
-    digest: ec98774e1417f6264b3aeb3a8bdb7be284041aa82784dad6a7a38ea5d16e23ac
+    digest: 0ccc655213683604773457f3607f606422265e599d167d2eb92b4533e83f415b
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -5450,6 +5437,19 @@ entries:
     created: "2024-11-14T02:34:29.658202731Z"
     description: The Kubedoop operator for Apache Zookeeper
     digest: 66a74f8ebff134986bf5f6efdcba6b472db9e2cc8684c597f7a5632a5d0e1bf4
+    maintainers:
+    - email: zncdatadev@googlegroups.com
+      name: ZNCDataDev Team
+    name: zookeeper-operator
+    type: application
+    urls:
+    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/zookeeper-operator-0.0.0-dev/zookeeper-operator-0.0.0-dev.tgz
+    version: 0.0.0-dev
+  - apiVersion: v2
+    appVersion: 0.0.0-dev
+    created: "2024-11-14T02:31:22.116385802Z"
+    description: The Kubedoop operator for Apache Zookeeper
+    digest: ec98774e1417f6264b3aeb3a8bdb7be284041aa82784dad6a7a38ea5d16e23ac
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -5629,9 +5629,9 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-29T06:49:31.478353463Z"
+    created: "2024-11-14T02:30:16.855240315Z"
     description: The Kubedoop operator for Apache Zookeeper
-    digest: 0ad35e565aadd25018e00f5929d617715e27059b4a7c41a00c963fe32f7c08c2
+    digest: a3c5b33906978c371a5e3f3c099447e2eed8baf6ab8fd3de52f4f038424ce195
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -5640,4 +5640,17 @@ entries:
     urls:
     - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/zookeeper-operator-0.0.0-dev/zookeeper-operator-0.0.0-dev.tgz
     version: 0.0.0-dev
-generated: "2024-11-29T10:36:42.713758225Z"
+  - apiVersion: v2
+    appVersion: 0.0.0-dev
+    created: "2024-10-22T01:47:32.555473883Z"
+    description: The Kubedoop operator for Apache Zookeeper
+    digest: 41bc7bfc99a171dc23815b843fe11810df50d1c9d2fd893989bdd2021a0ff059
+    maintainers:
+    - email: zncdatadev@googlegroups.com
+      name: ZNCDataDev Team
+    name: zookeeper-operator
+    type: application
+    urls:
+    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/zookeeper-operator-0.0.0-dev/zookeeper-operator-0.0.0-dev.tgz
+    version: 0.0.0-dev
+generated: "2024-11-29T10:39:25.159310393Z"
