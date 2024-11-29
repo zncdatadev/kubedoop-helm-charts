@@ -1786,10 +1786,23 @@ entries:
     version: 0.0.0-dev
   hive-operator:
   - apiVersion: v2
-    appVersion: 0.0.0-dev
-    created: "2024-10-22T01:48:46.227598552Z"
+    appVersion: 0.1.0
+    created: "2024-11-29T11:08:09.593412087Z"
     description: The Kubedoop Operator for Apache Hive
-    digest: 48d03e7ffd47631c2aa9db84314601bcd778069a2dc4d861525c769bb13c39b4
+    digest: 2b1cd88db5f07262db1657ed42d68f2054691f82665b10e1d48ca1da9a3a2185
+    maintainers:
+    - email: zncdatadev@googlegroups.com
+      name: ZNCDataDev Team
+    name: hive-operator
+    type: application
+    urls:
+    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/hive-operator-0.1.0/hive-operator-0.1.0.tgz
+    version: 0.1.0
+  - apiVersion: v2
+    appVersion: 0.0.0-dev
+    created: "2024-11-14T02:30:15.988442452Z"
+    description: The Kubedoop Operator for Apache Hive
+    digest: 8344a11f22800714832dd376792e5bc734adf8b79feb2fa6643236d3a42c6b0b
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -1800,22 +1813,9 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-10-30T09:56:22.930366502Z"
+    created: "2024-11-29T10:59:46.758742108Z"
     description: The Kubedoop Operator for Apache Hive
-    digest: 49acfe2d96b634af014411cb52bf24f225f42b060e54da4e011dce4ff236e37d
-    maintainers:
-    - email: zncdatadev@googlegroups.com
-      name: ZNCDataDev Team
-    name: hive-operator
-    type: application
-    urls:
-    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/hive-operator-0.0.0-dev/hive-operator-0.0.0-dev.tgz
-    version: 0.0.0-dev
-  - apiVersion: v2
-    appVersion: 0.0.0-dev
-    created: "2024-11-08T03:21:13.696079101Z"
-    description: The Kubedoop Operator for Apache Hive
-    digest: eb99c00785c3c48b51659f6f375241dc33246413ec1ab3316a0071e520d79b92
+    digest: b197e0e33ef10313158c550b59c9dc2f176eca1b29be86f0b623aaecd27d6bb4
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -1839,9 +1839,9 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-08T06:43:32.257460416Z"
+    created: "2024-11-14T02:31:21.311240161Z"
     description: The Kubedoop Operator for Apache Hive
-    digest: 8ea4d793a8ab134257c5d5869d3315b4e1b2b297fde25c633d43f8fea95093dd
+    digest: ecc785ae96df3b904ffc1e308b2c507e79a7fd0b4c9ee450a301e9fce14bbc0e
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -2021,9 +2021,9 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-14T02:30:15.988442452Z"
+    created: "2024-10-22T01:48:46.227598552Z"
     description: The Kubedoop Operator for Apache Hive
-    digest: 8344a11f22800714832dd376792e5bc734adf8b79feb2fa6643236d3a42c6b0b
+    digest: 48d03e7ffd47631c2aa9db84314601bcd778069a2dc4d861525c769bb13c39b4
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -2034,9 +2034,9 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-14T02:31:21.311240161Z"
+    created: "2024-11-08T06:43:32.257460416Z"
     description: The Kubedoop Operator for Apache Hive
-    digest: ecc785ae96df3b904ffc1e308b2c507e79a7fd0b4c9ee450a301e9fce14bbc0e
+    digest: 8ea4d793a8ab134257c5d5869d3315b4e1b2b297fde25c633d43f8fea95093dd
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -2047,22 +2047,9 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-14T02:34:28.426522345Z"
+    created: "2024-11-08T03:21:13.696079101Z"
     description: The Kubedoop Operator for Apache Hive
-    digest: f4d816f955c321de8261a37dc6091d214b06ff700e75b0c0db6bd29d77b0c125
-    maintainers:
-    - email: zncdatadev@googlegroups.com
-      name: ZNCDataDev Team
-    name: hive-operator
-    type: application
-    urls:
-    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/hive-operator-0.0.0-dev/hive-operator-0.0.0-dev.tgz
-    version: 0.0.0-dev
-  - apiVersion: v2
-    appVersion: 0.0.0-dev
-    created: "2024-11-19T02:28:27.221850161Z"
-    description: The Kubedoop Operator for Apache Hive
-    digest: e364ee48d2d768f75fec859165d9dd69744190162323df6ce5d00a1519097c5d
+    digest: eb99c00785c3c48b51659f6f375241dc33246413ec1ab3316a0071e520d79b92
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -2076,6 +2063,19 @@ entries:
     created: "2024-11-19T06:45:53.917088848Z"
     description: The Kubedoop Operator for Apache Hive
     digest: 3553d1d0bab5c792891b45dab63e747cf36a0a9f5c7ae11039912b60a59e5328
+    maintainers:
+    - email: zncdatadev@googlegroups.com
+      name: ZNCDataDev Team
+    name: hive-operator
+    type: application
+    urls:
+    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/hive-operator-0.0.0-dev/hive-operator-0.0.0-dev.tgz
+    version: 0.0.0-dev
+  - apiVersion: v2
+    appVersion: 0.0.0-dev
+    created: "2024-11-19T02:28:27.221850161Z"
+    description: The Kubedoop Operator for Apache Hive
+    digest: e364ee48d2d768f75fec859165d9dd69744190162323df6ce5d00a1519097c5d
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -2255,9 +2255,22 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-29T10:59:46.758742108Z"
+    created: "2024-11-14T02:34:28.426522345Z"
     description: The Kubedoop Operator for Apache Hive
-    digest: b197e0e33ef10313158c550b59c9dc2f176eca1b29be86f0b623aaecd27d6bb4
+    digest: f4d816f955c321de8261a37dc6091d214b06ff700e75b0c0db6bd29d77b0c125
+    maintainers:
+    - email: zncdatadev@googlegroups.com
+      name: ZNCDataDev Team
+    name: hive-operator
+    type: application
+    urls:
+    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/hive-operator-0.0.0-dev/hive-operator-0.0.0-dev.tgz
+    version: 0.0.0-dev
+  - apiVersion: v2
+    appVersion: 0.0.0-dev
+    created: "2024-10-30T09:56:22.930366502Z"
+    description: The Kubedoop Operator for Apache Hive
+    digest: 49acfe2d96b634af014411cb52bf24f225f42b060e54da4e011dce4ff236e37d
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -5692,4 +5705,4 @@ entries:
     urls:
     - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/zookeeper-operator-0.0.0-dev/zookeeper-operator-0.0.0-dev.tgz
     version: 0.0.0-dev
-generated: "2024-11-29T10:59:46.759606525Z"
+generated: "2024-11-29T11:08:09.594523717Z"
