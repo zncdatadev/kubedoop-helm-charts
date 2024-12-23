@@ -10,6 +10,8 @@ rules:
   - ""
   resources:
   - events
+  - pods
+  - secrets
   verbs:
   - create
   - get
@@ -21,13 +23,6 @@ rules:
   - ""
   resources:
   - nodes
-  verbs:
-  - get
-  - list
-  - watch
-- apiGroups:
-  - ""
-  resources:
   - persistentvolumeclaims
   verbs:
   - get
@@ -40,27 +35,6 @@ rules:
   verbs:
   - create
   - delete
-  - get
-  - list
-  - patch
-  - watch
-- apiGroups:
-  - ""
-  resources:
-  - pods
-  verbs:
-  - create
-  - get
-  - list
-  - patch
-  - update
-  - watch
-- apiGroups:
-  - ""
-  resources:
-  - secrets
-  verbs:
-  - create
   - get
   - list
   - patch
@@ -93,46 +67,9 @@ rules:
   - patch
   - update
 - apiGroups:
-  - secrets.kubedoop.dev
-  resources:
-  - secretcsis
-  verbs:
-  - create
-  - delete
-  - get
-  - list
-  - patch
-  - update
-  - watch
-- apiGroups:
-  - secrets.kubedoop.dev
-  resources:
-  - secretcsis/finalizers
-  verbs:
-  - update
-- apiGroups:
-  - secrets.kubedoop.dev
-  resources:
-  - secretcsis/status
-  verbs:
-  - get
-  - patch
-  - update
-- apiGroups:
   - storage.k8s.io
   resources:
   - csidrivers
-  verbs:
-  - create
-  - delete
-  - get
-  - list
-  - patch
-  - update
-  - watch
-- apiGroups:
-  - storage.k8s.io
-  resources:
   - storageclasses
   verbs:
   - get
