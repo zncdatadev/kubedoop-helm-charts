@@ -41,7 +41,7 @@ spec:
             properties:
               className:
                 type: string
-              extraPodMatchLabels:
+              extraPodSelectorLabels:
                 additionalProperties:
                   type: string
                 type: object
@@ -63,6 +63,9 @@ spec:
                   - protocol
                   type: object
                 type: array
+              publishNotReadyAddresses:
+                default: true
+                type: boolean
             required:
             - className
             type: object
