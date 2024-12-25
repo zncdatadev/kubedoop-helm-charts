@@ -39,10 +39,31 @@ spec:
           spec:
             description: ListenerClassSpec defines the desired state of ListenerClass
             properties:
+              preferredAddressType:
+                default: HostnameConservative
+                description: |-
+                  When preferredAddressType is set to HostnameConservative, the controller will
+                  attempt to use the ip only `ListenerClassSpec.ServiceType` is NodePort,
+                  otherwise it will use the hostname.
+                enum:
+                - HostnameConservative
+                - Hostname
+                - IP
+                type: string
               serviceAnnotations:
                 additionalProperties:
                   type: string
                 type: object
+              serviceExternalTrafficPolicy:
+                default: Local
+                description: |-
+                  ServiceExternalTrafficPolicy describes how nodes distribute service traffic they
+                  receive on one of the Service's "externally-facing" addresses (NodePorts, ExternalIPs,
+                  and LoadBalancer IPs.
+                enum:
+                - Local
+                - Cluster
+                type: string
               serviceType:
                 description: Service Type string describes ingress methods for a service
                 enum:
