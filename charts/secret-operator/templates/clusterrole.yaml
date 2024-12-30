@@ -41,6 +41,14 @@ rules:
   - update
   - watch
 - apiGroups:
+  - listeners.kubedoop.dev
+  resources:
+  - listeners
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
   - secrets.kubedoop.dev
   resources:
   - secretclasses
