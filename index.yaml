@@ -4442,6 +4442,19 @@ entries:
     urls:
     - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/spark-k8s-operator-0.0.0-dev/spark-k8s-operator-0.0.0-dev.tgz
     version: 0.0.0-dev
+  - apiVersion: v2
+    appVersion: 0.0.0-dev
+    created: "2025-01-13T02:46:18.223161492Z"
+    description: The Kubedoop operator for Apache Spark k8s
+    digest: 112e3a908d50ff6ce656ec396e9218134f3d314f0395d8e6af414a80aa649781
+    maintainers:
+    - email: zncdatadev@googlegroups.com
+      name: ZNCDataDev Team
+    name: spark-k8s-operator
+    type: application
+    urls:
+    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/spark-k8s-operator-0.0.0-dev/spark-k8s-operator-0.0.0-dev.tgz
+    version: 0.0.0-dev
   superset-operator:
   - apiVersion: v2
     appVersion: 0.1.0
@@ -5888,4 +5901,4 @@ entries:
     urls:
     - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/zookeeper-operator-0.0.0-dev/zookeeper-operator-0.0.0-dev.tgz
     version: 0.0.0-dev
-generated: "2025-01-09T10:32:25.681666434Z"
+generated: "2025-01-13T02:46:18.225199035Z"
