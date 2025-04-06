@@ -127,7 +127,7 @@ spec:
                     default: quay.io/zncdatadev
                     type: string
                 type: object
-              server:
+              servers:
                 properties:
                   cliOverrides:
                     items:
@@ -137,7 +137,6 @@ spec:
                     properties:
                       affinity:
                         type: object
-                        x-kubernetes-embedded-resource: true
                         x-kubernetes-preserve-unknown-fields: true
                       extraEnv:
                         additionalProperties:
@@ -286,7 +285,6 @@ spec:
                     type: object
                   podOverrides:
                     type: object
-                    x-kubernetes-embedded-resource: true
                     x-kubernetes-preserve-unknown-fields: true
                   roleConfig:
                     properties:
@@ -323,7 +321,6 @@ spec:
                           properties:
                             affinity:
                               type: object
-                              x-kubernetes-embedded-resource: true
                               x-kubernetes-preserve-unknown-fields: true
                             extraEnv:
                               additionalProperties:
@@ -472,7 +469,6 @@ spec:
                           type: object
                         podOverrides:
                           type: object
-                          x-kubernetes-embedded-resource: true
                           x-kubernetes-preserve-unknown-fields: true
                         replicas:
                           default: 1
@@ -482,7 +478,7 @@ spec:
                     type: object
                 type: object
             required:
-            - server
+            - servers
             type: object
           status:
             properties:
