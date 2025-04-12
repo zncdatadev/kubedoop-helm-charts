@@ -60,6 +60,10 @@ spec:
                           scope:
                             description: SecretClass scope
                             properties:
+                              listenerVolumes:
+                                items:
+                                  type: string
+                                type: array
                               node:
                                 type: boolean
                               pod:
@@ -77,24 +81,40 @@ spec:
                       hostname:
                         type: string
                       ldapFieldNames:
+                        default:
+                          email: mail
+                          givenName: givenName
+                          group: memberof
+                          surname: sn
+                          uid: uid
                         properties:
                           email:
+                            default: mail
                             type: string
                           givenName:
+                            default: givenName
                             type: string
                           group:
+                            default: memberof
                             type: string
                           surname:
+                            default: sn
                             type: string
                           uid:
+                            default: uid
                             type: string
                         type: object
                       port:
+                        description: LDAP server port. Default is 389, if tls default
+                          is 636.
+                        minimum: 0
                         type: integer
                       searchBase:
+                        default: ""
                         description: 'LDAP search base, for example: ou=users,dc=example,dc=com.'
                         type: string
                       searchFilter:
+                        default: ""
                         description: 'LDAP search filter, for example: (ou=teams,dc=example,dc=com).'
                         type: string
                       tls:
@@ -104,13 +124,6 @@ spec:
                               TLSPrivider defines the TLS provider for authentication.
                               You can specify the none or server or mutual verification.
                             properties:
-                              mutual:
-                                properties:
-                                  certSecretClass:
-                                    type: string
-                                required:
-                                - certSecretClass
-                                type: object
                               none:
                                 type: object
                               server:
@@ -141,6 +154,7 @@ spec:
                       hostname:
                         type: string
                       port:
+                        minimum: 0
                         type: integer
                       principalClaim:
                         type: string
@@ -149,6 +163,7 @@ spec:
                         - keycloak
                         type: string
                       rootPath:
+                        default: /
                         type: string
                       scopes:
                         items:
@@ -161,13 +176,6 @@ spec:
                               TLSPrivider defines the TLS provider for authentication.
                               You can specify the none or server or mutual verification.
                             properties:
-                              mutual:
-                                properties:
-                                  certSecretClass:
-                                    type: string
-                                required:
-                                - certSecretClass
-                                type: object
                               none:
                                 type: object
                               server:
@@ -213,8 +221,6 @@ spec:
                     properties:
                       clientCertSecretClass:
                         type: string
-                    required:
-                    - clientCertSecretClass
                     type: object
                 type: object
             required:
