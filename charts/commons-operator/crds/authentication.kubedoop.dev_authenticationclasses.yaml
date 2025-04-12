@@ -84,7 +84,7 @@ spec:
                         default:
                           email: mail
                           givenName: givenName
-                          group: memberOf
+                          group: memberof
                           surname: sn
                           uid: uid
                         properties:
@@ -95,7 +95,7 @@ spec:
                             default: givenName
                             type: string
                           group:
-                            default: group
+                            default: memberof
                             type: string
                           surname:
                             default: sn
