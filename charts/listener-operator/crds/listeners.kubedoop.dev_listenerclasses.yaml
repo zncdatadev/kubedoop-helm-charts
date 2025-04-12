@@ -53,6 +53,7 @@ spec:
               serviceAnnotations:
                 additionalProperties:
                   type: string
+                default: {}
                 type: object
               serviceExternalTrafficPolicy:
                 default: Local
