@@ -89,7 +89,7 @@ spec:
                           uid: uid
                         properties:
                           email:
-                            default: email
+                            default: mail
                             type: string
                           givenName:
                             default: givenName
