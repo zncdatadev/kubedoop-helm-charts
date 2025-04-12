@@ -50,17 +50,20 @@ spec:
                 properties:
                   authentication:
                     default: []
-                    properties:
-                      authenticationClass:
-                        description: |-
-                          Only affects client connections. This setting controls:
-                          - If clients need to authenticate themselves against the server via TLS
-                          - Which ca.crt to use when validating the provided client certs
-                          This will override the server TLS settings (if set) in `spec.clusterConfig.tls.serverSecretClass`.
-                        items:
+                    items:
+                      properties:
+                        authenticationClass:
+                          description: |-
+                            Only affects client connections. This setting controls:
+                            - If clients need to authenticate themselves against the server via TLS
+                            - Which ca.crt to use when validating the provided client certs
+
+                            This will override the server TLS settings (if set) in `spec.clusterConfig.tls.serverSecretClass`.
                           type: string
-                        type: array
-                    type: object
+                      required:
+                      - authenticationClass
+                      type: object
+                    type: array
                   listenerClass:
                     default: cluster-internal
                     description: |-
