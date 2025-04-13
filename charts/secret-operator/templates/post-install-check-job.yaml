@@ -1,0 +1,62 @@
+{{- if .Values.postInstall.checkDaemonSet.enabled }}
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ include "operator.fullname" . }}-ds-check
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "operator.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": post-install,post-upgrade
+    "helm.sh/hook-weight": "0"
+    "helm.sh/hook-delete-policy": hook-succeeded,before-hook-creation
+spec:
+  backoffLimit: {{ .Values.postInstall.checkDaemonSet.backoffLimit | default 6 }}
+  ttlSecondsAfterFinished: {{ .Values.postInstall.checkDaemonSet.ttlSecondsAfterFinished | default 100 }}
+  template:
+    metadata:
+      labels:
+        {{- include "operator.labels" . | nindent 8 }}
+        app.kubernetes.io/component: daemonset-readiness-check
+    spec:
+      serviceAccountName: {{ include "operator.fullname" . }}-ds-check
+      restartPolicy: OnFailure
+      containers:
+      - name: kubectl
+        image: {{ .Values.postInstall.checkDaemonSet.image | default "bitnami/kubectl:latest" }}
+        command:
+        - /bin/sh
+        - -c
+        - |
+          echo "Checking DaemonSet status..."
+          ATTEMPTS={{ .Values.postInstall.checkDaemonSet.attempts | default 30 }}
+          SLEEP_TIME={{ .Values.postInstall.checkDaemonSet.sleepTime | default 10 }}
+
+          for i in $(seq 1 $ATTEMPTS); do
+            echo "Attempt $i of $ATTEMPTS"
+
+            DESIRED=$(kubectl get daemonset {{ include "operator.fullname" . }}-node-driver -n {{ .Release.Namespace }} -o jsonpath='{.status.desiredNumberScheduled}')
+            READY=$(kubectl get daemonset {{ include "operator.fullname" . }}-node-driver -n {{ .Release.Namespace }} -o jsonpath='{.status.numberReady}')
+
+            echo "Desired: $DESIRED, Ready: $READY"
+
+            if [ "$DESIRED" = "$READY" ] && [ "$DESIRED" -gt 0 ]; then
+              echo "DaemonSet is ready!"
+              exit 0
+            fi
+
+            echo "Waiting for DaemonSet to be ready..."
+            sleep $SLEEP_TIME
+          done
+
+          echo "DaemonSet did not become ready within the expected time"
+          exit 1
+      {{- with .Values.postInstall.checkDaemonSet.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.postInstall.checkDaemonSet.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+{{- end }}
