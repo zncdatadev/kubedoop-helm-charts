@@ -117,3 +117,6 @@ postInstall:
     ttlSecondsAfterFinished: 100
     nodeSelector: {}
     tolerations: []
+    # Minimum number of available nodes for the DaemonSet to be considered ready
+    # If set to 0, the DaemonSet is considered ready if it is running on at all nodes
+    minAvailableNodes: 0

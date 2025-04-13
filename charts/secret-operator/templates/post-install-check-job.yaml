@@ -31,18 +31,50 @@ spec:
           echo "Checking DaemonSet status..."
           ATTEMPTS={{ .Values.postInstall.checkDaemonSet.attempts | default 30 }}
           SLEEP_TIME={{ .Values.postInstall.checkDaemonSet.sleepTime | default 10 }}
+          MIN_NODES={{ .Values.postInstall.checkDaemonSet.minAvailableNodes | default 0 }}
+
+          DS_NAME="{{ include "operator.fullname" . }}-daemonset"
+          NAMESPACE="{{ .Release.Namespace }}"
+
+          echo "Looking for DaemonSet: $DS_NAME in namespace: $NAMESPACE"
+          echo "Minimum required available nodes: $MIN_NODES"
 
           for i in $(seq 1 $ATTEMPTS); do
             echo "Attempt $i of $ATTEMPTS"
 
-            DESIRED=$(kubectl get daemonset {{ include "operator.fullname" . }}-node-driver -n {{ .Release.Namespace }} -o jsonpath='{.status.desiredNumberScheduled}')
-            READY=$(kubectl get daemonset {{ include "operator.fullname" . }}-node-driver -n {{ .Release.Namespace }} -o jsonpath='{.status.numberReady}')
+            # check if the DaemonSet exists
+            if kubectl get daemonset -n "$NAMESPACE" "$DS_NAME" &>/dev/null; then
+              echo "Found DaemonSet $DS_NAME in namespace $NAMESPACE"
 
-            echo "Desired: $DESIRED, Ready: $READY"
+              # print the DaemonSet status
+              kubectl get daemonset $DS_NAME -n $NAMESPACE
 
-            if [ "$DESIRED" = "$READY" ] && [ "$DESIRED" -gt 0 ]; then
-              echo "DaemonSet is ready!"
-              exit 0
+              # check if the DaemonSet is ready
+              DESIRED=$(kubectl get daemonset $DS_NAME -n $NAMESPACE -o jsonpath='{.status.desiredNumberScheduled}' 2>/dev/null)
+              READY=$(kubectl get daemonset $DS_NAME -n $NAMESPACE -o jsonpath='{.status.numberReady}' 2>/dev/null)
+
+              DESIRED=${DESIRED:-0}
+              READY=${READY:-0}
+
+              echo "Desired: $DESIRED, Ready: $READY, Minimum Required: $MIN_NODES"
+
+              # If minAvailableNodes is set to 0, use the regular check for all nodes to be ready
+              # Otherwise, check if the number of ready nodes meets the minimum requirement
+              if [ "$MIN_NODES" -gt 0 ]; then
+                if [ "$READY" -ge "$MIN_NODES" ]; then
+                  echo "DaemonSet has at least $MIN_NODES nodes ready!"
+                  exit 0
+                fi
+              elif [ "$DESIRED" -eq "$READY" ] && [ "$DESIRED" -gt 0 ]; then
+                echo "All DaemonSet pods are ready!"
+                exit 0
+              fi
+            else
+              echo "DaemonSet $DS_NAME not found in namespace $NAMESPACE"
+
+              # print all DaemonSets in the namespace
+              echo "Available DaemonSets in namespace $NAMESPACE:"
+              kubectl get daemonset -n $NAMESPACE
             fi
 
             echo "Waiting for DaemonSet to be ready..."
