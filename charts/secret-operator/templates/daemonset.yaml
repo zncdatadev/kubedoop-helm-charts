@@ -44,6 +44,14 @@ spec:
           args:
             - "-endpoint=$(ADDRESS)"
             - "-nodeid=$(NODE_NAME)"
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 9808
+            initialDelaySeconds: 10
+            timeoutSeconds: 3
+            periodSeconds: 10
+            failureThreshold: 5
           volumeMounts:
             - name: plugin-dir
               mountPath: /csi
