@@ -52,6 +52,13 @@ spec:
             timeoutSeconds: 3
             periodSeconds: 10
             failureThreshold: 5
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: 9808
+            initialDelaySeconds: 5
+            timeoutSeconds: 3
+            periodSeconds: 5
           volumeMounts:
             - name: plugin-dir
               mountPath: /csi
