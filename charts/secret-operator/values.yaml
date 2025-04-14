@@ -34,11 +34,11 @@ csiDriver:
   # Resources of the secret-operator container itself
   resources:
     limits:
-      cpu: 100m
-      memory: 12Mi
+      cpu: 10m
+      memory: 64Mi
     requests:
-      cpu: 100m
-      memory: 128Mi
+      cpu: 50m
+      memory: 32Mi
 
 livenessProbe:
   image:
