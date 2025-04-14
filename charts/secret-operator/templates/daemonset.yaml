@@ -32,7 +32,7 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           resources:
-            {{ .Values.node.driver.resources | toYaml | nindent 12 }}
+            {{ .Values.csiDriver.resources | toYaml | nindent 12 }}
           env:
             - name: ADDRESS
               value: unix:///csi/csi.sock

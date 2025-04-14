@@ -12,11 +12,11 @@ csiProvisioner:
     pullPolicy: IfNotPresent
   resources:
     requests:
-      cpu: 100m
-      memory: 128Mi
+      cpu: 10m
+      memory: 32Mi
     limits:
-      cpu: 100m
-      memory: 128Mi
+      cpu: 50m
+      memory: 64Mi
 csiNodeDriverRegistrar:
   image:
     repository: registry.k8s.io/sig-storage/csi-node-driver-registrar
@@ -24,22 +24,21 @@ csiNodeDriverRegistrar:
     pullPolicy: IfNotPresent
   resources:
     requests:
-      cpu: 100m
-      memory: 128Mi
+      cpu: 10m
+      memory: 32Mi
+    limits:
+      cpu: 50m
+      memory: 64Mi
+
+csiDriver::
+  # Resources of the secret-operator container itself
+  resources:
     limits:
       cpu: 100m
+      memory: 12Mi
+    requests:
+      cpu: 100m
       memory: 128Mi
-
-node:
-  driver:
-    # Resources of the secret-operator container itself
-    resources:
-      limits:
-        cpu: 100m
-        memory: 128Mi
-      requests:
-        cpu: 100m
-        memory: 128Mi
 
 livenessProbe:
   image:
@@ -48,11 +47,11 @@ livenessProbe:
     pullPolicy: IfNotPresent
   resources:
     limits:
-      cpu: 100m
-      memory: 128Mi
+      cpu: 50m
+      memory: 64Mi
     requests:
-      cpu: 100m
-      memory: 128Mi
+      cpu: 10m
+      memory: 32Mi
 
 
 nameOverride: ""
