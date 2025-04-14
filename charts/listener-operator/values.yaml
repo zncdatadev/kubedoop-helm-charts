@@ -19,11 +19,11 @@ csiDriver:
     pullPolicy: IfNotPresent
   resources:
     requests:
-      cpu: 100m
-      memory: 128Mi
+      cpu: 10m
+      memory: 32Mi
     limits:
-      cpu: 100m
-      memory: 128Mi
+      cpu: 50m
+      memory: 64Mi
 csiProvisioner:
   # logging:
   #   level: "5"
@@ -33,11 +33,11 @@ csiProvisioner:
     pullPolicy: IfNotPresent
   resources:
     requests:
-      cpu: 100m
-      memory: 128Mi
+      cpu: 10m
+      memory: 16Mi
     limits:
-      cpu: 100m
-      memory: 128Mi
+      cpu: 50m
+      memory: 64Mi
 csiNodeDriverRegistrar:
   # logging:
   #   level: "5"
@@ -47,11 +47,11 @@ csiNodeDriverRegistrar:
     pullPolicy: IfNotPresent
   resources:
     requests:
-      cpu: 100m
-      memory: 128Mi
+      cpu: 10m
+      memory: 16Mi
     limits:
-      cpu: 100m
-      memory: 128Mi
+      cpu: 10m
+      memory: 16Mi
 livenessProbe:
   # logging:
   #   level: "5"
@@ -61,11 +61,11 @@ livenessProbe:
     pullPolicy: IfNotPresent
   resources:
     requests:
-      cpu: 100m
-      memory: 128Mi
+      cpu: 10m
+      memory: 16Mi
     limits:
-      cpu: 100m
-      memory: 128Mi
+      cpu: 50m
+      memory: 16Mi
 nameOverride: ""
 fullnameOverride: ""
 
@@ -108,11 +108,11 @@ controller:
   resources:
     # Resource requests and limits for the controller pod
     limits:
-      cpu: 100m
-      memory: 128Mi
+      cpu: 50m
+      memory: 64Mi
     requests:
-      cpu: 100m
-      memory: 128Mi
+      cpu: 10m
+      memory: 32Mi
 
 nodeSelector: {}
 
