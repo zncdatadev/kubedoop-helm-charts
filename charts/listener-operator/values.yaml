@@ -134,7 +134,7 @@ preset: stable-nodes
 postInstall:
   checkDaemonSet:
     enabled: true
-    image: "bitnami/kubectl:latest"
+    image: "bitnami/kubectl:1.32"
     attempts: 30
     sleepTime: 10
     backoffLimit: 6
