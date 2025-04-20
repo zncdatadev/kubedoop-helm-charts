@@ -115,19 +115,6 @@ spec:
           volumeMounts:
             - name: plugin-dir
               mountPath: /csi
-      volumes:
-        - name: registration-dir
-          hostPath:
-            # node-driver-registrar appends a driver-unique filename to this path to avoid conflicts
-            path: {{ .Values.kubeletDir }}/plugins_registry
-        - name: plugin-dir
-          hostPath:
-            type: DirectoryOrCreate
-            path: {{ .Values.kubeletDir }}/plugins/secrets.kubedoop.dev/
-        - name: mountpoint-dir
-          hostPath:
-            type: DirectoryOrCreate
-            path: {{ .Values.kubeletDir }}/pods/
           livenessProbe:
             httpGet:
               path: /healthz
@@ -142,6 +129,19 @@ spec:
             initialDelaySeconds: 5
             periodSeconds: 10
             failureThreshold: 3
+      volumes:
+        - name: registration-dir
+          hostPath:
+            # node-driver-registrar appends a driver-unique filename to this path to avoid conflicts
+            path: {{ .Values.kubeletDir }}/plugins_registry
+        - name: plugin-dir
+          hostPath:
+            type: DirectoryOrCreate
+            path: {{ .Values.kubeletDir }}/plugins/secrets.kubedoop.dev/
+        - name: mountpoint-dir
+          hostPath:
+            type: DirectoryOrCreate
+            path: {{ .Values.kubeletDir }}/pods/
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}

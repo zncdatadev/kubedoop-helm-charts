@@ -119,20 +119,6 @@ spec:
           volumeMounts:
             - name: pluging-dir
               mountPath: /csi
-      volumes:
-        - name: registration-dir
-          hostPath:
-            # node-driver-registrar appends a driver-unique filename to this path to avoid conflicts
-            path: {{ .Values.kubeletDir }}/plugins_registry
-            type: DirectoryOrCreate
-        - name: pluging-dir
-          hostPath:
-            path: {{ .Values.kubeletDir }}/plugins/listeners.kubedoop.dev/
-            type: DirectoryOrCreate
-        - name: mountpoint-dir
-          hostPath:
-            path: {{ .Values.kubeletDir }}/pods/
-            type: DirectoryOrCreate
           livenessProbe:
             httpGet:
               path: /healthz
@@ -147,6 +133,20 @@ spec:
             initialDelaySeconds: 5
             periodSeconds: 10
             failureThreshold: 3
+      volumes:
+        - name: registration-dir
+          hostPath:
+            # node-driver-registrar appends a driver-unique filename to this path to avoid conflicts
+            path: {{ .Values.kubeletDir }}/plugins_registry
+            type: DirectoryOrCreate
+        - name: pluging-dir
+          hostPath:
+            path: {{ .Values.kubeletDir }}/plugins/listeners.kubedoop.dev/
+            type: DirectoryOrCreate
+        - name: mountpoint-dir
+          hostPath:
+            path: {{ .Values.kubeletDir }}/pods/
+            type: DirectoryOrCreate
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
