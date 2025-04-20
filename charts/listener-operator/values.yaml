@@ -19,11 +19,11 @@ csiDriver:
     pullPolicy: IfNotPresent
   resources:
     requests:
-      cpu: 10m
-      memory: 32Mi
-    limits:
-      cpu: 50m
+      cpu: 200m
       memory: 64Mi
+    limits:
+      cpu: 500m
+      memory: 128Mi
 csiProvisioner:
   # logging:
   #   level: "5"
@@ -33,10 +33,10 @@ csiProvisioner:
     pullPolicy: IfNotPresent
   resources:
     requests:
-      cpu: 10m
-      memory: 16Mi
+      cpu: 100m
+      memory: 32Mi
     limits:
-      cpu: 50m
+      cpu: 200m
       memory: 64Mi
 csiNodeDriverRegistrar:
   # logging:
@@ -47,11 +47,11 @@ csiNodeDriverRegistrar:
     pullPolicy: IfNotPresent
   resources:
     requests:
-      cpu: 10m
-      memory: 16Mi
+      cpu: 100m
+      memory: 32Mi
     limits:
-      cpu: 10m
-      memory: 16Mi
+      cpu: 100m
+      memory: 32Mi
 livenessProbe:
   # logging:
   #   level: "5"
@@ -61,11 +61,11 @@ livenessProbe:
     pullPolicy: IfNotPresent
   resources:
     requests:
-      cpu: 10m
-      memory: 16Mi
+      cpu: 100m
+      memory: 32Mi
     limits:
-      cpu: 50m
-      memory: 16Mi
+      cpu: 200m
+      memory: 32Mi
 nameOverride: ""
 fullnameOverride: ""
 
@@ -144,3 +144,10 @@ postInstall:
     # Minimum number of available nodes for the DaemonSet to be considered ready
     # If set to 0, the DaemonSet is considered ready if it is running on at all nodes
     minAvailableNodes: 0
+    resources: {}
+      # requests:
+      #   cpu: 100m
+      #   memory: 64Mi
+      # limits:
+      #   cpu: 200m
+      #   memory: 128Mi

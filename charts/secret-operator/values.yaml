@@ -5,6 +5,17 @@ image:
   pullPolicy: IfNotPresent
   pullSecrets: []
 
+
+csiDriver:
+  # Resources of the secret-operator container itself
+  resources:
+    requests:
+      cpu: 200m
+      memory: 64Mi
+    limits:
+      cpu: 500m
+      memory: 128Mi
+
 csiProvisioner:
   image:
     repository: registry.k8s.io/sig-storage/csi-provisioner
@@ -12,10 +23,10 @@ csiProvisioner:
     pullPolicy: IfNotPresent
   resources:
     requests:
-      cpu: 10m
+      cpu: 100m
       memory: 32Mi
     limits:
-      cpu: 50m
+      cpu: 200m
       memory: 64Mi
 csiNodeDriverRegistrar:
   image:
@@ -24,33 +35,22 @@ csiNodeDriverRegistrar:
     pullPolicy: IfNotPresent
   resources:
     requests:
-      cpu: 10m
+      cpu: 100m
       memory: 32Mi
     limits:
-      cpu: 50m
-      memory: 64Mi
-
-csiDriver:
-  # Resources of the secret-operator container itself
-  resources:
-    requests:
-      cpu: 10m
+      cpu: 100m
       memory: 32Mi
-    limits:
-      cpu: 50m
-      memory: 64Mi
-
 livenessProbe:
   image:
     repository: registry.k8s.io/sig-storage/livenessprobe
     tag: v2.14.0
     pullPolicy: IfNotPresent
   resources:
-    limits:
-      cpu: 50m
-      memory: 64Mi
     requests:
-      cpu: 10m
+      cpu: 100m
+      memory: 32Mi
+    limits:
+      cpu: 200m
       memory: 32Mi
 
 
@@ -119,3 +119,10 @@ postInstall:
     # Minimum number of available nodes for the DaemonSet to be considered ready
     # If set to 0, the DaemonSet is considered ready if it is running on at all nodes
     minAvailableNodes: 0
+    resources: {}
+      # requests:
+      #   cpu: 100m
+      #   memory: 64Mi
+      # limits:
+      #   cpu: 200m
+      #   memory: 128Mi
