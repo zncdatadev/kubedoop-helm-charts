@@ -24,6 +24,8 @@ spec:
       containers:
       - name: kubectl
         image: {{ .Values.postInstall.checkDaemonSet.image | default "bitnami/kubectl:latest" }}
+        resources:
+          {{- toYaml .Values.postInstall.checkDaemonSet.resources | nindent 10 }}
         command:
         - /bin/sh
         - -c
