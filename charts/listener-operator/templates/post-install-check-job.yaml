@@ -23,7 +23,7 @@ spec:
       restartPolicy: OnFailure
       containers:
       - name: kubectl
-        image: {{ .Values.postInstall.checkDaemonSet.image | default "bitnami/kubectl:latest" }}
+        image: {{ .Values.postInstall.checkDaemonSet.image | default "quay.io/zncdatadev/tools:1.0.0-kubedoop0.0.0-dev" }}
         resources:
           {{- toYaml .Values.postInstall.checkDaemonSet.resources | nindent 10 }}
         command:

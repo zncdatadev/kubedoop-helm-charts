@@ -134,7 +134,7 @@ preset: stable-nodes
 postInstall:
   checkDaemonSet:
     enabled: true
-    image: "bitnami/kubectl:1.32"
+    image: "quay.io/zncdatadev/tools:1.0.0-kubedoop0.0.0-dev"
     attempts: 30
     sleepTime: 10
     backoffLimit: 6
