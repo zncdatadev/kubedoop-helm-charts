@@ -3608,6 +3608,19 @@ entries:
     urls:
     - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/listener-operator-0.0.0-dev/listener-operator-0.0.0-dev.tgz
     version: 0.0.0-dev
+  - apiVersion: v2
+    appVersion: 0.0.0-dev
+    created: "2025-04-20T10:00:34.900295888Z"
+    description: The Kubedoop Listener Operator
+    digest: 12703e14e5562bcd64d85f7204a9e798551af25be637fce6e021589ff750c1ea
+    maintainers:
+    - email: zncdatadev@googlegroups.com
+      name: ZNCDataDev Team
+    name: listener-operator
+    type: application
+    urls:
+    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/listener-operator-0.0.0-dev/listener-operator-0.0.0-dev.tgz
+    version: 0.0.0-dev
   secret-operator:
   - apiVersion: v2
     appVersion: 0.1.0
@@ -4251,6 +4264,19 @@ entries:
     created: "2025-04-20T07:39:49.562871521Z"
     description: The Kubedoop Secret Operator
     digest: 47a5baa6b51370a7d4e9a0f6e129e5b299d31efb0ae1e62913d9b26b7fef9846
+    maintainers:
+    - email: zncdatadev@googlegroups.com
+      name: zncdatadev
+    name: secret-operator
+    type: application
+    urls:
+    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/secret-operator-0.0.0-dev/secret-operator-0.0.0-dev.tgz
+    version: 0.0.0-dev
+  - apiVersion: v2
+    appVersion: 0.0.0-dev
+    created: "2025-04-20T10:00:35.006190203Z"
+    description: The Kubedoop Secret Operator
+    digest: 045fe55ed5a874d5fcfc55573ba080387a3e778642d906759bebf513435cf416
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: zncdatadev
@@ -6239,4 +6265,4 @@ entries:
     urls:
     - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/zookeeper-operator-0.0.0-dev/zookeeper-operator-0.0.0-dev.tgz
     version: 0.0.0-dev
-generated: "2025-04-20T07:39:49.563761785Z"
+generated: "2025-04-20T10:00:35.007119448Z"
