@@ -1915,6 +1915,19 @@ entries:
     urls:
     - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/hdfs-operator-0.0.0-dev/hdfs-operator-0.0.0-dev.tgz
     version: 0.0.0-dev
+  - apiVersion: v2
+    appVersion: 0.0.0-dev
+    created: "2025-05-04T16:05:08.156363303Z"
+    description: The Kubedoop operator for Apache HDFS
+    digest: e22ca0df23df2d6fd89f552cbde0605a6adbf47fa1c61068ed1d3af6b1dbbda8
+    maintainers:
+    - email: zncdatadev@googlegroups.com
+      name: ZNCDataDev Team
+    name: hdfs-operator
+    type: application
+    urls:
+    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/hdfs-operator-0.0.0-dev/hdfs-operator-0.0.0-dev.tgz
+    version: 0.0.0-dev
   hive-operator:
   - apiVersion: v2
     appVersion: 0.1.0
@@ -6278,4 +6291,4 @@ entries:
     urls:
     - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/zookeeper-operator-0.0.0-dev/zookeeper-operator-0.0.0-dev.tgz
     version: 0.0.0-dev
-generated: "2025-04-20T11:54:46.108227214Z"
+generated: "2025-05-04T16:05:08.157342792Z"
