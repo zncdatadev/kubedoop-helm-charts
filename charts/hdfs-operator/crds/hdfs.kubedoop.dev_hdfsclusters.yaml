@@ -3133,11 +3133,13 @@ spec:
                     type: object
                 type: object
               image:
+                default:
+                  pullPolicy: IfNotPresent
+                  repo: quay.io/zncdatadev
                 properties:
                   custom:
                     type: string
                   kubedoopVersion:
-                    default: 0.0.0-dev
                     type: string
                   productVersion:
                     default: 3.3.6
@@ -3149,7 +3151,7 @@ spec:
                     type: string
                   pullSecretName:
                     type: string
-                  repository:
+                  repo:
                     default: quay.io/zncdatadev
                     type: string
                 type: object
