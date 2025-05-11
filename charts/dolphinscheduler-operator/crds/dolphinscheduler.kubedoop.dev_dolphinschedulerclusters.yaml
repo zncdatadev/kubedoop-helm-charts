@@ -3,7 +3,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    controller-gen.kubebuilder.io/version: v0.16.5
+    controller-gen.kubebuilder.io/version: v0.17.1
   name: dolphinschedulerclusters.dolphinscheduler.kubedoop.dev
 spec:
   group: dolphinscheduler.kubedoop.dev
@@ -51,7 +51,6 @@ spec:
                     properties:
                       affinity:
                         type: object
-                        x-kubernetes-embedded-resource: true
                         x-kubernetes-preserve-unknown-fields: true
                       gracefulShutdownTimeout:
                         default: 30s
@@ -192,7 +191,6 @@ spec:
                     type: object
                   podOverrides:
                     type: object
-                    x-kubernetes-embedded-resource: true
                     x-kubernetes-preserve-unknown-fields: true
                   roleConfig:
                     properties:
@@ -229,7 +227,6 @@ spec:
                           properties:
                             affinity:
                               type: object
-                              x-kubernetes-embedded-resource: true
                               x-kubernetes-preserve-unknown-fields: true
                             gracefulShutdownTimeout:
                               default: 30s
@@ -370,7 +367,6 @@ spec:
                           type: object
                         podOverrides:
                           type: object
-                          x-kubernetes-embedded-resource: true
                           x-kubernetes-preserve-unknown-fields: true
                         replicas:
                           default: 1
@@ -389,7 +385,6 @@ spec:
                     properties:
                       affinity:
                         type: object
-                        x-kubernetes-embedded-resource: true
                         x-kubernetes-preserve-unknown-fields: true
                       gracefulShutdownTimeout:
                         default: 30s
@@ -530,7 +525,6 @@ spec:
                     type: object
                   podOverrides:
                     type: object
-                    x-kubernetes-embedded-resource: true
                     x-kubernetes-preserve-unknown-fields: true
                   roleConfig:
                     properties:
@@ -567,7 +561,6 @@ spec:
                           properties:
                             affinity:
                               type: object
-                              x-kubernetes-embedded-resource: true
                               x-kubernetes-preserve-unknown-fields: true
                             gracefulShutdownTimeout:
                               default: 30s
@@ -708,7 +701,6 @@ spec:
                           type: object
                         podOverrides:
                           type: object
-                          x-kubernetes-embedded-resource: true
                           x-kubernetes-preserve-unknown-fields: true
                         replicas:
                           default: 1
@@ -861,14 +853,15 @@ spec:
                     type: boolean
                 type: object
               image:
+                default:
+                  pullPolicy: IfNotPresent
+                  repo: quay.io/zncdatadev
                 properties:
                   custom:
                     type: string
                   koobdoopVersion:
-                    default: 0.0.0-dev
                     type: string
                   productVersion:
-                    default: 3.2.2
                     type: string
                   pullPolicy:
                     default: IfNotPresent
@@ -877,7 +870,7 @@ spec:
                     type: string
                   pullSecretName:
                     type: string
-                  repository:
+                  repo:
                     default: quay.io/zncdatadev
                     type: string
                 type: object
@@ -891,7 +884,6 @@ spec:
                     properties:
                       affinity:
                         type: object
-                        x-kubernetes-embedded-resource: true
                         x-kubernetes-preserve-unknown-fields: true
                       gracefulShutdownTimeout:
                         default: 30s
@@ -1032,7 +1024,6 @@ spec:
                     type: object
                   podOverrides:
                     type: object
-                    x-kubernetes-embedded-resource: true
                     x-kubernetes-preserve-unknown-fields: true
                   roleConfig:
                     properties:
@@ -1069,7 +1060,6 @@ spec:
                           properties:
                             affinity:
                               type: object
-                              x-kubernetes-embedded-resource: true
                               x-kubernetes-preserve-unknown-fields: true
                             gracefulShutdownTimeout:
                               default: 30s
@@ -1210,7 +1200,6 @@ spec:
                           type: object
                         podOverrides:
                           type: object
-                          x-kubernetes-embedded-resource: true
                           x-kubernetes-preserve-unknown-fields: true
                         replicas:
                           default: 1
@@ -1229,7 +1218,6 @@ spec:
                     properties:
                       affinity:
                         type: object
-                        x-kubernetes-embedded-resource: true
                         x-kubernetes-preserve-unknown-fields: true
                       gracefulShutdownTimeout:
                         default: 30s
@@ -1370,7 +1358,6 @@ spec:
                     type: object
                   podOverrides:
                     type: object
-                    x-kubernetes-embedded-resource: true
                     x-kubernetes-preserve-unknown-fields: true
                   roleConfig:
                     properties:
@@ -1407,7 +1394,6 @@ spec:
                           properties:
                             affinity:
                               type: object
-                              x-kubernetes-embedded-resource: true
                               x-kubernetes-preserve-unknown-fields: true
                             gracefulShutdownTimeout:
                               default: 30s
@@ -1548,7 +1534,6 @@ spec:
                           type: object
                         podOverrides:
                           type: object
-                          x-kubernetes-embedded-resource: true
                           x-kubernetes-preserve-unknown-fields: true
                         replicas:
                           default: 1
