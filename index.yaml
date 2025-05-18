@@ -42,6 +42,19 @@ entries:
     version: 0.0.0-dev
   commons-operator:
   - apiVersion: v2
+    appVersion: 0.2.0
+    created: "2025-05-18T10:43:30.390931756Z"
+    description: Commons operator of Kubedoop
+    digest: 4163f20ca705838d915f55fe9f71e9053a56efcfdbe067ebda714324f5c3296e
+    maintainers:
+    - email: zncdatadev@googlegroups.com
+      name: ZNCDataDev Team
+    name: commons-operator
+    type: application
+    urls:
+    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/commons-operator-0.2.0/commons-operator-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
     appVersion: 0.1.0
     created: "2024-11-28T12:54:21.636755651Z"
     description: Commons operator of Kubedoop
@@ -56,9 +69,9 @@ entries:
     version: 0.1.0
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-14T02:27:08.33191727Z"
+    created: "2024-11-08T03:21:12.897722175Z"
     description: Commons operator of Kubedoop
-    digest: 69e8f34841abffaa73af4ba64ede0f884cbfba0deea383fc7eade023085b501b
+    digest: df2e98e71870e7b8fbc5b6e5680f3c5d9e34e61d9dd130933a41100ea9ee101c
     maintainers:
     - email: huagang517@126.com
       name: whg517
@@ -69,25 +82,12 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-08T06:55:36.428932523Z"
+    created: "2025-04-12T13:09:03.928778037Z"
     description: Commons operator of Kubedoop
-    digest: 7803245f6103f0d3f9680ea81138726906a451f7b2492968d1ff06cf24dc4e5d
+    digest: 43564365d14a25a487bdd43461d7b814aaf82b24b0c3217ace69c26f36e1ac1d
     maintainers:
-    - email: huagang517@126.com
-      name: whg517
-    name: commons-operator
-    type: application
-    urls:
-    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/commons-operator-0.0.0-dev/commons-operator-0.0.0-dev.tgz
-    version: 0.0.0-dev
-  - apiVersion: v2
-    appVersion: 0.0.0-dev
-    created: "2024-11-08T06:32:14.198556213Z"
-    description: Commons operator of Kubedoop
-    digest: 828d6d9a5555c53e152ddb36d42db70c5e139f31787e504ef6aae49e3bfc9a24
-    maintainers:
-    - email: huagang517@126.com
-      name: whg517
+    - email: zncdatadev@googlegroups.com
+      name: ZNCDataDev Team
     name: commons-operator
     type: application
     urls:
@@ -108,9 +108,9 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-08T06:46:19.683505569Z"
+    created: "2024-11-14T02:34:27.715057225Z"
     description: Commons operator of Kubedoop
-    digest: 59ae16dc719752122233980b36396a38d112ece4f537abd3628c941306b978c8
+    digest: 0a7b0cde26a773c74141781f8143114c4758cb32aa0f5c0e899fef40e1a40f16
     maintainers:
     - email: huagang517@126.com
       name: whg517
@@ -277,9 +277,9 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-08T03:21:12.897722175Z"
+    created: "2024-11-08T06:55:36.428932523Z"
     description: Commons operator of Kubedoop
-    digest: df2e98e71870e7b8fbc5b6e5680f3c5d9e34e61d9dd130933a41100ea9ee101c
+    digest: 7803245f6103f0d3f9680ea81138726906a451f7b2492968d1ff06cf24dc4e5d
     maintainers:
     - email: huagang517@126.com
       name: whg517
@@ -303,9 +303,9 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-14T02:34:27.715057225Z"
+    created: "2024-11-08T06:46:19.683505569Z"
     description: Commons operator of Kubedoop
-    digest: 0a7b0cde26a773c74141781f8143114c4758cb32aa0f5c0e899fef40e1a40f16
+    digest: 59ae16dc719752122233980b36396a38d112ece4f537abd3628c941306b978c8
     maintainers:
     - email: huagang517@126.com
       name: whg517
@@ -316,22 +316,9 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-19T02:28:26.433283443Z"
+    created: "2024-11-08T06:32:14.198556213Z"
     description: Commons operator of Kubedoop
-    digest: 2186f311e6a1f11869d975fb0352cea1c68ba0ac2724446c5faf27d59fdd62bb
-    maintainers:
-    - email: huagang517@126.com
-      name: whg517
-    name: commons-operator
-    type: application
-    urls:
-    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/commons-operator-0.0.0-dev/commons-operator-0.0.0-dev.tgz
-    version: 0.0.0-dev
-  - apiVersion: v2
-    appVersion: 0.0.0-dev
-    created: "2024-11-19T06:45:53.377588482Z"
-    description: Commons operator of Kubedoop
-    digest: 5a49fd9d975c47ae108f30fd223611cfd681f0de7694bc16fe9006fe2dba3189
+    digest: 828d6d9a5555c53e152ddb36d42db70c5e139f31787e504ef6aae49e3bfc9a24
     maintainers:
     - email: huagang517@126.com
       name: whg517
@@ -345,6 +332,19 @@ entries:
     created: "2024-11-19T09:03:07.564315721Z"
     description: Commons operator of Kubedoop
     digest: 2b2c91334fc18a4a6d73aa715663c72da48916cf624cc9ba412784f0b558ee52
+    maintainers:
+    - email: huagang517@126.com
+      name: whg517
+    name: commons-operator
+    type: application
+    urls:
+    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/commons-operator-0.0.0-dev/commons-operator-0.0.0-dev.tgz
+    version: 0.0.0-dev
+  - apiVersion: v2
+    appVersion: 0.0.0-dev
+    created: "2024-11-19T06:45:53.377588482Z"
+    description: Commons operator of Kubedoop
+    digest: 5a49fd9d975c47ae108f30fd223611cfd681f0de7694bc16fe9006fe2dba3189
     maintainers:
     - email: huagang517@126.com
       name: whg517
@@ -524,12 +524,25 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2025-04-12T13:09:03.928778037Z"
+    created: "2024-11-19T02:28:26.433283443Z"
     description: Commons operator of Kubedoop
-    digest: 43564365d14a25a487bdd43461d7b814aaf82b24b0c3217ace69c26f36e1ac1d
+    digest: 2186f311e6a1f11869d975fb0352cea1c68ba0ac2724446c5faf27d59fdd62bb
     maintainers:
-    - email: zncdatadev@googlegroups.com
-      name: ZNCDataDev Team
+    - email: huagang517@126.com
+      name: whg517
+    name: commons-operator
+    type: application
+    urls:
+    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/commons-operator-0.0.0-dev/commons-operator-0.0.0-dev.tgz
+    version: 0.0.0-dev
+  - apiVersion: v2
+    appVersion: 0.0.0-dev
+    created: "2024-11-14T02:27:08.33191727Z"
+    description: Commons operator of Kubedoop
+    digest: 69e8f34841abffaa73af4ba64ede0f884cbfba0deea383fc7eade023085b501b
+    maintainers:
+    - email: huagang517@126.com
+      name: whg517
     name: commons-operator
     type: application
     urls:
@@ -6291,4 +6304,4 @@ entries:
     urls:
     - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/zookeeper-operator-0.0.0-dev/zookeeper-operator-0.0.0-dev.tgz
     version: 0.0.0-dev
-generated: "2025-05-04T16:05:08.157342792Z"
+generated: "2025-05-18T10:43:30.392077662Z"
