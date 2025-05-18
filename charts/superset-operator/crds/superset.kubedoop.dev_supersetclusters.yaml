@@ -3,7 +3,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    controller-gen.kubebuilder.io/version: v0.16.5
+    controller-gen.kubebuilder.io/version: v0.17.1
   name: supersetclusters.superset.kubedoop.dev
 spec:
   group: superset.kubedoop.dev
@@ -107,7 +107,6 @@ spec:
                   custom:
                     type: string
                   kubedoopVersion:
-                    default: 0.0.0-dev
                     type: string
                   productVersion:
                     default: 4.0.2
@@ -133,7 +132,6 @@ spec:
                     properties:
                       affinity:
                         type: object
-                        x-kubernetes-embedded-resource: true
                         x-kubernetes-preserve-unknown-fields: true
                       gracefulShutdownTimeout:
                         default: 30s
@@ -274,7 +272,6 @@ spec:
                     type: object
                   podOverrides:
                     type: object
-                    x-kubernetes-embedded-resource: true
                     x-kubernetes-preserve-unknown-fields: true
                   roleConfig:
                     properties:
@@ -311,7 +308,6 @@ spec:
                           properties:
                             affinity:
                               type: object
-                              x-kubernetes-embedded-resource: true
                               x-kubernetes-preserve-unknown-fields: true
                             gracefulShutdownTimeout:
                               default: 30s
@@ -452,7 +448,6 @@ spec:
                           type: object
                         podOverrides:
                           type: object
-                          x-kubernetes-embedded-resource: true
                           x-kubernetes-preserve-unknown-fields: true
                         replicas:
                           format: int32
