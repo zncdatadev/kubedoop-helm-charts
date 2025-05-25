@@ -576,6 +576,19 @@ entries:
     version: 0.0.0-dev
   dolphinscheduler-operator:
   - apiVersion: v2
+    appVersion: 0.2.0
+    created: "2025-05-25T16:06:42.419165297Z"
+    description: The Kubedoop operator for Apache DolphinScheduler
+    digest: 6755e743d782c9a2de4c4b6eb91ecb3c6ccf088a40ceeafec2980be161883450
+    maintainers:
+    - email: zncdatadev@googlegroups.com
+      name: ZNCDataDev Team
+    name: dolphinscheduler-operator
+    type: application
+    urls:
+    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/dolphinscheduler-operator-0.2.0/dolphinscheduler-operator-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
     appVersion: 0.1.0
     created: "2024-11-29T11:23:57.126669596Z"
     description: The Kubedoop operator for Apache DolphinScheduler
@@ -590,9 +603,9 @@ entries:
     version: 0.1.0
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-14T02:27:08.449565095Z"
+    created: "2024-10-24T07:19:27.558331117Z"
     description: The Kubedoop operator for Apache DolphinScheduler
-    digest: 1c6c13a73fc99eb1562b32830128c08692e7d15cc942021218ae79a06eae0b29
+    digest: bc505828c0172d97b8246a052ff4db98f46ef1ce4e7f0e3faf574f279c3e9b76
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -603,22 +616,9 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-26T03:28:55.206116672Z"
+    created: "2024-11-08T06:46:19.863650866Z"
     description: The Kubedoop operator for Apache DolphinScheduler
-    digest: a57520ea35a503b30466bedb62b5011965837eb12a73343a48b6635636b650b1
-    maintainers:
-    - email: zncdatadev@googlegroups.com
-      name: ZNCDataDev Team
-    name: dolphinscheduler-operator
-    type: application
-    urls:
-    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/dolphinscheduler-operator-0.0.0-dev/dolphinscheduler-operator-0.0.0-dev.tgz
-    version: 0.0.0-dev
-  - apiVersion: v2
-    appVersion: 0.0.0-dev
-    created: "2024-10-24T10:52:13.955119966Z"
-    description: The Kubedoop operator for Apache DolphinScheduler
-    digest: 3a3480189fcac16ee016997fcbd1fcde7817e955c77a7929ad5a7f10ef378760
+    digest: 8a2c8133f4541d5006b8bfd18cd79d5b2a84ae5ccd45f4b64dc5a3b2075fc8eb
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -642,9 +642,9 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-10-30T09:56:22.571844401Z"
+    created: "2024-11-14T02:30:15.594179198Z"
     description: The Kubedoop operator for Apache DolphinScheduler
-    digest: dae2604af14b729ae2fd04e5c418b2ff849a5305c0b93eb76b9be74be52d921e
+    digest: 0ddd16e8319c22352b62643326fe09a7c1242e744a412d66b9b2e23d205dc94a
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -668,9 +668,9 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-08T06:32:14.300637024Z"
+    created: "2024-11-14T02:34:27.870512695Z"
     description: The Kubedoop operator for Apache DolphinScheduler
-    digest: 23dc3dc9f1bd19ae3e2de9aae5625c6bccef99057d88d4b6f0a44d56f6206496
+    digest: 96217129d3c72452f11446300e37d8c90862f05fe76926cf5fad02af6377dc1b
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -694,9 +694,9 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-08T06:46:19.863650866Z"
+    created: "2024-11-14T02:31:20.911381781Z"
     description: The Kubedoop operator for Apache DolphinScheduler
-    digest: 8a2c8133f4541d5006b8bfd18cd79d5b2a84ae5ccd45f4b64dc5a3b2075fc8eb
+    digest: 104bd9feffc9fd341f5572ffce70a287989ad22cb9ba9f9b2a6fc974f1351cc1
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -837,9 +837,9 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-10-24T07:19:27.558331117Z"
+    created: "2024-11-26T03:28:55.206116672Z"
     description: The Kubedoop operator for Apache DolphinScheduler
-    digest: bc505828c0172d97b8246a052ff4db98f46ef1ce4e7f0e3faf574f279c3e9b76
+    digest: a57520ea35a503b30466bedb62b5011965837eb12a73343a48b6635636b650b1
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -863,9 +863,9 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-14T02:30:15.594179198Z"
+    created: "2024-10-30T09:56:22.571844401Z"
     description: The Kubedoop operator for Apache DolphinScheduler
-    digest: 0ddd16e8319c22352b62643326fe09a7c1242e744a412d66b9b2e23d205dc94a
+    digest: dae2604af14b729ae2fd04e5c418b2ff849a5305c0b93eb76b9be74be52d921e
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -876,9 +876,9 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-14T02:31:20.911381781Z"
+    created: "2024-10-24T10:52:13.955119966Z"
     description: The Kubedoop operator for Apache DolphinScheduler
-    digest: 104bd9feffc9fd341f5572ffce70a287989ad22cb9ba9f9b2a6fc974f1351cc1
+    digest: 3a3480189fcac16ee016997fcbd1fcde7817e955c77a7929ad5a7f10ef378760
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -889,9 +889,9 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-14T02:34:27.870512695Z"
+    created: "2024-11-08T06:32:14.300637024Z"
     description: The Kubedoop operator for Apache DolphinScheduler
-    digest: 96217129d3c72452f11446300e37d8c90862f05fe76926cf5fad02af6377dc1b
+    digest: 23dc3dc9f1bd19ae3e2de9aae5625c6bccef99057d88d4b6f0a44d56f6206496
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -1113,6 +1113,19 @@ entries:
     created: "2025-05-18T10:55:41.666731567Z"
     description: The Kubedoop operator for Apache DolphinScheduler
     digest: ffd4592bd5cc948b32bc33f00d354f75ae86cfc82752113c7dce91da310a786f
+    maintainers:
+    - email: zncdatadev@googlegroups.com
+      name: ZNCDataDev Team
+    name: dolphinscheduler-operator
+    type: application
+    urls:
+    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/dolphinscheduler-operator-0.0.0-dev/dolphinscheduler-operator-0.0.0-dev.tgz
+    version: 0.0.0-dev
+  - apiVersion: v2
+    appVersion: 0.0.0-dev
+    created: "2024-11-14T02:27:08.449565095Z"
+    description: The Kubedoop operator for Apache DolphinScheduler
+    digest: 1c6c13a73fc99eb1562b32830128c08692e7d15cc942021218ae79a06eae0b29
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -6603,4 +6616,4 @@ entries:
     urls:
     - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/zookeeper-operator-0.0.0-dev/zookeeper-operator-0.0.0-dev.tgz
     version: 0.0.0-dev
-generated: "2025-05-25T16:05:59.391684139Z"
+generated: "2025-05-25T16:06:42.420675664Z"
