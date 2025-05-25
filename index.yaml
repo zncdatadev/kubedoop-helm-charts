@@ -5576,6 +5576,19 @@ entries:
     version: 0.0.0-dev
   trino-operator:
   - apiVersion: v2
+    appVersion: 0.2.0
+    created: "2025-05-25T16:18:34.91405553Z"
+    description: The Kubedoop operator for Trino
+    digest: 09fc97571028b99c3f7ffbb39f9139516b6b3c7838763b728bb6cfd405a3ec30
+    maintainers:
+    - email: zncdatadev@googlegroups.com
+      name: ZNCDataDev Team
+    name: trino-operator
+    type: application
+    urls:
+    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/trino-operator-0.2.0/trino-operator-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
     appVersion: 0.1.0
     created: "2024-11-29T10:30:52.528244938Z"
     description: The Kubedoop operator for Trino
@@ -5590,9 +5603,9 @@ entries:
     version: 0.1.0
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-14T02:30:16.730496479Z"
+    created: "2024-11-08T03:21:14.865126513Z"
     description: The Kubedoop operator for Trino
-    digest: a06dd831fc265cf4f97a000fd5fbdf4bcc3b63a370c438e49c80426ca83f856f
+    digest: fc1fe6c61fbfdf8947456b93fd4318de4e60faf3073fdec0f28f6aea6a9c2448
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -5603,22 +5616,9 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-08T06:43:32.964881041Z"
+    created: "2025-05-18T10:55:42.339825338Z"
     description: The Kubedoop operator for Trino
-    digest: e4933b436370bee78711c0397998a56588c67080eac584c1e83b6f2e5dcbc568
-    maintainers:
-    - email: zncdatadev@googlegroups.com
-      name: ZNCDataDev Team
-    name: trino-operator
-    type: application
-    urls:
-    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/trino-operator-0.0.0-dev/trino-operator-0.0.0-dev.tgz
-    version: 0.0.0-dev
-  - apiVersion: v2
-    appVersion: 0.0.0-dev
-    created: "2024-11-08T06:32:15.238216406Z"
-    description: The Kubedoop operator for Trino
-    digest: 41c2a697a5e63c32e21ba78112d1880794f15a2b4808794c03a4c5c40f06a550
+    digest: 870dbaddf206a6d2466cd399fdf1a038f2e4b010d735724e28799cb0ba454092
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -5642,9 +5642,9 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-08T06:46:21.696326757Z"
+    created: "2024-11-14T02:34:29.435265005Z"
     description: The Kubedoop operator for Trino
-    digest: 62faee7c81be8d77bd2a1c4c8309e2a551740d383447778536bbfd6bbb3863e6
+    digest: 515f8014d452112cbdb9a0d6be027a30c5a05d0cc7f07dca781b830edaedabd3
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -5811,9 +5811,9 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-08T03:21:14.865126513Z"
+    created: "2024-11-08T06:43:32.964881041Z"
     description: The Kubedoop operator for Trino
-    digest: fc1fe6c61fbfdf8947456b93fd4318de4e60faf3073fdec0f28f6aea6a9c2448
+    digest: e4933b436370bee78711c0397998a56588c67080eac584c1e83b6f2e5dcbc568
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -5837,9 +5837,9 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-14T02:34:29.435265005Z"
+    created: "2024-11-08T06:46:21.696326757Z"
     description: The Kubedoop operator for Trino
-    digest: 515f8014d452112cbdb9a0d6be027a30c5a05d0cc7f07dca781b830edaedabd3
+    digest: 62faee7c81be8d77bd2a1c4c8309e2a551740d383447778536bbfd6bbb3863e6
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -5850,22 +5850,9 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-19T02:28:28.411850485Z"
+    created: "2024-11-08T06:32:15.238216406Z"
     description: The Kubedoop operator for Trino
-    digest: fa0dc215724035f51205683d47988bc334dd8bea79cc77a48429cee4f83f1afd
-    maintainers:
-    - email: zncdatadev@googlegroups.com
-      name: ZNCDataDev Team
-    name: trino-operator
-    type: application
-    urls:
-    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/trino-operator-0.0.0-dev/trino-operator-0.0.0-dev.tgz
-    version: 0.0.0-dev
-  - apiVersion: v2
-    appVersion: 0.0.0-dev
-    created: "2024-11-19T06:45:54.725923357Z"
-    description: The Kubedoop operator for Trino
-    digest: ebdf54ba2149d974da91df3546e9c85e3e4a14729457e141b556c3ee70590405
+    digest: 41c2a697a5e63c32e21ba78112d1880794f15a2b4808794c03a4c5c40f06a550
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -5879,6 +5866,19 @@ entries:
     created: "2024-11-19T09:03:08.78563051Z"
     description: The Kubedoop operator for Trino
     digest: 3fe24885c1098fa8145963332bf880e89881963e404ef8bb0ad75284515c3e9b
+    maintainers:
+    - email: zncdatadev@googlegroups.com
+      name: ZNCDataDev Team
+    name: trino-operator
+    type: application
+    urls:
+    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/trino-operator-0.0.0-dev/trino-operator-0.0.0-dev.tgz
+    version: 0.0.0-dev
+  - apiVersion: v2
+    appVersion: 0.0.0-dev
+    created: "2024-11-19T06:45:54.725923357Z"
+    description: The Kubedoop operator for Trino
+    digest: ebdf54ba2149d974da91df3546e9c85e3e4a14729457e141b556c3ee70590405
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -6058,9 +6058,22 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2025-05-18T10:55:42.339825338Z"
+    created: "2024-11-19T02:28:28.411850485Z"
     description: The Kubedoop operator for Trino
-    digest: 870dbaddf206a6d2466cd399fdf1a038f2e4b010d735724e28799cb0ba454092
+    digest: fa0dc215724035f51205683d47988bc334dd8bea79cc77a48429cee4f83f1afd
+    maintainers:
+    - email: zncdatadev@googlegroups.com
+      name: ZNCDataDev Team
+    name: trino-operator
+    type: application
+    urls:
+    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/trino-operator-0.0.0-dev/trino-operator-0.0.0-dev.tgz
+    version: 0.0.0-dev
+  - apiVersion: v2
+    appVersion: 0.0.0-dev
+    created: "2024-11-14T02:30:16.730496479Z"
+    description: The Kubedoop operator for Trino
+    digest: a06dd831fc265cf4f97a000fd5fbdf4bcc3b63a370c438e49c80426ca83f856f
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -6616,4 +6629,4 @@ entries:
     urls:
     - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/zookeeper-operator-0.0.0-dev/zookeeper-operator-0.0.0-dev.tgz
     version: 0.0.0-dev
-generated: "2025-05-25T16:06:42.420675664Z"
+generated: "2025-05-25T16:18:34.916024507Z"
