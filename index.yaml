@@ -1123,6 +1123,19 @@ entries:
     version: 0.0.0-dev
   hbase-operator:
   - apiVersion: v2
+    appVersion: 0.2.0
+    created: "2025-05-25T16:04:42.432811635Z"
+    description: The Kubedoop operator for Hbase
+    digest: f20066f51c5505ad1a723aa86153651f32095ad9447ec5e16695e189f575670c
+    maintainers:
+    - email: zncdatadev@googlegroups.com
+      name: ZNCDataDev Team
+    name: hbase-operator
+    type: application
+    urls:
+    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/hbase-operator-0.2.0/hbase-operator-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
     appVersion: 0.1.0
     created: "2024-12-01T10:59:12.983210291Z"
     description: The Kubedoop operator for Hbase
@@ -1137,9 +1150,9 @@ entries:
     version: 0.1.0
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-14T02:30:15.719664112Z"
+    created: "2024-11-14T02:34:28.050877307Z"
     description: The Kubedoop operator for Hbase
-    digest: 55e0b8e13c3baf7dd41509c4d981c9bb55abc9e47a035206cafd15bf0044c3f8
+    digest: 746325b9ff0c262ab43bdffaa361f2e687d2146c84a82fea212c52d582228d7e
     name: hbase-operator
     type: application
     urls:
@@ -1147,19 +1160,12 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-08T06:43:32.043601851Z"
+    created: "2025-05-18T10:55:41.771752429Z"
     description: The Kubedoop operator for Hbase
-    digest: e17a8efbfe77799172bb546b6314e752c08df045a11475015978ba48d4e07241
-    name: hbase-operator
-    type: application
-    urls:
-    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/hbase-operator-0.0.0-dev/hbase-operator-0.0.0-dev.tgz
-    version: 0.0.0-dev
-  - apiVersion: v2
-    appVersion: 0.0.0-dev
-    created: "2024-11-14T02:28:59.524349886Z"
-    description: The Kubedoop operator for Hbase
-    digest: 8ea91e2ab8001b6446dfb6b3efe50056a70ef6bc8fbc6e81284ee32dde0e1459
+    digest: ff4c800433720b5db9456eebc7b838022e36193418e6c22a0b3c58fcb4410980
+    maintainers:
+    - email: zncdatadev@googlegroups.com
+      name: ZNCDataDev Team
     name: hbase-operator
     type: application
     urls:
@@ -1227,9 +1233,9 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-08T06:59:18.396751828Z"
+    created: "2024-11-08T06:43:32.043601851Z"
     description: The Kubedoop operator for Hbase
-    digest: 656dc6f4617b5748448e3cc1236d3cc4dec21e7478620b6dfa4fbea73e4bd594
+    digest: e17a8efbfe77799172bb546b6314e752c08df045a11475015978ba48d4e07241
     name: hbase-operator
     type: application
     urls:
@@ -1327,9 +1333,9 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-14T02:34:28.050877307Z"
+    created: "2024-11-08T06:59:18.396751828Z"
     description: The Kubedoop operator for Hbase
-    digest: 746325b9ff0c262ab43bdffaa361f2e687d2146c84a82fea212c52d582228d7e
+    digest: 656dc6f4617b5748448e3cc1236d3cc4dec21e7478620b6dfa4fbea73e4bd594
     name: hbase-operator
     type: application
     urls:
@@ -1337,9 +1343,9 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-19T02:28:26.841251677Z"
+    created: "2024-11-14T02:28:59.524349886Z"
     description: The Kubedoop operator for Hbase
-    digest: 8e14a243437f3a7490feb69f808f275fc6f272992a4af907483467ed2d4fb399
+    digest: 8ea91e2ab8001b6446dfb6b3efe50056a70ef6bc8fbc6e81284ee32dde0e1459
     name: hbase-operator
     type: application
     urls:
@@ -1347,9 +1353,9 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-19T06:45:53.648236017Z"
+    created: "2024-11-22T10:29:28.258405858Z"
     description: The Kubedoop operator for Hbase
-    digest: a9933414a3640e4d9e8ee200edc5d2a6d135e29396ecc5a975325f066460f9e8
+    digest: af562d86619492f102354da462056407c39e61d24dc119f5cbd7ec75c0fb263a
     name: hbase-operator
     type: application
     urls:
@@ -1397,9 +1403,9 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-22T10:29:28.258405858Z"
+    created: "2024-11-19T06:45:53.648236017Z"
     description: The Kubedoop operator for Hbase
-    digest: af562d86619492f102354da462056407c39e61d24dc119f5cbd7ec75c0fb263a
+    digest: a9933414a3640e4d9e8ee200edc5d2a6d135e29396ecc5a975325f066460f9e8
     name: hbase-operator
     type: application
     urls:
@@ -1513,12 +1519,19 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2025-05-18T10:55:41.771752429Z"
+    created: "2024-11-19T02:28:26.841251677Z"
     description: The Kubedoop operator for Hbase
-    digest: ff4c800433720b5db9456eebc7b838022e36193418e6c22a0b3c58fcb4410980
-    maintainers:
-    - email: zncdatadev@googlegroups.com
-      name: ZNCDataDev Team
+    digest: 8e14a243437f3a7490feb69f808f275fc6f272992a4af907483467ed2d4fb399
+    name: hbase-operator
+    type: application
+    urls:
+    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/hbase-operator-0.0.0-dev/hbase-operator-0.0.0-dev.tgz
+    version: 0.0.0-dev
+  - apiVersion: v2
+    appVersion: 0.0.0-dev
+    created: "2024-11-14T02:30:15.719664112Z"
+    description: The Kubedoop operator for Hbase
+    digest: 55e0b8e13c3baf7dd41509c4d981c9bb55abc9e47a035206cafd15bf0044c3f8
     name: hbase-operator
     type: application
     urls:
@@ -6577,4 +6590,4 @@ entries:
     urls:
     - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/zookeeper-operator-0.0.0-dev/zookeeper-operator-0.0.0-dev.tgz
     version: 0.0.0-dev
-generated: "2025-05-25T14:57:51.378600348Z"
+generated: "2025-05-25T16:04:42.434585276Z"
