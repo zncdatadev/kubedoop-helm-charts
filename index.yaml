@@ -1526,6 +1526,19 @@ entries:
     version: 0.0.0-dev
   hdfs-operator:
   - apiVersion: v2
+    appVersion: 0.2.0
+    created: "2025-05-25T14:57:51.377608326Z"
+    description: The Kubedoop operator for Apache HDFS
+    digest: 53907ea389f208f823659476969ebf22090afa21731188819a5f34639b90cae6
+    maintainers:
+    - email: zncdatadev@googlegroups.com
+      name: ZNCDataDev Team
+    name: hdfs-operator
+    type: application
+    urls:
+    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/hdfs-operator-0.2.0/hdfs-operator-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
     appVersion: 0.1.0
     created: "2024-11-29T15:22:35.154450687Z"
     description: The Kubedoop operator for Apache HDFS
@@ -1540,9 +1553,9 @@ entries:
     version: 0.1.0
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-14T02:30:15.845549756Z"
+    created: "2024-11-08T03:21:13.487127627Z"
     description: The Kubedoop operator for Apache HDFS
-    digest: 1ddbd489dac8f7ef4e25ba2389494eee4632902f17b781b334af99d621cf16bc
+    digest: 90b86d9b672be793753b752f0421b25bc887ed6fa0bf5675a2b7c2b13527e981
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -1553,22 +1566,9 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-08T06:43:32.153562005Z"
+    created: "2025-05-04T16:05:08.156363303Z"
     description: The Kubedoop operator for Apache HDFS
-    digest: fea06b89d8adae18ee9ef684e0d2ea8ee9ae1cff5d43b336ec1d238dcdcfd8f1
-    maintainers:
-    - email: zncdatadev@googlegroups.com
-      name: ZNCDataDev Team
-    name: hdfs-operator
-    type: application
-    urls:
-    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/hdfs-operator-0.0.0-dev/hdfs-operator-0.0.0-dev.tgz
-    version: 0.0.0-dev
-  - apiVersion: v2
-    appVersion: 0.0.0-dev
-    created: "2024-11-08T06:32:14.53219153Z"
-    description: The Kubedoop operator for Apache HDFS
-    digest: 66e6f67c4ad0cd3e6ee2cf529e7171a65a680c39280de32c29e60976554ef95f
+    digest: e22ca0df23df2d6fd89f552cbde0605a6adbf47fa1c61068ed1d3af6b1dbbda8
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -1592,9 +1592,9 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-08T06:46:20.281304424Z"
+    created: "2024-11-14T02:34:28.261093059Z"
     description: The Kubedoop operator for Apache HDFS
-    digest: 5b5a34023ae74236497e485147d72fb6a764add525f7cea9cd890421927f5ed3
+    digest: 68b3528281216792097508e1d1196a1b4ce149a95486e8d734544b78cd4bd811
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -1761,9 +1761,9 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-08T03:21:13.487127627Z"
+    created: "2024-11-08T06:43:32.153562005Z"
     description: The Kubedoop operator for Apache HDFS
-    digest: 90b86d9b672be793753b752f0421b25bc887ed6fa0bf5675a2b7c2b13527e981
+    digest: fea06b89d8adae18ee9ef684e0d2ea8ee9ae1cff5d43b336ec1d238dcdcfd8f1
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -1787,9 +1787,9 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-14T02:34:28.261093059Z"
+    created: "2024-11-08T06:46:20.281304424Z"
     description: The Kubedoop operator for Apache HDFS
-    digest: 68b3528281216792097508e1d1196a1b4ce149a95486e8d734544b78cd4bd811
+    digest: 5b5a34023ae74236497e485147d72fb6a764add525f7cea9cd890421927f5ed3
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -1800,22 +1800,9 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2024-11-19T02:28:27.045735379Z"
+    created: "2024-11-08T06:32:14.53219153Z"
     description: The Kubedoop operator for Apache HDFS
-    digest: aa32569fa81094f7fad3d337ed783d33a62600dbc0a0736d13d79174c37bbd2a
-    maintainers:
-    - email: zncdatadev@googlegroups.com
-      name: ZNCDataDev Team
-    name: hdfs-operator
-    type: application
-    urls:
-    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/hdfs-operator-0.0.0-dev/hdfs-operator-0.0.0-dev.tgz
-    version: 0.0.0-dev
-  - apiVersion: v2
-    appVersion: 0.0.0-dev
-    created: "2024-11-19T06:45:53.797584236Z"
-    description: The Kubedoop operator for Apache HDFS
-    digest: eb3ea98ac94a1f32e6b3350d87663e3f80c366477db57f7fd0c4fabf531deefe
+    digest: 66e6f67c4ad0cd3e6ee2cf529e7171a65a680c39280de32c29e60976554ef95f
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -1829,6 +1816,19 @@ entries:
     created: "2024-11-19T09:03:07.943662694Z"
     description: The Kubedoop operator for Apache HDFS
     digest: d18b38b4bd4bd9d9f4dec4ffb4493a55ccf789a6ef68ca4051dbe3954d7a96df
+    maintainers:
+    - email: zncdatadev@googlegroups.com
+      name: ZNCDataDev Team
+    name: hdfs-operator
+    type: application
+    urls:
+    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/hdfs-operator-0.0.0-dev/hdfs-operator-0.0.0-dev.tgz
+    version: 0.0.0-dev
+  - apiVersion: v2
+    appVersion: 0.0.0-dev
+    created: "2024-11-19T06:45:53.797584236Z"
+    description: The Kubedoop operator for Apache HDFS
+    digest: eb3ea98ac94a1f32e6b3350d87663e3f80c366477db57f7fd0c4fabf531deefe
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -2008,9 +2008,22 @@ entries:
     version: 0.0.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2025-05-04T16:05:08.156363303Z"
+    created: "2024-11-19T02:28:27.045735379Z"
     description: The Kubedoop operator for Apache HDFS
-    digest: e22ca0df23df2d6fd89f552cbde0605a6adbf47fa1c61068ed1d3af6b1dbbda8
+    digest: aa32569fa81094f7fad3d337ed783d33a62600dbc0a0736d13d79174c37bbd2a
+    maintainers:
+    - email: zncdatadev@googlegroups.com
+      name: ZNCDataDev Team
+    name: hdfs-operator
+    type: application
+    urls:
+    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/hdfs-operator-0.0.0-dev/hdfs-operator-0.0.0-dev.tgz
+    version: 0.0.0-dev
+  - apiVersion: v2
+    appVersion: 0.0.0-dev
+    created: "2024-11-14T02:30:15.845549756Z"
+    description: The Kubedoop operator for Apache HDFS
+    digest: 1ddbd489dac8f7ef4e25ba2389494eee4632902f17b781b334af99d621cf16bc
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -6564,4 +6577,4 @@ entries:
     urls:
     - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/zookeeper-operator-0.0.0-dev/zookeeper-operator-0.0.0-dev.tgz
     version: 0.0.0-dev
-generated: "2025-05-25T12:19:53.758050459Z"
+generated: "2025-05-25T14:57:51.378600348Z"
