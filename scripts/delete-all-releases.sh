@@ -1,6 +1,12 @@
 #!/bin/bash
 set -euo pipefail
 
+# Load common library functions
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$SCRIPT_DIR/lib.sh"
+
+# clean_all_chart_index function is now provided by lib.sh
+
 # Delete the specified release and its associated tags
 function delete_release() {
   local repository="$1"
@@ -32,18 +38,22 @@ function main() {
   local usage="
   Usage: delete-all-releases.sh [options]
 
-  Delete all releases from a GitHub repository, optionally with their associated tags.
+  Delete all releases from a GitHub repository, optionally with their associated tags and chart index entries.
 
   Arguments:
-    -r, --repository <repo>    The GitHub repository (format: owner/repo). Required.
-    -f, --force               Skip confirmation prompt.
-    -t, --with-tags          Also delete associated tags for each release.
-    -h, --help                Display this help message.
+    -r, --repository <repo>       The GitHub repository (format: owner/repo). Required.
+    -f, --force                   Skip confirmation prompt.
+    -t, --with-tags               Also delete associated tags for each release.
+    -i, --clean-index             Also clean up chart index entries from the pages branch.
+    -p, --pages-branch <branch>   The branch containing the chart index. Default is 'gh-pages'.
+    -h, --help                    Display this help message.
 "
 
   local repository=""
   local force=false
   local delete_tags=false
+  local clean_index=false
+  local pages_branch="gh-pages"
 
   while [[ $# -gt 0 ]]; do
     case $1 in
@@ -58,6 +68,14 @@ function main() {
       -t|--with-tags)
         delete_tags=true
         shift
+        ;;
+      -i|--clean-index)
+        clean_index=true
+        shift
+        ;;
+      -p|--pages-branch)
+        pages_branch=$2
+        shift 2
         ;;
       -h|--help)
         echo "$usage"
@@ -78,8 +96,7 @@ function main() {
   fi
 
   # Confirm GitHub authentication
-  if ! gh auth status >/dev/null 2>&1 && [[ -z "${GH_TOKEN:-}" ]]; then
-    echo "Error: Not authenticated with GitHub. Please run 'gh auth login' or set GH_TOKEN." >&2
+  if ! check_gh_login; then
     exit 1
   fi
 
@@ -101,6 +118,10 @@ function main() {
     echo "Associated tags will also be deleted."
   fi
 
+  if [[ "$clean_index" == "true" ]]; then
+    echo "Chart index entries will also be cleaned up from $pages_branch branch."
+  fi
+
   # If not in force mode, request confirmation
   if [[ "$force" != "true" ]]; then
     read -p "Are you sure you want to proceed? [y/N] " -n 1 -r
@@ -115,6 +136,11 @@ function main() {
   echo "$releases" | jq -c '.[]' | while read -r release; do
     delete_release "$repository" "$release" "$delete_tags"
   done
+
+  # Clean up chart index if requested
+  if [[ "$clean_index" == "true" ]]; then
+    clean_all_chart_index "$pages_branch"
+  fi
 }
 
 main "$@"
