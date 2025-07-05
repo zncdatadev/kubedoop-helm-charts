@@ -388,22 +388,21 @@ class GitOperations:
 class ChartIndexManager:
     """Manages Helm chart index operations"""
 
-    def __init__(self, git_ops: GitOperations):
+    def __init__(self, git_ops: GitOperations, pages_branch: str):
         """
         Initialize chart index manager.
 
         Args:
             git_ops: GitOperations instance
+            pages_branch: Name of the pages branch
         """
         self.git_ops = git_ops
+        self.pages_branch = pages_branch
         self.original_branch = None
 
-    def prepare_pages_branch(self, pages_branch: str) -> bool:
+    def prepare_pages_branch(self) -> bool:
         """
         Prepare the pages branch for index operations.
-
-        Args:
-            pages_branch: Name of the pages branch
 
         Returns:
             True if successful, False otherwise
@@ -412,26 +411,26 @@ class ChartIndexManager:
         self.original_branch = self.git_ops.get_current_branch()
 
         # Check if pages branch exists
-        if not self.git_ops.branch_exists(pages_branch):
-            logging.warning(f"{pages_branch} branch does not exist. Skipping index cleanup.")
+        if not self.git_ops.branch_exists(self.pages_branch):
+            logging.warning(f"{self.pages_branch} branch does not exist. Skipping index cleanup.")
             return False
 
         # Fetch and checkout pages branch
-        if not self.git_ops.fetch_branch(pages_branch):
-            logging.error(f"Failed to fetch {pages_branch} branch")
+        if not self.git_ops.fetch_branch(self.pages_branch):
+            logging.error(f"Failed to fetch {self.pages_branch} branch")
             return False
 
-        if not self.git_ops.checkout_branch(pages_branch):
-            logging.error(f"Failed to checkout {pages_branch} branch")
+        if not self.git_ops.checkout_branch(self.pages_branch):
+            logging.error(f"Failed to checkout {self.pages_branch} branch")
             return False
 
         # Pull latest changes
-        if not self.git_ops.pull_branch(pages_branch):
-            logging.warning(f"Failed to pull latest changes from {pages_branch}")
+        if not self.git_ops.pull_branch(self.pages_branch):
+            logging.warning(f"Failed to pull latest changes from {self.pages_branch}")
 
         # Check if index.yaml exists
         if not Path('index.yaml').exists():
-            logging.warning(f"index.yaml not found in {pages_branch} branch. Skipping index cleanup.")
+            logging.warning(f"index.yaml not found in {self.pages_branch} branch. Skipping index cleanup.")
             self.restore_original_branch()
             return False
 
@@ -448,21 +447,24 @@ class ChartIndexManager:
             return self.git_ops.checkout_branch(self.original_branch)
         return True
 
-    def clean_specific_chart_index(self, chart_name: str, chart_version: str, pages_branch: str) -> bool:
+    def clean_multiple_chart_indexes(self, charts: list[dict[str, str]]) -> bool:
         """
-        Clean up a specific chart index entry.
+        Clean up multiple chart index entries in a single operation.
 
         Args:
-            chart_name: Name of the chart
-            chart_version: Version of the chart
-            pages_branch: Name of the pages branch
+            charts: List of dictionaries with 'name' and 'version' keys
 
         Returns:
             True if successful, False otherwise
         """
-        logging.info(f"Cleaning up chart index for {chart_name} version {chart_version}...")
+        if not charts:
+            logging.warning("No charts provided for index cleanup")
+            return True
 
-        if not self.prepare_pages_branch(pages_branch):
+        chart_names = [f"{chart['name']} v{chart['version']}" for chart in charts]
+        logging.info(f"Cleaning up chart indexes for: {', '.join(chart_names)}")
+
+        if not self.prepare_pages_branch():
             return False
 
         try:
@@ -470,57 +472,78 @@ class ChartIndexManager:
             with open('index.yaml', 'r') as f:
                 index_data = yaml.load(f)
 
-            # Remove specific chart version
-            if 'entries' in index_data and chart_name in index_data['entries']:
-                entries = index_data['entries'][chart_name]
-                # Filter out the specific version
-                index_data['entries'][chart_name] = [
-                    entry for entry in entries if entry.get('version') != chart_version
-                ]
+            removed_charts = []
 
-                # Remove chart entry if no versions left
-                if not index_data['entries'][chart_name]:
-                    del index_data['entries'][chart_name]
+            # Remove each chart version
+            for chart in charts:
+                chart_name = chart['name']
+                chart_version = chart['version']
 
+                if 'entries' in index_data and chart_name in index_data['entries']:
+                    chart_entries = index_data['entries'][chart_name]
+                    # Filter out the specific version
+                    filtered_chart_entries = [
+                        entry for entry in chart_entries if entry.get('version') != chart_version
+                    ]
+
+                    if len(filtered_chart_entries) != len(chart_entries):
+                        # Version was found and removed
+                        index_data['entries'][chart_name] = filtered_chart_entries
+                        removed_charts.append(f"{chart_name} v{chart_version}")
+
+                        # Remove chart entry if no versions left
+                        if not index_data['entries'][chart_name]:
+                            del index_data['entries'][chart_name]
+                            logging.info(f"Removed all versions of {chart_name}, deleted chart entry")
+                    else:
+                        logging.warning(f"Chart {chart_name} version {chart_version} not found in index.yaml")
+                else:
+                    logging.warning(f"Chart {chart_name} not found in index.yaml")
+
+            if removed_charts:
                 # Write back to file
                 with open('index.yaml', 'w') as f:
                     yaml.dump(index_data, f)
 
-                logging.info(f"Removed {chart_name} version {chart_version} from index.yaml")
+                logging.info(f"Removed from index.yaml: {', '.join(removed_charts)}")
 
                 # Commit and push if there are changes
                 if self.git_ops.has_changes('index.yaml'):
-                    commit_msg = f"Remove {chart_name} version {chart_version} from index"
-                    success = self.git_ops.commit_and_push('index.yaml', commit_msg, pages_branch)
+                    if len(removed_charts) == 1:
+                        commit_msg = f"Remove {removed_charts[0]} from index"
+                    else:
+                        commit_msg = f"Remove {len(removed_charts)} chart versions from index"
+
+                    success = self.git_ops.commit_and_push('index.yaml', commit_msg, self.pages_branch)
                     if success:
-                        logging.info(f"Successfully pushed index.yaml changes to {pages_branch} branch")
+                        logging.info(f"Successfully pushed index.yaml changes to {self.pages_branch} branch")
+                    else:
+                        logging.error("Failed to push index.yaml changes")
+                        return False
                 else:
                     logging.info("No changes to commit in index.yaml")
             else:
-                logging.warning(f"Chart {chart_name} not found in index.yaml")
+                logging.info("No chart versions were removed from index.yaml")
 
             return True
 
         except Exception as e:
-            logging.error(f"Error cleaning specific chart index: {e}")
+            logging.error(f"Error cleaning multiple chart indexes: {e}")
             return False
 
         finally:
             self.restore_original_branch()
 
-    def clean_all_chart_index(self, pages_branch: str) -> bool:
+    def clean_all_chart_index(self) -> bool:
         """
         Clean up all chart index entries.
-
-        Args:
-            pages_branch: Name of the pages branch
 
         Returns:
             True if successful, False otherwise
         """
-        logging.info(f"Cleaning up all chart index entries from {pages_branch} branch...")
+        logging.info(f"Cleaning up all chart index entries from {self.pages_branch} branch...")
 
-        if not self.prepare_pages_branch(pages_branch):
+        if not self.prepare_pages_branch():
             return False
 
         try:
@@ -540,9 +563,9 @@ class ChartIndexManager:
             # Commit and push changes
             if self.git_ops.has_changes('index.yaml'):
                 commit_msg = "Clear all chart entries from index"
-                success = self.git_ops.commit_and_push('index.yaml', commit_msg, pages_branch)
+                success = self.git_ops.commit_and_push('index.yaml', commit_msg, self.pages_branch)
                 if success:
-                    logging.info(f"Successfully pushed index.yaml changes to {pages_branch} branch")
+                    logging.info(f"Successfully pushed index.yaml changes to {self.pages_branch} branch")
             else:
                 logging.info("No changes to commit in index.yaml")
 
@@ -712,8 +735,8 @@ def delete_all_releases(args):
     # Clean up chart index if requested
     if args.clean_index:
         git_ops = GitOperations()
-        index_manager = ChartIndexManager(git_ops)
-        index_manager.clean_all_chart_index(args.pages_branch)
+        index_manager = ChartIndexManager(git_ops, args.pages_branch)
+        index_manager.clean_all_chart_index()
 
 
 def delete_specific_releases(args):
@@ -723,7 +746,7 @@ def delete_specific_releases(args):
     release_manager = ChartReleaseManager(args.repository)
     git_ops = GitOperations()
     chart_manager = ChartManager(args.chart_dir)
-    index_manager = ChartIndexManager(git_ops)
+    index_manager = ChartIndexManager(git_ops, args.pages_branch)
 
     # Check authentication
     if not release_manager.check_authentication():
@@ -761,10 +784,12 @@ def delete_specific_releases(args):
         # Delete tag
         release_manager.delete_tag(release_name)
 
-        # Clean up chart index
-        index_manager.clean_specific_chart_index(chart_name, chart_version, args.pages_branch)
-
         logging.info(f"Deleted release for {chart_name}")
+
+    # Clean up chart indexes in batch
+    if changed_charts:
+        chart_index_data = [{'name': chart['name'], 'version': chart['version']} for chart in changed_charts]
+        index_manager.clean_multiple_chart_indexes(chart_index_data)
 
 
 def main():
