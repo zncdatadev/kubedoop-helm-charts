@@ -77,7 +77,9 @@ class ChartReleaseManager:
         try:
             response = self.session.request(method, url, **kwargs)
             if response.status_code == 404:
-                return response  # Let caller handle 404 specifically
+                raise GitHubAPIError(f"Resource not found: {url}")
+            if response.status_code == 403:
+                raise GitHubAPIError("Access forbidden. Check your token permissions.")
             response.raise_for_status()
             return response
         except requests.exceptions.RequestException as e:
@@ -96,8 +98,7 @@ class ChartReleaseManager:
         except GitHubAPIError:
             # Try with gh CLI if direct API fails
             try:
-                result = subprocess.run(['gh', 'auth', 'status'],
-                                      capture_output=True, text=True)
+                result = subprocess.run(['gh', 'auth', 'status'], capture_output=True, text=True)
                 return result.returncode == 0
             except (subprocess.SubprocessError, FileNotFoundError):
                 return False
@@ -128,7 +129,7 @@ class ChartReleaseManager:
             True if successful, False otherwise
         """
         try:
-            response = self._make_request('DELETE', f'repos/{self.repository}/releases/{release_id}')
+            self._make_request('DELETE', f'repos/{self.repository}/releases/{release_id}')
             logging.info(f"Successfully deleted release: {release_name}")
             return True
         except GitHubAPIError as e:
@@ -146,7 +147,7 @@ class ChartReleaseManager:
             True if successful, False otherwise
         """
         try:
-            response = self._make_request('DELETE', f'repos/{self.repository}/git/refs/tags/{tag_name}')
+            self._make_request('DELETE', f'repos/{self.repository}/git/refs/tags/{tag_name}')
             logging.info(f"Successfully deleted tag: {tag_name}")
             return True
         except GitHubAPIError as e:
@@ -183,7 +184,7 @@ class ChartReleaseManager:
             True if successful, False otherwise
         """
         try:
-            response = self._make_request('DELETE', f'repos/{self.repository}/releases/tags/{tag_name}')
+            self._make_request('DELETE', f'repos/{self.repository}/releases/tags/{tag_name}')
             logging.info(f"Successfully deleted release with tag: {tag_name}")
             return True
         except GitHubAPIError as e:
@@ -687,17 +688,11 @@ def delete_all_releases(args):
         logging.info(f"No releases found in repository {args.repository}")
         return
 
-    # Display what will be deleted
-    print(f"The following releases will be deleted from {args.repository}:")
-    for release in releases:
-        print(f"- {release['name']} (tag: {release['tag_name']})")
-    print(f"Total releases to delete: {len(releases)}")
-
     if args.with_tags:
-        print("Associated tags will also be deleted.")
+        logging.info("Associated tags will also be deleted.")
 
     if args.clean_index:
-        print(f"Chart index entries will also be cleaned up from {args.pages_branch} branch.")
+        logging.info(f"Chart index entries will also be cleaned up from {args.pages_branch} branch.")
 
     # Confirm deletion unless forced
     if not args.force:
