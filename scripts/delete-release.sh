@@ -13,7 +13,9 @@ source "$SCRIPT_DIR/lib.sh"
 # - "^0\.0\.0-.*$" matches any version starting with "0.0.0-"
 # - "^.*-dev$" matches any version ending with "-dev"
 # - "^(0\.0\.0-dev|1\.0\.0-beta)$" matches either "0.0.0-dev" or "1.0.0-beta"
-SUPPORTED_DELETE_RELEASE_VERSION_PATTERN="^0\.0\.0-dev$"
+# - "^0\.2\.0$" matches exactly "0.2.0"
+# - ".*" matches any version
+SUPPORTED_DELETE_RELEASE_VERSION_PATTERN="${DELETE_RELEASE_VERSION_PATTERN:-'^0\.0\.0-dev$'}"
 
 function main () {
   local usage="
@@ -88,7 +90,15 @@ function main () {
   echo "Discovering changes since $latest_tag..."
 
   local changed_charts=()
-  readarray -t changed_charts <<<"$(lookup_changed_charts "$latest_tag" "$charts_dir" "$version_pattern")"
+  local changed_charts_output
+  changed_charts_output=$(lookup_changed_charts "$latest_tag" "$charts_dir" "$version_pattern")
+
+  if [[ -n "$changed_charts_output" ]]; then
+    # Use a more compatible method to populate the array
+    while IFS= read -r chart; do
+      [[ -n "$chart" ]] && changed_charts+=("$chart")
+    done <<< "$changed_charts_output"
+  fi
 
   if [[ ${#changed_charts[@]} -eq 0 ]]; then
     echo "No changes detected." 1>&2
@@ -157,6 +167,7 @@ function filter_charts() {
       # Check chart version support delete using regex pattern
       local chart_version=$(yq eval '.version' "$file")
       if [[ "$chart_version" =~ $version_pattern ]]; then
+        echo "Found Helm chart: $chart with version $chart_version" 1>&2
         echo "$chart"
       else
         echo "Chart version $chart_version does not match supported pattern for deletion: $version_pattern" >&2
@@ -187,9 +198,8 @@ function lookup_changed_charts() {
   # Get the list of changed charts.
   if [[ -n "$changed_files" ]]; then
     cut -d "/" -f "1-$depth" <<<"$changed_files" | uniq | sort -u | filter_charts "$version_pattern"
-  else
-    echo "No changed files found in commit $commit within directory $charts_dir." 1>&2
   fi
+  # Note: No output when no changes found, caller handles empty output
 }
 
 # delete_chart_release deletes a release for a Helm chart.
@@ -217,10 +227,9 @@ function delete_chart_release() {
     return
   fi
 
-  # Delete release
-  local release_id=$(gh api -X GET "repos/$repository/releases" | jq -r ".[] | select(.name | startswith(\"$release_name\")) | .id")
-  if [[ -n "$release_id" ]]; then
-    if ! gh api -X DELETE "repos/$repository/releases/$release_id"; then
+  # Delete release using tag name directly
+  if gh api -X GET "repos/$repository/releases/tags/$release_name" >/dev/null 2>&1; then
+    if ! gh api -X DELETE "repos/$repository/releases/tags/$release_name"; then
       echo "Failed to delete release $release_name" 1>&2
       return 1
     fi
@@ -229,14 +238,17 @@ function delete_chart_release() {
     echo "No release found for $release_name" 1>&2
   fi
 
-  # Delete tags from remote
-  for tag in "$release_name" "$chart_version"; do
-    if gh api -X DELETE "repos/$repository/git/refs/tags/$tag" 2>/dev/null; then
-      echo "Successfully deleted remote tag $tag"
-    else
-      echo "No remote tag found for $tag or failed to delete" 1>&2
+  # Delete tag from remote
+  # Check if tag exists first
+  if gh api -X GET "repos/$repository/git/refs/tags/$release_name" >/dev/null 2>&1; then
+    if ! gh api -X DELETE "repos/$repository/git/refs/tags/$release_name"; then
+      echo "Failed to delete remote tag $release_name" 1>&2
+      return 1
     fi
-  done
+    echo "Successfully deleted remote tag $release_name"
+  else
+    echo "No remote tag found for $release_name" 1>&2
+  fi
 
   # Clean up chart index from pages branch
   clean_specific_chart_index "$chart_name" "$chart_version" "$pages_branch"
