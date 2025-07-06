@@ -242,19 +242,6 @@ entries:
     version: 0.0.0-dev
   kafka-operator:
   - apiVersion: v2
-    appVersion: 0.2.0
-    created: "2025-05-27T03:27:35.377940724Z"
-    description: The Kubedoop operator for Apache Kafka
-    digest: 049c1712db5d6422408f1047b25a5bea548530818b1801c26766fe2d85d07afa
-    maintainers:
-    - email: zncdatadev@googlegroups.com
-      name: ZNCDataDev Team
-    name: kafka-operator
-    type: application
-    urls:
-    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/kafka-operator-0.2.0/kafka-operator-0.2.0.tgz
-    version: 0.2.0
-  - apiVersion: v2
     appVersion: 0.1.0
     created: "2024-11-29T11:24:30.117155323Z"
     description: The Kubedoop operator for Apache Kafka
