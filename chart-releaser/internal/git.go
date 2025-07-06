@@ -1,35 +1,39 @@
-package main
+package internal
 
 import (
 	"fmt"
-	"log"
 	"os/exec"
 	"strings"
+
+	"github.com/go-logr/logr"
 )
 
 // Git manages Git operations for detecting changes and managing branches
 type Git struct {
-	RepoPath string
+	logger logr.Logger
 }
 
 // NewGit creates a new Git instance
 func NewGit(repoPath string) *Git {
 	return &Git{
-		RepoPath: repoPath,
+		logger: Logger.WithName("git"),
 	}
 }
 
 // runGitCommand runs a git command and returns its output
 func (g *Git) runGitCommand(args ...string) (string, error) {
 	cmd := exec.Command("git", args...)
-	cmd.Dir = g.RepoPath
-	
+
+	g.logger.V(1).Info("Running git command", "args", args)
+
 	output, err := cmd.Output()
 	if err != nil {
-		return "", fmt.Errorf("git command failed: %w", err)
+		return "", fmt.Errorf("git command failed. args: %v, error: %w", args, err)
 	}
-	
-	return strings.TrimSpace(string(output)), nil
+
+	result := strings.TrimSpace(string(output))
+	g.logger.V(2).Info("Git command output", "args", args, "output", result)
+	return result, nil
 }
 
 // GetCurrentBranch gets the current branch name
@@ -38,42 +42,60 @@ func (g *Git) GetCurrentBranch() (string, error) {
 }
 
 // FetchTags fetches tags from remote repository
-func (g *Git) FetchTags() error {
+func (g *Git) fetchTags() error {
+	g.logger.Info("Fetching tags from remote")
 	_, err := g.runGitCommand("fetch", "--tags")
 	if err != nil {
-		log.Printf("Failed to fetch tags from remote: %v", err)
+		g.logger.Error(err, "Failed to fetch tags from remote")
 	}
 	return err
 }
 
 // GetLatestTag gets the latest tag or appropriate commit for comparison
-func (g *Git) GetLatestTag(baseBranch string) (string, error) {
+func (g *Git) getLatestTag(baseBranch string) (string, error) {
 	// Fetch tags first
-	g.FetchTags()
-	
+	g.fetchTags()
+
 	currentBranch, err := g.GetCurrentBranch()
 	if err != nil {
 		return "", fmt.Errorf("failed to get current branch: %w", err)
 	}
 
+	g.logger.Info("Getting latest tag", "currentBranch", currentBranch, "baseBranch", baseBranch)
+
 	// Try to get the latest tag
 	latestTag, err := g.runGitCommand("describe", "--tags", "--abbrev=0", "HEAD~")
 	if err == nil {
+		g.logger.Info("Found latest tag", "tag", latestTag)
 		return latestTag, nil
 	}
+
+	g.logger.Info("No tags found, using commit-based comparison")
 
 	// No tags found, decide based on branch
 	if currentBranch == baseBranch {
 		// On base branch, use first commit
+		g.logger.Info("On base branch, using first commit")
 		return g.runGitCommand("rev-list", "--max-parents=0", "--first-parent", "HEAD")
 	} else {
 		// On other branches, use merge base with base branch
+		g.logger.Info("On feature branch, using merge base with base branch")
 		return g.runGitCommand("merge-base", "HEAD", baseBranch)
 	}
 }
 
 // GetChangedFiles gets list of changed files since a commit
-func (g *Git) GetChangedFiles(sinceCommit, pathFilter string) ([]string, error) {
+func (g *Git) GetChangedFiles(baseBranch, pathFilter string) ([]string, error) {
+	sinceCommit, err := g.getLatestTag(baseBranch)
+	if err != nil {
+		return nil, fmt.Errorf("failed to get latest tag: %w", err)
+	}
+	if sinceCommit == "" {
+		return nil, fmt.Errorf("no commits found since base branch %s", baseBranch)
+	}
+
+	g.logger.Info("Getting changed files", "sinceCommit", sinceCommit, "pathFilter", pathFilter)
+
 	args := []string{"diff", "--find-renames", "--name-only", sinceCommit}
 	if pathFilter != "" {
 		args = append(args, "--", pathFilter)
@@ -85,10 +107,13 @@ func (g *Git) GetChangedFiles(sinceCommit, pathFilter string) ([]string, error) 
 	}
 
 	if output == "" {
+		g.logger.Info("No changed files found")
 		return []string{}, nil
 	}
 
-	return strings.Split(output, "\n"), nil
+	files := strings.Split(output, "\n")
+	g.logger.Info("Found changed files", "count", len(files), "files", files)
+	return files, nil
 }
 
 // CheckoutBranch checks out a branch
@@ -137,9 +162,9 @@ func (g *Git) CommitAndPush(filePath, message, branch string) error {
 	}
 
 	// Push
-	if _, err := g.runGitCommand("push", "origin", branch); err != nil {
-		return fmt.Errorf("failed to push: %w", err)
-	}
+	// if _, err := g.runGitCommand("push", "origin", branch); err != nil {
+	// 	return fmt.Errorf("failed to push: %w", err)
+	// }
 
 	return nil
 }

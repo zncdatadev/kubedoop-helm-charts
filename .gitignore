@@ -1,6 +1,29 @@
 # File created using '.gitignore Generator' for Visual Studio Code: https://bit.ly/vscode-gig
-# Created by https://www.toptal.com/developers/gitignore/api/windows,visualstudiocode,macos,linux,jetbrains,helm,python
-# Edit at https://www.toptal.com/developers/gitignore?templates=windows,visualstudiocode,macos,linux,jetbrains,helm,python
+# Created by https://www.toptal.com/developers/gitignore/api/windows,visualstudiocode,python,macos,linux,jetbrains,helm,go
+# Edit at https://www.toptal.com/developers/gitignore?templates=windows,visualstudiocode,python,macos,linux,jetbrains,helm,go
+
+### Go ###
+# If you prefer the allow list template instead of the deny list, see community template:
+# https://github.com/github/gitignore/blob/main/community/Golang/Go.AllowList.gitignore
+#
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary, built with `go test -c`
+*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+
+# Dependency directories (remove the comment below to include it)
+# vendor/
+
+# Go workspace file
+go.work
 
 ### Helm ###
 # Chart dependencies
@@ -174,7 +197,6 @@ __pycache__/
 *$py.class
 
 # C extensions
-*.so
 
 # Distribution / packaging
 .Python
@@ -385,9 +407,11 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# End of https://www.toptal.com/developers/gitignore/api/windows,visualstudiocode,macos,linux,jetbrains,helm,python
+# End of https://www.toptal.com/developers/gitignore/api/windows,visualstudiocode,python,macos,linux,jetbrains,helm,go
 
 # Custom rules (everything added below won't be overriden by 'Generate .gitignore File' if you use 'Update' option)
 
 # chart-releaser
 .cr-*
+
+bin
