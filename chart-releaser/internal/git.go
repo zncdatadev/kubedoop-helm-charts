@@ -162,9 +162,9 @@ func (g *Git) CommitAndPush(filePath, message, branch string) error {
 	}
 
 	// Push
-	// if _, err := g.runGitCommand("push", "origin", branch); err != nil {
-	// 	return fmt.Errorf("failed to push: %w", err)
-	// }
+	if _, err := g.runGitCommand("push", "origin", branch); err != nil {
+		return fmt.Errorf("failed to push: %w", err)
+	}
 
 	return nil
 }

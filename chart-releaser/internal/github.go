@@ -109,14 +109,14 @@ func (gh *GHClient) DeleteTag(tag string) error {
 	gh.logger.Info("Deleting tag", "tag", tag)
 
 	// Delete tag reference
-	// _, err := gh.client.Git.DeleteRef(gh.ctx, gh.owner, gh.repo, fmt.Sprintf("tags/%s", tag))
-	// if err != nil {
-	// 	if isNotFoundError(err) {
-	// 		log.Printf("Tag %s not found, skipping deletion", tag)
-	// 		return nil
-	// 	}
-	// 	return fmt.Errorf("failed to delete tag %s: %w", tag, err)
-	// }
+	_, err := gh.client.Git.DeleteRef(gh.ctx, gh.owner, gh.repo, fmt.Sprintf("tags/%s", tag))
+	if err != nil {
+		if isNotFoundError(err) {
+			log.Printf("Tag %s not found, skipping deletion", tag)
+			return nil
+		}
+		return fmt.Errorf("failed to delete tag %s: %w", tag, err)
+	}
 
 	log.Printf("Successfully deleted tag: %s", tag)
 	return nil
