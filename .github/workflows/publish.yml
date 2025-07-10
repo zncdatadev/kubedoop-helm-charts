@@ -33,22 +33,11 @@ jobs:
         git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
     - name: Helm tool installer
       uses: azure/setup-helm@v4.2.0
-
-    - name: Setup Go
-      uses: actions/setup-go@v5
-      with:
-        go-version-file: ./chart-releaser/go.mod
-
-    - name: Install chart-releaser
-      run: |
-        go build -o ./bin/chart-releaser ./chart-releaser/cmd/chart-releaser/main.go
-        chmod +x ./bin/chart-releaser
     - name: Delete existing release if exists
       env:
         GH_TOKEN: ${{ github.token }}
       run: |
-        # Delete all matching versions charts which are changed by the current commit
-        ./bin/chart-releaser delete --owner ${{ github.repository_owner }} --repo ${{ github.event.repository.name }} --version-pattern ".*"
+        ./scripts/delete-release.sh -r ${{ github.repository }}
     # TODO: Sign the chart
     - name: Run chart-releaser
       uses: helm/chart-releaser-action@v1.6.0
