@@ -149,16 +149,16 @@ entries:
     version: 0.1.0
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2025-05-18T10:55:41.771752429Z"
+    created: "2025-08-10T16:16:46.087199756Z"
     description: The Kubedoop operator for Hbase
-    digest: ff4c800433720b5db9456eebc7b838022e36193418e6c22a0b3c58fcb4410980
+    digest: 060b94d0ff8cf1b0f3aef84ccea2a9add76562733b7fa967a0922a67b9e35ea4
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
     name: hbase-operator
     type: application
     urls:
-    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/hbase-operator-0.0.0-dev/hbase-operator-0.0.0-dev.tgz
+    - oci://quay.io/kubedoopcharts/hbase-operator:0.0.0-dev
     version: 0.0.0-dev
   hdfs-operator:
   - apiVersion: v2
@@ -520,4 +520,4 @@ entries:
     urls:
     - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/zookeeper-operator-0.0.0-dev/zookeeper-operator-0.0.0-dev.tgz
     version: 0.0.0-dev
-generated: "2025-08-10T16:12:16.639441444Z"
+generated: "2025-08-10T16:16:46.086578599Z"
