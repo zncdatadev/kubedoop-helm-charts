@@ -109,16 +109,16 @@ entries:
     version: 0.1.0
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2025-05-18T10:55:41.666731567Z"
+    created: "2025-08-10T16:27:22.337003971Z"
     description: The Kubedoop operator for Apache DolphinScheduler
-    digest: ffd4592bd5cc948b32bc33f00d354f75ae86cfc82752113c7dce91da310a786f
+    digest: 45f6844a01b8f41fe439f2038c1f425c216a8a56910fc0c5139dfca6317a3b27
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
     name: dolphinscheduler-operator
     type: application
     urls:
-    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/dolphinscheduler-operator-0.0.0-dev/dolphinscheduler-operator-0.0.0-dev.tgz
+    - oci://quay.io/kubedoopcharts/dolphinscheduler-operator:0.0.0-dev
     version: 0.0.0-dev
   hbase-operator:
   - apiVersion: v2
@@ -520,4 +520,4 @@ entries:
     urls:
     - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/zookeeper-operator-0.0.0-dev/zookeeper-operator-0.0.0-dev.tgz
     version: 0.0.0-dev
-generated: "2025-08-10T16:16:46.086578599Z"
+generated: "2025-08-10T16:27:22.336361647Z"
