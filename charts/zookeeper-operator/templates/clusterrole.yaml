@@ -7,18 +7,6 @@ metadata:
     {{- include "operator.labels" . | nindent 4 }}
 rules:
 - apiGroups:
-  - apps
-  resources:
-  - statefulsets
-  verbs:
-  - create
-  - delete
-  - get
-  - list
-  - patch
-  - update
-  - watch
-- apiGroups:
   - ""
   resources:
   - configmaps
@@ -36,16 +24,35 @@ rules:
 - apiGroups:
   - ""
   resources:
-  - endpoints
   - pods
   verbs:
   - get
   - list
   - watch
 - apiGroups:
-  - events.k8s.io
+  - apps
   resources:
-  - events
+  - statefulsets
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - discovery.k8s.io
+  resources:
+  - endpointslices
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - policy
+  resources:
+  - poddisruptionbudgets
   verbs:
   - create
   - delete
