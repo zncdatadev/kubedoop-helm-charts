@@ -229,16 +229,16 @@ entries:
     version: 0.1.0
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2025-05-18T10:55:41.892539237Z"
+    created: "2025-08-10T13:39:55.299129242Z"
     description: The Kubedoop Operator for Apache Hive
-    digest: 3f59bc8e397121802e865c7e0ff75cd1dfc1605fd31a98d5c5d6290587f3ff17
+    digest: df697062a23d37ce4cb733a806db2c8d7ce3e26e716db5b2c610b202e17ed963
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
     name: hive-operator
     type: application
     urls:
-    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/hive-operator-0.0.0-dev/hive-operator-0.0.0-dev.tgz
+    - oci://quay.io/kubedoopcharts/hive-operator:0.0.0-dev
     version: 0.0.0-dev
   kafka-operator:
   - apiVersion: v2
@@ -520,17 +520,4 @@ entries:
     urls:
     - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/zookeeper-operator-0.0.0-dev/zookeeper-operator-0.0.0-dev.tgz
     version: 0.0.0-dev
-  - apiVersion: v2
-    appVersion: 0.0.0-dev
-    created: "2025-08-10T11:38:00.175335344Z"
-    description: The Kubedoop operator for Apache Zookeeper
-    digest: fb5eeab2422ec3241c2f4417061431d76e80ad8e8daa684fb36e84cbdede517f
-    maintainers:
-    - email: zncdatadev@googlegroups.com
-      name: ZNCDataDev Team
-    name: zookeeper-operator
-    type: application
-    urls:
-    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/zookeeper-operator-0.0.0-dev/zookeeper-operator-0.0.0-dev.tgz
-    version: 0.0.0-dev
-generated: "2025-08-10T11:38:00.175399214Z"
+generated: "2025-08-10T13:39:55.298490865Z"
