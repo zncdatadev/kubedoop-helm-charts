@@ -429,9 +429,9 @@ entries:
     version: 0.1.0
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2025-08-10T14:03:08.920009533Z"
+    created: "2025-08-14T11:41:59.684604313Z"
     description: The Kubedoop operator for Apache Superset
-    digest: 469f85fc9a6cf8d23c68608c8f0d4f4e902d93f37ddcaaed54ed759d178b024e
+    digest: 1ef5d2b412976875cacb0f568155ce38202a6dfef1627b64fe2a14e069461293
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -520,4 +520,4 @@ entries:
     urls:
     - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/zookeeper-operator-0.0.0-dev/zookeeper-operator-0.0.0-dev.tgz
     version: 0.0.0-dev
-generated: "2025-08-14T11:41:02.877768538Z"
+generated: "2025-08-14T11:41:59.684033063Z"
