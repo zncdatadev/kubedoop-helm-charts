@@ -349,9 +349,9 @@ entries:
     version: 0.1.0
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2025-08-13T01:22:37.642231703Z"
+    created: "2025-08-15T10:46:00.84545329Z"
     description: The Kubedoop Secret Operator
-    digest: b7d2ebbc33ecfc679bac41e5c19f2d64b5474d107c139cda7aa4734116a34274
+    digest: 7312e6aa6c7c3daa467693026c529e95bf41d5b1ba17ed682c14402d558d6aa1
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: zncdatadev
@@ -520,4 +520,4 @@ entries:
     urls:
     - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/zookeeper-operator-0.0.0-dev/zookeeper-operator-0.0.0-dev.tgz
     version: 0.0.0-dev
-generated: "2025-08-15T10:45:22.103415207Z"
+generated: "2025-08-15T10:46:00.844531947Z"
