@@ -29,9 +29,9 @@ entries:
     version: 0.1.0
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2025-08-13T01:31:38.14152341Z"
+    created: "2025-08-15T10:44:41.123660519Z"
     description: The Kubedoop operator for Apache airflow
-    digest: 1e86cbe509a1b045667bc80666bc7f172f6a680da8a42dc2cb5ed9aa4d800448
+    digest: b122230b703a5d52994797ae83c94c0ab662dcf170942da43b37b51ae3ba6dc2
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -520,4 +520,4 @@ entries:
     urls:
     - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/zookeeper-operator-0.0.0-dev/zookeeper-operator-0.0.0-dev.tgz
     version: 0.0.0-dev
-generated: "2025-08-14T11:42:49.752989098Z"
+generated: "2025-08-15T10:44:41.122891625Z"
