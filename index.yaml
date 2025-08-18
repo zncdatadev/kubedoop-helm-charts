@@ -269,9 +269,9 @@ entries:
     version: 0.1.0
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2025-08-14T11:41:02.878411874Z"
+    created: "2025-08-18T02:34:13.816804811Z"
     description: The Kubedoop operator for Apache Kafka
-    digest: d7c0280bdf6e8efcac925a13294880f3b7083367e5313bcf02ff7e0eb9cd9fab
+    digest: d6f17eceab2859a3feb7c2713c011d0d55c902a751d4745909a5183609861f41
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -520,4 +520,4 @@ entries:
     urls:
     - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/zookeeper-operator-0.0.0-dev/zookeeper-operator-0.0.0-dev.tgz
     version: 0.0.0-dev
-generated: "2025-08-18T02:33:34.591988857Z"
+generated: "2025-08-18T02:34:13.816198607Z"
