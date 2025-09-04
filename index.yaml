@@ -43,9 +43,9 @@ entries:
   commons-operator:
   - apiVersion: v2
     appVersion: 0.3.0
-    created: "2025-08-31T16:01:24.518462602Z"
+    created: "2025-09-04T03:38:57.975818117Z"
     description: Commons operator of Kubedoop
-    digest: 0ff553f7bf8b517a2784b0fb76fb526b4aa531664df73bcd2e33f64eb74fe204
+    digest: 5f9c0826da98749b1aa79b2addffd5451fa482c0b18db7be866016888f6f60b3
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -533,4 +533,4 @@ entries:
     urls:
     - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/zookeeper-operator-0.0.0-dev/zookeeper-operator-0.0.0-dev.tgz
     version: 0.0.0-dev
-generated: "2025-09-04T03:00:35.564286825Z"
+generated: "2025-09-04T03:38:57.975149908Z"
