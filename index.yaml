@@ -202,9 +202,9 @@ entries:
     version: 0.1.0
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2025-09-05T15:24:11.662556679Z"
+    created: "2025-09-05T15:30:17.320588015Z"
     description: The Kubedoop operator for Apache HDFS
-    digest: 19dc62edde7bdcee429f480b976935f08e39041ee2405d32f255c023e98e2ea3
+    digest: e00d0129fc58bf713156da2968012cc92ae6a1c24e5fefb625a9998737fbd959
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -533,4 +533,4 @@ entries:
     urls:
     - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/zookeeper-operator-0.0.0-dev/zookeeper-operator-0.0.0-dev.tgz
     version: 0.0.0-dev
-generated: "2025-09-05T15:26:31.9393841Z"
+generated: "2025-09-05T15:30:17.319879998Z"
