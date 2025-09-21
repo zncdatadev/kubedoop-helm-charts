@@ -495,16 +495,16 @@ entries:
     version: 0.1.0
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2025-05-18T10:55:42.339825338Z"
+    created: "2025-09-21T10:48:23.036926691Z"
     description: The Kubedoop operator for Trino
-    digest: 870dbaddf206a6d2466cd399fdf1a038f2e4b010d735724e28799cb0ba454092
+    digest: dad1c22807bac74ba7cbfad4b84ffe6b275b9ada0edf82c3eb7c9eaac927c4e0
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
     name: trino-operator
     type: application
     urls:
-    - https://github.com/zncdatadev/kubedoop-helm-charts/releases/download/trino-operator-0.0.0-dev/trino-operator-0.0.0-dev.tgz
+    - oci://quay.io/kubedoopcharts/trino-operator:0.0.0-dev
     version: 0.0.0-dev
   zookeeper-operator:
   - apiVersion: v2
@@ -546,4 +546,4 @@ entries:
     urls:
     - oci://quay.io/kubedoopcharts/zookeeper-operator:0.0.0-dev
     version: 0.0.0-dev
-generated: "2025-09-16T17:29:17.059123392Z"
+generated: "2025-09-21T10:48:23.035377826Z"
