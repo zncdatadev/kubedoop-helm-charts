@@ -493,9 +493,9 @@ entries:
     version: 0.1.0
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2025-10-14T07:21:50.309252002Z"
+    created: "2025-10-14T10:29:59.434972566Z"
     description: The Kubedoop operator for Apache Spark k8s
-    digest: 07017b8630136f9fec833f6063c699fac5c126cd2d61102048ecc00874897cca
+    digest: a164c30d6bb90879d684bf5c9365d876cd7a356fad0a46f2e45f3918b380c60d
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -650,4 +650,4 @@ entries:
     urls:
     - oci://quay.io/kubedoopcharts/zookeeper-operator:0.0.0-dev
     version: 0.0.0-dev
-generated: "2025-10-14T09:45:26.848613193Z"
+generated: "2025-10-14T10:29:59.434299037Z"
