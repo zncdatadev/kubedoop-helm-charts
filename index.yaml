@@ -400,9 +400,9 @@ entries:
     version: 0.1.0
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2025-12-28T14:26:08.198864361Z"
+    created: "2026-01-07T15:46:55.747043016Z"
     description: The Kubedoop Listener Operator
-    digest: 66f03b0296c7008bdb878581316769bf69f9e712c0231a4c3fa204726ccf87ba
+    digest: 647d18131147127940fe2df44d751404002b5f47ba7f5ff87b29f23a3f5a83c9
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -663,4 +663,4 @@ entries:
     urls:
     - oci://quay.io/kubedoopcharts/zookeeper-operator:0.0.0-dev
     version: 0.0.0-dev
-generated: "2026-01-07T15:44:36.22502794Z"
+generated: "2026-01-07T15:46:55.743981842Z"
