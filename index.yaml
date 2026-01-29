@@ -42,9 +42,9 @@ entries:
     version: 0.1.0
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2026-01-25T09:03:54.582410142Z"
+    created: "2026-01-29T14:12:27.477048379Z"
     description: The Kubedoop operator for Apache airflow
-    digest: 6dd40eb60b29d7f9508053d75831d8f361a0cf1e1da84179aafa081280884672
+    digest: 487788567c114f2ad7075760562bc3a18773a215318f2555a0b4624f32fd60b7
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -663,4 +663,4 @@ entries:
     urls:
     - oci://quay.io/kubedoopcharts/zookeeper-operator:0.0.0-dev
     version: 0.0.0-dev
-generated: "2026-01-27T13:28:03.938960834Z"
+generated: "2026-01-29T14:12:27.476140804Z"
