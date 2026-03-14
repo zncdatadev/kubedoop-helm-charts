@@ -559,9 +559,9 @@ entries:
     version: 0.1.0
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2026-03-14T08:22:50.741916371Z"
+    created: "2026-03-14T09:29:37.536184089Z"
     description: The Kubedoop operator for Apache Superset
-    digest: b5cd90e744948f809c47ae8429f3cb73a05763c68c05b29a7cdca1c1f0851441
+    digest: d79b9352e80fdfbf262b82442a50cc1d47c0dd2de4294e2568d7c595b902f672
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -663,4 +663,4 @@ entries:
     urls:
     - oci://quay.io/kubedoopcharts/zookeeper-operator:0.0.0-dev
     version: 0.0.0-dev
-generated: "2026-03-14T08:22:50.741234951Z"
+generated: "2026-03-14T09:29:37.535374598Z"
