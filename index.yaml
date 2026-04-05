@@ -652,9 +652,9 @@ entries:
     version: 0.1.0
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2026-03-14T11:21:04.869414347Z"
+    created: "2026-04-05T08:30:26.704032135Z"
     description: The Kubedoop operator for Apache Zookeeper
-    digest: 1526ce0f4e0dde020265d5da728c6650152e64d9e7fb314f691dd44084028b7f
+    digest: 0743f037c6345c3980c2873598f9190da76032a78a5e5e57ccfe3b47f9dbdd20
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -663,4 +663,4 @@ entries:
     urls:
     - oci://quay.io/kubedoopcharts/zookeeper-operator:0.0.0-dev
     version: 0.0.0-dev
-generated: "2026-03-16T05:03:02.552242999Z"
+generated: "2026-04-05T08:30:26.703333127Z"
