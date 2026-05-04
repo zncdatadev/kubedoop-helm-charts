@@ -479,9 +479,9 @@ entries:
     version: 0.1.0
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2026-05-04T08:56:11.356997429Z"
+    created: "2026-05-04T09:09:03.031146562Z"
     description: The Kubedoop Secret Operator
-    digest: e0d774088edc6852812f8802bcc17866a5671ebd5ae794817739691fbab041eb
+    digest: be40b3455ebdb358db9977edd6d25037603d4a01ea3433eb1343305055b4686c
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: zncdatadev
@@ -689,4 +689,4 @@ entries:
     urls:
     - oci://quay.io/kubedoopcharts/zookeeper-operator:0.0.0-dev
     version: 0.0.0-dev
-generated: "2026-05-04T08:56:11.356072296Z"
+generated: "2026-05-04T09:09:03.02982272Z"
