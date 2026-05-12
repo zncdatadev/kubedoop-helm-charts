@@ -690,9 +690,9 @@ entries:
     version: 0.1.0
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2026-05-12T07:50:19.322982374Z"
+    created: "2026-05-12T11:38:48.872304967Z"
     description: The Kubedoop operator for Trino
-    digest: c52e6ade2d9296c94ef6d627c1d66cd1c5116773a14d37538340fd87fc2beaa0
+    digest: 3a0e60268c0ed361d750432d4347eb16cee8373fc1576ca4060d792840725a18
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -767,4 +767,4 @@ entries:
     urls:
     - oci://quay.io/kubedoopcharts/zookeeper-operator:0.0.0-dev
     version: 0.0.0-dev
-generated: "2026-05-12T07:50:19.322232126Z"
+generated: "2026-05-12T11:38:48.871468947Z"
