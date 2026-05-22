@@ -227,9 +227,9 @@ entries:
     version: 0.1.0
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2026-05-21T14:58:47.169534871Z"
+    created: "2026-05-22T00:43:58.031025235Z"
     description: The Kubedoop operator for Hbase
-    digest: 4a1d9885020662684da0fade895940512f184ab1328a5cb665cfa83048f0dff3
+    digest: 5e5eaf024fe5d7cda9d9865208f02be47b5b14aa99c7c48392d5c7a316ca6015
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -832,4 +832,4 @@ entries:
     urls:
     - oci://quay.io/kubedoopcharts/zookeeper-operator:0.0.0-dev
     version: 0.0.0-dev
-generated: "2026-05-21T15:23:19.853972486Z"
+generated: "2026-05-22T00:43:58.030401219Z"
