@@ -185,6 +185,20 @@ entries:
     urls:
     - oci://quay.io/kubedoopcharts/dolphinscheduler-operator:0.0.0-dev
     version: 0.0.0-dev
+  doris-operator:
+  - apiVersion: v2
+    appVersion: 0.4.0-dev
+    created: "2026-06-11T01:34:06.755868895Z"
+    description: Apache Doris operator of Kubedoop
+    digest: 7132c3fa3527150ff9ec5bcd32bd1619f874f3c853d0a55ad036c01d03d5117a
+    maintainers:
+    - email: zncdatadev@googlegroups.com
+      name: ZNCDataDev Team
+    name: doris-operator
+    type: application
+    urls:
+    - oci://quay.io/kubedoopcharts/doris-operator:0.4.0-dev
+    version: 0.4.0-dev
   hbase-operator:
   - apiVersion: v2
     appVersion: 0.4.0-dev
@@ -845,4 +859,4 @@ entries:
     urls:
     - oci://quay.io/kubedoopcharts/zookeeper-operator:0.0.0-dev
     version: 0.0.0-dev
-generated: "2026-06-11T00:32:48.690160036Z"
+generated: "2026-06-11T01:34:06.755284266Z"
