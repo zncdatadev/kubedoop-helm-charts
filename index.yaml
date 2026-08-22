@@ -372,6 +372,19 @@ entries:
     version: 0.0.0-dev
   hive-operator:
   - apiVersion: v2
+    appVersion: 0.4.0
+    created: "2026-08-22T15:23:42.222498723Z"
+    description: The Kubedoop Operator for Apache Hive
+    digest: 5097be667c1ac6a6db67135f56c2ebb39c9fc08b2ac319d6296d4e1fcc5b51c4
+    maintainers:
+    - email: zncdatadev@googlegroups.com
+      name: ZNCDataDev Team
+    name: hive-operator
+    type: application
+    urls:
+    - oci://quay.io/kubedoopcharts/hive-operator:0.4.0
+    version: 0.4.0
+  - apiVersion: v2
     appVersion: 0.4.0-dev
     created: "2026-05-12T07:03:22.392114291Z"
     description: The Kubedoop Operator for Apache Hive
@@ -977,4 +990,4 @@ entries:
     urls:
     - oci://quay.io/kubedoopcharts/zookeeper-operator:0.0.0-dev
     version: 0.0.0-dev
-generated: "2026-08-22T14:57:12.991742305Z"
+generated: "2026-08-22T15:23:42.221794158Z"
