@@ -213,6 +213,19 @@ entries:
     version: 0.0.0-dev
   doris-operator:
   - apiVersion: v2
+    appVersion: 0.4.0
+    created: "2026-08-22T14:30:57.084913308Z"
+    description: Apache Doris operator of Kubedoop
+    digest: db386ac05e6aa5c1e38d5234c506043291111259e6183fa24a0684e219383f89
+    maintainers:
+    - email: zncdatadev@googlegroups.com
+      name: ZNCDataDev Team
+    name: doris-operator
+    type: application
+    urls:
+    - oci://quay.io/kubedoopcharts/doris-operator:0.4.0
+    version: 0.4.0
+  - apiVersion: v2
     appVersion: 0.4.0-dev
     created: "2026-08-21T15:19:16.246153626Z"
     description: Apache Doris operator of Kubedoop
@@ -938,4 +951,4 @@ entries:
     urls:
     - oci://quay.io/kubedoopcharts/zookeeper-operator:0.0.0-dev
     version: 0.0.0-dev
-generated: "2026-08-22T14:24:20.654306439Z"
+generated: "2026-08-22T14:30:57.084331075Z"
