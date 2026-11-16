@@ -675,9 +675,9 @@ entries:
     version: 0.4.0-dev
   - apiVersion: v2
     appVersion: 0.0.0-dev
-    created: "2026-08-23T09:58:54.060762881Z"
+    created: "2026-11-16T12:43:36.291119764Z"
     description: The Kubedoop operator for Apache NiFi
-    digest: 62b7cd0a0dc2a6e214cf1404e278c95bee92d6abdf814e48f4e204bfffc4e384
+    digest: 042fcba025d20b570c3fd4950af22f52d4479274939fb805521709154654995a
     maintainers:
     - email: zncdatadev@googlegroups.com
       name: ZNCDataDev Team
@@ -1068,4 +1068,4 @@ entries:
     urls:
     - oci://quay.io/kubedoopcharts/zookeeper-operator:0.0.0-dev
     version: 0.0.0-dev
-generated: "2026-10-18T10:27:09.027624927Z"
+generated: "2026-11-16T12:43:36.290200032Z"
